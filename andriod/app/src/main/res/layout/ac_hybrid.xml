@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/inc_header_bar"
+        layout="@layout/hybrid_header" />
+
+    <com.baidu.kuai.widget.ProgressWebView
+        android:id="@+id/wv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_below="@+id/inc_header_bar" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ll_bottom"
+            android:scrollbars="vertical"
+            android:text="调试功能" />
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#80000000"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="后退" />
+
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="刷新" />
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="清空缓存" />
+
+            <Button
+                android:id="@+id/btn_forward"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="前进" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

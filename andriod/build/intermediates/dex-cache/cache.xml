@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\debug\HyBrid\app\build\intermediates\exploded-aar\HyBrid\lib_hybrid\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="a838a00ba78c7c592baa4052d27cf83467cca615">
+        <dex dex="D:\debug\HyBrid\app\build\intermediates\pre-dexed\debug\classes-24bce4aed7cbb3bd26c6973bc03f856e6988aa69.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telphone=no" />
+    <title>基本功能</title>
+    <link href="../static/css/global.css" rel="stylesheet" type="text/css" />
+    <style>
+        .btn-primary {
+            margin: 20px;
+            display: block;
+        }
+        .url {
+            width: 90%;
+            margin: 20px;
+            line-height: 44px;
+            height: 44px;
+            padding: 0 10px;
+            display: block;
+            vertical-align: middle;
+            border-radius: 4px;
+            font-size: 16px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn-primary" id="webview">
+        新开webview去到Header使用demo</div>
+    <div class="btn-primary" id="native">
+        跳转native页面hotel/detail</div>
+    <div class="btn-primary" id="login">
+        唤起登录框（未完成）</div>
+    <input type="text" class="url" id="url" placeholder="增量资源地址" value="http://files.cnblogs.com/files/yexiaochai/hotel.zip">
+    <div class="btn-primary" id="getIncrement">
+        由上述地址获取增量</div>
+    <script src="../libs/underscore.js" type="text/javascript"></script>
+    <script src="../libs/zepto.js" type="text/javascript"></script>
+    <script src="../libs/libs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $('#webview').click(function () {
+            requestHybrid({
+                tagname: 'forward',
+                param: {
+                    topage: 'flight/index.html',
+                    type: 'webview'
+                }
+            });
+        });
+
+        $('#native').click(function () {
+            requestHybrid({
+                tagname: 'forward',
+                param: {
+                    topage: 'hotel/detail',
+                    type: 'native'
+                }
+            });
+        });
+
+        $('#getIncrement').click(function () {
+            requestHybrid({
+                tagname: 'updateapp',
+                param: {
+                    url: $('#url').val(),
+                    module: 'hotel'
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
