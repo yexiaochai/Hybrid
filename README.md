@@ -1,5 +1,5 @@
 # Hybrid
-简单Hybrid框的实现，后期希望能形成一个通用的Hybrid平台，详情请看博客介绍，代码会持续更新，因为是原理简述，不会太复杂<br/>
+经过之前的简单Hybrid框的实现，现在正在形成一个通用的Hybrid平台，详情请看博客介绍，代码会持续更新<br/>
 Native Andriod代码由明月同学提供<br/>
 Native Ios代码由Nil同学提供<br/>
 
