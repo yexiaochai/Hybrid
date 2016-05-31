@@ -4,8 +4,15 @@ Native Andriod代码由明月同学提供<br/>
 Native Ios代码由Nil同学提供<br/>
 
 # 博客地址
+
+##设计博客
 http://www.cnblogs.com/yexiaochai/p/4921635.html<br/>
 http://www.cnblogs.com/yexiaochai/p/5524783.html
+
+
+##ios博客
+http://www.cnblogs.com/nildog/p/5536081.html#3440931
+
 
 
 # 前端框架
