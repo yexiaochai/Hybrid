@@ -1,6 +1,6 @@
 ﻿define([
     'BaseView',
-    'text!PagePath/forward/tpl.layout.html',
+    'text!PagePath/cache/tpl.layout.html',
     'text!StylePath/common.css'
 ], function (AbstractView,
              layoutHtml,
