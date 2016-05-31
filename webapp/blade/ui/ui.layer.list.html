@@ -1,0 +1,17 @@
+<section class="cm-modal cm-modal--action">
+  <%if(typeof title == 'string' && title.length > 0){ %>
+   <header class="cm-modal-hd">
+	    <h3 class="cm-modal-title js_title"><%=title %></h3>
+	 </header>
+  <%} %>
+  <div class="cm-modal-bd js_wrapper">
+    <ul class="cm-actions cm-actions--full js_scroller" >
+      <%for(var i = 0, len = list.length; i < len; i++) {%>
+        <li data-index="<%=i%>" class="cm-actions-btn js_item <%if(list[i].disabled){ %>disabled<%} %> <%if(i == index) { %>active<% } %>"><%=((typeof itemFn == "function" && itemFn(list[i])) || list[i].name)%></li>
+      <%}%>
+    </ul>
+  </div>
+  <div class="cm-modal-ft cm-actions">
+    <span class="cm-actions-btn js_cancel"><%=cancelText%></span>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<section class="cm-modal cm-modal--alert">
+  <div class="cm-modal-bd">
+    <%if(typeof title == 'string' && title.length > 0){ %>
+      <h3 class="cm-alert-title"><%=title%></h3>
+    <%} %>
+    <div <%if(content.length > 20){ %> class="cm-mutil-lines"<%} %>><%=content%></div>
+  </div>
+  <div class="cm-actions  <%if(btns.length > 2){ %> cm-actions--full <%} %>">
+    <% for(var i = 0, len = btns.length; i < len; i++ ) {%>
+    <span class="<%=btns[i].className%> cm-actions-btn">
+      <%=btns[i].name%></span>
+    <% } %>
+  </div>
+</section>

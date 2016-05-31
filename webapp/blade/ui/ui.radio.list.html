@@ -1,0 +1,15 @@
+<section class="cm-modal">
+  <%if(typeof title == 'string' && title.length > 0){ %>
+  <header class="cm-modal-hd cm-modal-hd--center js_header">
+    <h3 class="cm-modal-title js_title">
+      <%=title %></h3>
+  </header>
+  <%} %>
+  <div class="cm-modal-bd js_wrapper" style="overflow: hidden; position: relative;" >
+    <ul class="cm-radio-list js_items"  style="position: absolute; width: 100%; ">
+      <%for(var i = 0, len = data.length; i < len; i++) { %>
+      <li data-index="<%=i %>" <%if(i == index){ %>class="active"<%} %> ><%=((typeof itemFn == "function" && itemFn(data[i])) || data[i].name)%></li>
+      <% } %>
+    </ul>
+  </div>
+</section>

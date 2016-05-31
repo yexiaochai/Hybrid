@@ -1,0 +1,62 @@
+﻿
+<div class="btn-primary js-btn0" >
+    forward基本使用去首页
+</div>
+
+<pre>
+<code>
+this.forward('index');
+</code>
+</pre>
+
+<div class="btn-primary js-btn1" >
+    forward pop动画去首页
+</div>
+<pre>
+<code>
+//这里没写好,要改造
+this.forward('index', null, null, 'pop');
+</code>
+</pre>
+
+
+<div class="btn-primary js-btn2" >
+    forward present
+</div>
+<pre>
+<code>
+this.forward('index', null, null, 'present');
+</code>
+</pre>
+
+<div class="btn-primary js-btn3" >
+    forward去百度
+</div>
+<pre>
+<code>
+_.requestHybrid({
+    tagname: 'forward',
+    param: {
+        topage: 'https://www.baidu.com/',
+        type: 'h5'
+    }
+});
+
+</code>
+</pre>
+
+<div class="btn-primary js-btn4" >
+    forward跳Native没有导航
+</div>
+<pre>
+<code>
+_.requestHybrid({
+    tagname: 'forward',
+    param: {
+        topage: 'index2',
+        type: 'native',
+        navigateion: 'none'
+    }
+});
+</code>
+</pre>

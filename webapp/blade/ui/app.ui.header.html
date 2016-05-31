@@ -1,0 +1,33 @@
+<ul class="cm-app-header">
+<%
+
+var i = 0, len = 0, j = 0, jj = 0;
+var left = left;
+var right = right.reverse();
+var item = null;
+var dir;
+var btnObj = null;
+
+%>
+
+<%for(jj=0; jj < 2; jj++) { %>
+  <% 
+    if(jj == 0) { dir = 'fl'; btnObj = left; } else { dir = 'fr'; btnObj = right; }
+  %>
+  <% for(i = 0, len = btnObj.length; i < len; i++) { %>
+    <% item = btnObj[i]; %>
+    <%if(typeof item.itemFn == 'function') { %>
+      <%=item.itemFn() %>
+    <%} else { %>
+      <li class=" cm-header-btn js_<%=item.tagname %>" style="<%=(item.value && item.value.length > 2) ? 'line-height: 16px;' : ''%>" >
+    <% if(item.value) { %>
+        <%=item.value %>
+    <% } else { %>
+        返回
+    <% } %>
+    </li>
+    <%} %>
+  <%} %>
+<%} %>
+
+</ul>

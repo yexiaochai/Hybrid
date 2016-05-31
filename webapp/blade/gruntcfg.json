@@ -1,0 +1,154 @@
+{
+  "requirejs": {
+
+    "blade": {
+      "options": {
+        "uglify": {
+          "except": [
+            "$super"
+          ]
+        },
+        "baseUrl": "<%= config.srcDir %>",
+        "paths": {
+          "$": "libs/zepto",
+          "_": "libs/underscore",
+          "_e": "libs/underscore.extend",
+          "F": "libs/fastclick",
+
+          "common": "common",
+          "text": "libs/require.text",
+          "AbstractApp": "mvc/abstract.app",
+          "AbstractView": "mvc/abstract.view",
+          "ModuleView": "mvc/module.view",
+          "AbstractModel": "data/abstract.model",
+          "AbstractEntity": "mvc/abstract.entity",
+          "AbstractStore": "data/abstract.store",
+          "AbstractStorage": "data/abstract.storage",
+          "cValidate": "common/c.validate",
+          "cUser": "common/c.user",
+          "UIAbstractView": "ui/ui.abstract.view",
+          "UIMask": "ui/ui.mask",
+          "UILayer": "ui/ui.layer",
+          "UIPageView": "ui/ui.page.view",
+          "UIScroll": "ui/ui.scroll",
+
+          "UISlider": "ui/ui.slider",
+          "T_UISlider": "ui/ui.slider.html",
+          "UIImageSlider": "ui/ui.image.slider",
+
+          "UIIdentitycard": "ui/ui.identitycard",
+          "T_UIIdentitycard": "ui/ui.identitycard.html",
+
+          "UIScrollLayer": "ui/ui.scroll.layer",
+          "T_UIScrollLayer": "ui/ui.scroll.layer.html",
+
+          "UIAlert": "ui/ui.alert",
+          "T_UIAlert": "ui/ui.alert.html",
+
+          "UICalendar": "ui/ui.calendar",
+          "T_UICalendar": "ui/ui.calendar.html",
+
+          "UICalendarBox": "ui/ui.calendar.box",
+          "T_UICalendarBox": "ui/ui.calendar.box.html",
+
+          "UIRated": "ui/ui.rated",
+          "T_UIRated": "ui/ui.rated.html",
+
+          "UIRadioList": "ui/ui.radio.list",
+          "T_UIRadioList": "ui/ui.radio.list.html",
+
+          "APPUIHeader": "ui/app.ui.header",
+          "T_APPUIHeader": "ui/app.ui.header.html",
+
+          "UIHeader": "ui/ui.header",
+          "T_UIHeader": "ui/ui.header.html",
+
+          "UIToast": "ui/ui.toast",
+          "T_UIToast": "ui/ui.toast.html",
+
+          "UILoading": "ui/ui.loading",
+          "T_UILoading": "ui/ui.loading.html",
+
+          "UILayerList": "ui/ui.layer.list",
+          "T_UILayerList": "ui/ui.layer.list.html",
+
+          "UISelect": "ui/ui.select",
+          "T_UISelect": "ui/ui.select.html",
+
+          "UIGroupSelect": "ui/ui.group.select",
+          "T_UIGroupSelect": "ui/ui.group.select.html",
+          "T_UIGroupSelect2": "ui/ui.group.select2.html",
+
+          "UIDatetimepicker": "ui/ui.datetimepicker",
+          "T_UIDatetimepicker": "ui/ui.datetimepicker.html",
+
+          "MED": "hybrid/openapp"
+
+
+        },
+        "exclude": [
+
+        ],
+        "include": [
+          "$",
+          "_",
+          "_e",
+          "F",
+
+          "text",
+          "AbstractApp",
+          "AbstractView",
+          "ModuleView",
+          "AbstractModel",
+          "AbstractEntity",
+          "AbstractStore",
+          "AbstractStorage",
+          "cValidate",
+          "cUser",
+          "UIAbstractView",
+          "UIMask",
+          "UILayer",
+          "UIPageView",
+          "UIScroll",
+          "UISlider",
+          "text!T_UISlider",
+          "UIImageSlider",
+          "UIIdentitycard",
+          "text!T_UIIdentitycard",
+          "UIScrollLayer",
+          "text!T_UIScrollLayer",
+          "UIAlert",
+          "text!T_UIAlert",
+          "UICalendar",
+          "text!T_UICalendar",
+          "UICalendarBox",
+          "text!T_UICalendarBox",
+          "UIRated",
+          "text!T_UIRated",
+          "UIRadioList",
+          "text!T_UIRadioList",
+
+          "APPUIHeader",
+          "text!T_APPUIHeader",
+          "UIHeader",
+          "text!T_UIHeader",
+          "UIToast",
+          "text!T_UIToast",
+          "UILoading",
+          "text!T_UILoading",
+          "UILayerList",
+          "text!T_UILayerList",
+          "UISelect",
+          "text!T_UISelect",
+          "UIGroupSelect",
+          "text!T_UIGroupSelect",
+          "text!T_UIGroupSelect2",
+          "UIDatetimepicker",
+          "text!T_UIDatetimepicker",
+          "common"
+        ],
+        "out": "<%= config.destDir %>/libs.js"
+      }
+    }
+  }
+}

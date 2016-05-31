@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9o8-Rx-TI2">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="3ab-oe-4tL">
+            <objects>
+                <navigationController id="9o8-Rx-TI2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yID-lk-T8l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="btJ-M0-iBw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOj-rQ-lPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-973" y="409"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Hybrid_Medlinker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp3-P1-5Q0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="268"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="H5页面">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p17-PP-sEY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-ew-a6b">
+                                <rect key="frame" x="0.0" y="332" width="600" height="268"/>
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="本地页面">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="localPageClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zQ8-bZ-7kM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zp3-P1-5Q0" secondAttribute="trailing" id="67V-Ja-nSQ"/>
+                            <constraint firstItem="zp3-P1-5Q0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bnu-nF-h2J"/>
+                            <constraint firstItem="Bfi-ew-a6b" firstAttribute="top" secondItem="zp3-P1-5Q0" secondAttribute="bottom" id="Qmt-oM-ZyC"/>
+                            <constraint firstItem="Bfi-ew-a6b" firstAttribute="top" secondItem="zp3-P1-5Q0" secondAttribute="bottom" id="US2-0j-GKK"/>
+                            <constraint firstItem="Bfi-ew-a6b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="grd-1T-z6d"/>
+                            <constraint firstItem="Bfi-ew-a6b" firstAttribute="height" secondItem="zp3-P1-5Q0" secondAttribute="height" id="lce-0E-NRD"/>
+                            <constraint firstAttribute="trailing" secondItem="Bfi-ew-a6b" secondAttribute="trailing" id="nou-sQ-bJA"/>
+                            <constraint firstItem="zp3-P1-5Q0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pcb-Gz-0As"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bfi-ew-a6b" secondAttribute="bottom" id="wqZ-89-hln"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZNm-ka-JnQ">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入需要跳转的链接" textAlignment="center" minimumFontSize="17" id="aUw-8R-ZI4">
+                            <rect key="frame" x="20" y="7" width="560" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="gZ2-Qn-sTy"/>
+                            </constraints>
+                            <string key="text">hybrid://forward?param=%7B%22topage%22%3A%22http%3A%2F%2Fkuai.baidu.com%2Fwebapp%2Fdemo%2Findex.html%22%2C%22type%22%3A%22h5%22%7D</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="hybirdUrlTextField" destination="aUw-8R-ZI4" id="b5P-tC-bJz"/>
+                        <segue destination="DvD-pw-4kD" kind="show" identifier="show" id="z8l-KJ-kJD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="409"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Ybv-br-pOm">
+            <objects>
+                <viewController storyboardIdentifier="WebTestViewController" id="DvD-pw-4kD" customClass="WebTestViewController" customModule="Hybrid_Medlinker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CzL-eY-PsS"/>
+                        <viewControllerLayoutGuide type="bottom" id="FHV-Lo-Kxj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c10-6q-gfs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="index2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6In-1U-xv5">
+                                <rect key="frame" x="212" y="264" width="176" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0m-OV-7C5">
+                                <rect key="frame" x="272" y="344" width="56" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="fbG-B0-P55"/>
+                                    <constraint firstAttribute="height" constant="46" id="gI7-kA-tGG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="返回"/>
+                                <connections>
+                                    <action selector="back:" destination="DvD-pw-4kD" eventType="touchUpInside" id="pdp-WH-EyV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6In-1U-xv5" firstAttribute="centerX" secondItem="c10-6q-gfs" secondAttribute="centerX" id="9En-1o-beR"/>
+                            <constraint firstItem="i0m-OV-7C5" firstAttribute="centerX" secondItem="c10-6q-gfs" secondAttribute="centerX" id="Dxo-Cr-qKx"/>
+                            <constraint firstItem="i0m-OV-7C5" firstAttribute="centerY" secondItem="c10-6q-gfs" secondAttribute="centerY" constant="67" id="pUz-we-F6R"/>
+                            <constraint firstItem="6In-1U-xv5" firstAttribute="centerY" secondItem="c10-6q-gfs" secondAttribute="centerY" id="wYV-EP-Q7F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="uCP-I4-EGn">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="GJl-rH-6dz"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqa-Lx-v78" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="409"/>
+        </scene>
+    </scenes>
+</document>

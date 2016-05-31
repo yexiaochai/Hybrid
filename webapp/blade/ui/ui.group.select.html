@@ -1,0 +1,18 @@
+﻿<section class="cm-modal cm-modal-select">
+  <div class="cm-modal-bd plr10 " >
+     <div class="js_wrapper cm-scroll-select-group cm-scroll-select-group--birthday">
+        <h3><%=title %></h3>
+     </div>    
+  </div>
+  <p class="cm-scroll-select-tips js_tips"><%=tips %></p>
+  <footer class="cm-modal-ft cm-actions js_footer">
+    <%if(typeof btns == 'string'){ %>
+      <%=btns %>
+    <% } else { %>
+    <% for(var i = 0, len = btns.length; i < len; i++ ) {%>
+    <span class="cm-actions-btn <%=btns[i].className%>">
+      <%=btns[i].name%></span>
+    <% } %>
+    <%} %>
+  </footer>
+</section>
