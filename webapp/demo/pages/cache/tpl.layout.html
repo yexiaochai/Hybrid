@@ -1,0 +1,26 @@
+﻿
+<div class="btn-primary js-btn0" >
+    检查更新
+</div>
+<pre>
+<code>
+/*
+ 用户点击系统会回到大首页,并且准备拉取更新
+ 因为这里没有server的配合暂时读取这个更新:http://yexiaochai.github.io/Hybrid/webapp/hybrid_ver.json
+ {
+ "blade": "1.0.0",
+ "static": "1.0.0",
+ "demo": "1.0.0"
+ }
+ 只要远端版本号比Native存的版本大,便会拉取对应频道压缩包做更新:
+ http://yexiaochai.github.io/Hybrid/webapp/blade.zip
+ http://yexiaochai.github.io/Hybrid/webapp/static.zip
+ http://yexiaochai.github.io/Hybrid/webapp/demo.zip
+ */
+//拉取更新包
+_.requestHybrid({
+    tagname: 'checkver'
+});
+</code>
+</pre>
+
