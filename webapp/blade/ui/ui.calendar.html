@@ -1,0 +1,94 @@
+
+<div class="cm-calendar">
+
+  <ul class="cm-calendar-hd js_weekend">
+    <% var i = 0, day1 = 0;  %>
+    <%for(day1 = 0; day1 < 7; day1++) { %>
+    <li><%=weekDayArr[day1] %></li>
+    <%} %>
+  </ul>
+<%for(var j = 0; j < displayMonthNum; j++) { %>
+<%
+  var changedMonth = month + j;
+  var yyy =  parseInt(( month + j ) / 12);
+  if(changedMonth > 11) { 
+    changedMonth = changedMonth - 12 * yyy;
+  }
+  changedYear = year + yyy;
+  var d = new Date(changedYear, changedMonth);
+  var days = _.dateUtil.getDaysOfMonth(d);
+  var beginWeek = _.dateUtil.getBeginDayOfMouth(d);
+  var endDateTime = endDate.getTime();
+
+  var str_month = MonthClapFn(changedYear, changedMonth);
+
+  var appendDay = 0;
+  var preDay = 0;
+  var preMonthDays = 0;
+  if( showOtherMonthDay) {
+    appendDay = 7-((beginWeek + days) % 7);
+    preDay = beginWeek * -1;
+    preMonthDays =_.dateUtil.getDaysOfMonth(new Date(changedYear, changedMonth - 1));
+  }
+  var tmpMonth = changedMonth, tmpYear = changedYear;
+
+%>
+  <ul class="cm-calendar-bd ">
+    <%if(str_month.length > 0 ) { %>
+      <h3 class="cm-month js_month"><%=str_month %></h3>
+    <% } %>
+    <ul class="cm-day-list">
+      <% if(!showOtherMonthDay) { for(i = 0; i < beginWeek; i++) { %>
+        <li class="cm-item--disabled js_empty_day"></li>
+      <% }} %>
+      <% for(i = preDay; i < days + appendDay; i++) { %>
+        <% var day = i + 1; %>
+
+        <% 
+          if(showOtherMonthDay){
+            changedMonth = tmpMonth;
+            changedYear = tmpYear;
+            if(day > days) {
+              day = day - days;
+              changedMonth++;
+
+              if(changedMonth > 11) { 
+                changedMonth = changedMonth - 12;
+                changedYear++;
+              }
+            } else if(day < 1) {
+              day = preMonthDays + day;
+              changedMonth--;
+              if(changedMonth < 0) { 
+                changedMonth = changedMonth + 12;
+                changedYear--;
+              }
+            }
+          }
+        %>
+
+        <% var dateObj = new Date(changedYear, changedMonth, day ); %>
+        <% var calendar_time = dateObj.getTime(); %>
+        <% var difftime = calendar_time - curTime; %>
+        <% var _difftime =  -1 * difftime; %>
+        <% var diffHour =  parseInt(_difftime / 3600000 * 100) / 100; %>
+
+        <%  var isOverdue = false; %>
+        <%  if(_.isDate(displayTime) && calendar_time < startTime.getTime()) isOverdue = true;%>
+
+        <%  if(typeof endTime != 'undefined' && calendar_time > endTime.getTime()) isOverdue = true; %>
+
+        <% var isSelectDate = (typeof selectDate != 'undefined' && _.isDate(selectDate) && selectDate.getTime() == calendar_time ); 
+        %>
+
+        <li  data-curTime="<%=diffHour%>" class=" <%=isSelectDate ? 'active' : '' %> js_calendar_item <%if(isOverdue) { %> js_overdue_day cm-item--disabled <%} %> " data-cndate="<%=changedYear%>-<%=changedMonth + 1%>-<%=day%>" data-date="<%=changedYear%>-<%=changedMonth%>-<%=day%>">
+          <%=dayItemFn.call(scope, changedYear, changedMonth, day, dateObj, difftime)%>
+        </li>
+      <% } %>
+    </ul>
+
+  </ul>
+  <%} %>
+</div>
+
+

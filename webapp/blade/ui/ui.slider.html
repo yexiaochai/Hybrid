@@ -1,0 +1,22 @@
+<div class="cm-slide js_wrapper">
+  <ul class="cm-slide-list js_scroller <%=className %>" style=" position: absolute; ">
+    
+    <%if(typeof firstLoopItem != 'undefined'){ %> 
+     <li class="cm-slide-item" data-key="first" >
+      <%=((typeof itemFn == 'function' && itemFn(firstLoopItem, -1)) || firstLoopItem.name) %>
+     </li>
+    <%} %>
+
+    <%for(var i = 0, len = data.length; i < len; i++) { %>
+    <li class="cm-slide-item" data-key="<%=data[i].id %>" data-index="<%=i%>" >
+      <%=((typeof itemFn == 'function' && itemFn(data[i], i)) || data[i].name) %>
+    </li>
+    <%} %>
+
+    <%if(typeof lastLoopItem != 'undefined'){ %> 
+     <li class="cm-slide-item" data-key="last" >
+      <%=((typeof itemFn == 'function' && itemFn(lastLoopItem, -1)) || lastLoopItem.name) %>
+     </li>
+    <%} %>
+  </ul>
+</div>

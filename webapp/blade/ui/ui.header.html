@@ -1,0 +1,47 @@
+
+<div class="cm-header">
+<%
+
+var i = 0, len = 0, j = 0, jj = 0;
+var left = left;
+var right = right.reverse();
+var item = null;
+var dir;
+var btnObj = null;
+
+%>
+
+<%for(jj=0; jj < 2; jj++) { %>
+  <% 
+    if(jj == 0) { dir = 'fl'; btnObj = left; } else { dir = 'fr'; btnObj = right; }
+  %>
+  <% for(i = 0, len = btnObj.length; i < len; i++) { %>
+    <% item = btnObj[i]; %>
+    <%if(typeof item.itemFn == 'function') { %>
+      <%=item.itemFn() %>
+    <%} else { %>
+      <span class=" cm-header-<%=(item.value ? 'btn' : 'icon') %> <%=dir %>  js_<%=item.tagname %>" >
+        <% if(item.value) { %>
+          <%=item.value %>
+        <% } else { %>
+          <%if(item.classname) { %>
+          <i class="<%=item.classname %>"></i>
+          <% } else { %>
+          <i class="icon-<%=item.tagname %>"></i>
+          <% } %>
+        <% } %>
+      </span>
+    <%} %>
+  <%} %>
+<%} %>
+
+<h1 class="cm-page-title js_title" >
+  <%if(_.isArray(title) && title.length == 2) { %>
+    <span class="cm-title-l"><%=title[0]%></span>
+    <span class="cm-title-s"><%=title[1]%></span>
+  <%} else { %>
+    <%=title%>
+  <%} %>
+</h1>
+
+</div>

@@ -1,0 +1,27 @@
+﻿
+<div class="btn-primary js-btn0" >
+    ajax get&post
+</div>
+<pre>
+<code>
+_.requestHybrid({
+    tagname: 'get',
+    param: {
+        url: 'http://api.kuai.baidu.com/city/getstartcitys',
+        param: {a: 1, b: 2}
+    },
+
+    callback: function (data) {
+        scope.hideLoading();
+        scope.$('.js-content').html(JSON.stringify(data));
+    }
+});
+</code>
+</pre>
+
+<div class="js-content">
+
+</div>
+
+
+

@@ -1,0 +1,11 @@
+<section class="cm-modal" >
+    <%if(typeof title == 'string' && title.length > 0){ %>
+	    <header class="cm-modal-hd">
+	        <h3 class="cm-modal-title"><%=title %></h3>
+	        <i class="icon-close js_close" ></i>
+	    </header>
+	<%} %>
+    <div class="cm-modal-bd  js_wrapper">
+      <div class="js_scroller"><%=html %></div>
+    </div>
+</section>

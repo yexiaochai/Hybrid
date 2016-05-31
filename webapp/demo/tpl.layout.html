@@ -1,0 +1,102 @@
+﻿
+
+<div class="btn-primary js-setheader0" >
+    Header基本设置
+</div>
+
+<pre>
+<code>
+var opts = {
+    view: this,
+    title: 'Header Demo',
+    back: function () {
+        this.back();
+    }
+};
+this.header.set(opts);
+</code>
+</pre>
+
+<div class="btn-primary js-setheader1" >
+    设置主标题子标题
+</div>
+
+
+<pre>
+<code>
+var opts = {
+    view: this,
+    title: ['主标题', '子标题'],
+    back: function () {
+        this.back();
+    }
+};
+this.header.set(opts);
+</code>
+</pre>
+
+
+<div class="btn-primary js-setheader2" >
+    设置Header标题左右图标
+</div>
+<pre>
+<code>
+var opts = {
+    view: this,
+    back: function () {
+        this.back();
+    },
+    title: {
+        tagname: 'title',
+        title: '带图标title',
+        lefticon: 'http://images2015.cnblogs.com/blog/294743/201511/294743-20151102143118414-1197511976.png',
+        righticon: 'http://images2015.cnblogs.com/blog/294743/201511/294743-20151102143118414-1197511976.png',
+        callback: function () {
+            this.showToast('点击标题回调');
+        }
+    }
+};
+this.header.set(opts);
+</code>
+</pre>
+
+
+<div class="btn-primary js-setheader3" >
+    设置右边点击按钮
+</div>
+<pre>
+<code>
+var opts = {
+    view: this,
+    back: function () {
+        this.back();
+    },
+    title: '设置右边按钮',
+    right: [
+        {
+            tagname: 'search',
+            icon: 'http://images2015.cnblogs.com/blog/294743/201511/294743-20151102143118414-1197511976.png',
+            callback: function () {
+                this.showToast('图标读取线上资源');
+            }
+        }
+    ]
+};
+this.header.set(opts);
+</code>
+</pre>
+
+
+<div class="btn-primary js-setheader0" >
+    Header基本设置
+</div>
+<pre>
+<code>
+    <script>
+
+
+
+    </script>
+</code>
+</pre>
+

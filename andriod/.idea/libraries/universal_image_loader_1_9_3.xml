@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="universal-image-loader-1.9.3">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib_hybrid/libs/universal-image-loader-1.9.3.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
