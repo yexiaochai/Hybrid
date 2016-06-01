@@ -182,12 +182,8 @@ define([], function () {
 
             window.sss = this;
 
-            Object.defineProperty(window, "sss", {
-                get : function(){ debugger; return window.i; },
-                set : function(newValue){ window.i = newValue; },
-                enumerable : true,
-                configurable : true
-            });
+            window.__defineGetter__('sss', function(){ debugger })
+
 
         },
 
