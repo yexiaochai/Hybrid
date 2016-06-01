@@ -344,6 +344,16 @@ class MLTools: NSObject {
     }
     
     func checkVersion() {
+        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            if vc is UINavigationController {
+                let currentNavi = vc as! UINavigationController
+                currentNavi.popToRootViewControllerAnimated(true)
+            }
+            else {
+                vc.navigationController?.popToRootViewControllerAnimated(true)
+            }
+        }
+
         //创建NSURL对象
         let url:NSURL! = NSURL(string: "http://yexiaochai.github.io/Hybrid/webapp/hybrid_ver.json")
         //创建请求对象
@@ -410,13 +420,18 @@ class MLTools: NSObject {
                     let newKeyPath = documentPath + "/" + key
                     print("newKeyPath \(newKeyPath)")
                     
-                    let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath)
-                    //                    循环出力取得路径
-                    print("key == \(key)")
-                    
-                    for file in fileArray! {
-                        print("     \(file)")
+                    if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
+//                        print("key == \(key)")
+//                        for file in fileArray {
+//                            print("     \(file)")
+//                        }
+                        print("fileArray.count == \(fileArray.count)")
                     }
+                    else {
+                        print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
+                        print("fileArray 为空")
+                    }
+                    
                     var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
                     defaultsDic[key] = value
                     NSUserDefaults.standardUserDefaults().setObject(defaultsDic, forKey: "LocalResources")
