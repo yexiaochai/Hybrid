@@ -18,8 +18,6 @@
             this.commonstyle = commonStyle;
             this.style = indexStyle;
 
-            alert(111)
-
             this.events = {
                 'click .js-items li': function (e) {
                     var el = $(e.currentTarget);
