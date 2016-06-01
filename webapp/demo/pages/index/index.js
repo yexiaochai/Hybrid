@@ -18,18 +18,14 @@
             this.commonstyle = commonStyle;
             this.style = indexStyle;
 
-            alert(222);
-
             this.events = {
                 'click .js-items li': function (e) {
                     var el = $(e.currentTarget);
                     var tag = el.attr('data-tag');
                     this.forward(tag);
 
-
                 }
-            }
-
+            };
 
         },
 
@@ -54,9 +50,6 @@
 
         addEvent: function () {
             this.on('onShow', function () {
-
-
-
             });
         }
 
