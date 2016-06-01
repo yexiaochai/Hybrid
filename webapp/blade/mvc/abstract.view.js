@@ -182,10 +182,6 @@ define([], function () {
 
             window.sss = this;
 
-            window.sss.__defineGetter__ = function () {
-                console.log(123)
-            }
-
         },
 
 
