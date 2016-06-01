@@ -396,16 +396,10 @@ class MLTools: NSObject {
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
             if let responseData = data {
                 do{
-                    //
-                    //                        let keyPath = zipPath.stringByReplacingOccurrencesOfString(".zip", withString: "")
                     let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     let documentPath = documentPaths[0]
-                    
                     let docPath = documentPath + "/" + key
                     let zipPath = docPath + ".zip"
-                    
-                    //                        zipPath = NSBundle.mainBundle().pathForResource("DogHybirdResources/" + key, ofType: "zip") {
-                    
                     //删除目录下所有文件
                     if let fileArray : [AnyObject] = NSFileManager.defaultManager().subpathsAtPath(docPath) {
                         for f in fileArray {
@@ -418,8 +412,6 @@ class MLTools: NSObject {
                     print("下载并解压了 \(key)")
                     //取得当前应用下路径
                     let newKeyPath = documentPath + "/" + key
-                    print("newKeyPath \(newKeyPath)")
-                    
                     if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
 //                        print("key == \(key)")
 //                        for file in fileArray {

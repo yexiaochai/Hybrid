@@ -16,10 +16,6 @@ let types = ["html","js","css","jpg","png"]
 class DogHybirdURLProtocol: NSURLProtocol {
     
     override class func canInitWithRequest(request: NSURLRequest) -> Bool {
-        
-//        NSString *scheme = [[request URL] scheme];
-//        if ( ([scheme caseInsensitiveCompare:@"http"] == NSOrderedSame ||
-//        [scheme caseInsensitiveCompare:@"https"] == NSOrderedSame))
         //如果被标记为已处理 直接跳过
         if let hasHandled = NSURLProtocol.propertyForKey(DogHybirdURLProtocolHandled, inRequest: request) as? Bool where hasHandled == true {
             print("重复的url == \(request.URL?.absoluteString)")
@@ -33,24 +29,9 @@ class DogHybirdURLProtocol: NSURLProtocol {
                 let type = tempArray.last!
                 tempArray.removeLast()
                 let path = MLTools().LocalResources + tempArray.joinWithSeparator(".")
-                
-//                let basePath = NSBundle.mainBundle().pathForResource("DogHybirdResources", ofType: "")
-////                let fileArray = NSFileManager.defaultManager().subpathsAtPath(NSHomeDirectory())
-//                let fileArray = NSFileManager.defaultManager().subpathsAtPath(basePath!)
-//
-//                //                    循环出力取得路径
-//                for file in fileArray! {
-//                    print("      \(file)")
-//                }
-
-                
-                
                 let filePath = NSBundle.mainBundle().pathForResource(path, ofType: type)
                 if let zipPath = filePath {
                     if types.contains(type) {
-//                        print("文件存在")
-//                        print("path == \(path)")
-//                        print("type == \(type)")
                         return true
                     }
                     else {
@@ -61,13 +42,9 @@ class DogHybirdURLProtocol: NSURLProtocol {
                 else {
                     let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
                     let documentPath = documentPaths[0]
-
                     let newPath = path.stringByReplacingOccurrencesOfString("DogHybirdResources/", withString: "")
                     let fileData = NSFileManager.defaultManager().contentsAtPath(documentPath + "/\(newPath).\(type)")
-
                     if fileData?.length > 0 {
-//                        print("path == \(documentPath + "/\(newPath).\(type)")")
-//                        print("fileList == \(fileData)")
                         return true
                     }
                 }

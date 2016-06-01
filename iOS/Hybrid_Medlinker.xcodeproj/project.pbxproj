@@ -12,7 +12,6 @@
 		B586C9C21CF59D3700EAAE26 /* HybirdTransionPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = B586C9C11CF59D3700EAAE26 /* HybirdTransionPush.swift */; };
 		B5A076DD1CFC126C00795DF8 /* DogHybirdURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A076DC1CFC126C00795DF8 /* DogHybirdURLProtocol.swift */; };
 		B5A076DF1CFD8CE700795DF8 /* MLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A076DE1CFD8CE700795DF8 /* MLTools.swift */; };
-		B5A076E11CFE871200795DF8 /* DogHybirdResources in Resources */ = {isa = PBXBuildFile; fileRef = B5A076E01CFE871200795DF8 /* DogHybirdResources */; };
 		B5A077081CFE87D100795DF8 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = B5A076E71CFE87D100795DF8 /* aescrypt.c */; };
 		B5A077091CFE87D100795DF8 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = B5A076E81CFE87D100795DF8 /* aeskey.c */; };
 		B5A0770A1CFE87D100795DF8 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = B5A076EA1CFE87D100795DF8 /* aestab.c */; };
@@ -88,7 +87,6 @@
 		B586C9C11CF59D3700EAAE26 /* HybirdTransionPush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybirdTransionPush.swift; sourceTree = "<group>"; };
 		B5A076DC1CFC126C00795DF8 /* DogHybirdURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogHybirdURLProtocol.swift; sourceTree = "<group>"; };
 		B5A076DE1CFD8CE700795DF8 /* MLTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLTools.swift; sourceTree = "<group>"; };
-		B5A076E01CFE871200795DF8 /* DogHybirdResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DogHybirdResources; sourceTree = "<group>"; };
 		B5A076E51CFE87D100795DF8 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		B5A076E61CFE87D100795DF8 /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_via_ace.h; sourceTree = "<group>"; };
 		B5A076E71CFE87D100795DF8 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 			isa = PBXGroup;
 			children = (
 				B5A077161CFE882A00795DF8 /* libz.tbd */,
-				B5A076E01CFE871200795DF8 /* DogHybirdResources */,
 				B5D220601CE4710A00750A50 /* CFNetwork.framework */,
 				B5D2205E1CE470FA00750A50 /* JavaScriptCore.framework */,
 				B5D2202D1CE46F6900750A50 /* Hybrid_Medlinker */,
@@ -605,7 +602,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D220391CE46F6900750A50 /* LaunchScreen.storyboard in Resources */,
-				B5A076E11CFE871200795DF8 /* DogHybirdResources in Resources */,
 				B5D220361CE46F6900750A50 /* Assets.xcassets in Resources */,
 				B5D220341CE46F6900750A50 /* Main.storyboard in Resources */,
 			);
