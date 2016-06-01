@@ -48,9 +48,9 @@ class DogHybirdURLProtocol: NSURLProtocol {
                 let filePath = NSBundle.mainBundle().pathForResource(path, ofType: type)
                 if let zipPath = filePath {
                     if types.contains(type) {
-                        print("文件存在")
-                        print("path == \(path)")
-                        print("type == \(type)")
+//                        print("文件存在")
+//                        print("path == \(path)")
+//                        print("type == \(type)")
                         return true
                     }
                     else {
@@ -66,8 +66,8 @@ class DogHybirdURLProtocol: NSURLProtocol {
                     let fileData = NSFileManager.defaultManager().contentsAtPath(documentPath + "/\(newPath).\(type)")
 
                     if fileData?.length > 0 {
-                        print("path == \(documentPath + "/\(newPath).\(type)")")
-                        print("fileList == \(fileData)")
+//                        print("path == \(documentPath + "/\(newPath).\(type)")")
+//                        print("fileList == \(fileData)")
                         return true
                     }
                 }
@@ -143,8 +143,9 @@ class DogHybirdURLProtocol: NSURLProtocol {
                             client.URLProtocol(self, didLoadData: docFileData!)
                             client.URLProtocolDidFinishLoading(self)
                         }
-
-                        print(">>>>> 未找到对应文件 \(path)\(type)<<<<<")
+                        else {
+                            print(">>>>> 未找到对应文件 \(path)\(type)<<<<<")
+                        }
                     }
                 }
                 else {
