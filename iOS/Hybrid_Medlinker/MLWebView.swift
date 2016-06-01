@@ -11,13 +11,10 @@ import UIKit
 import CoreMotion
 
 class MLWebView: UIView {
-    let USER_AGENT_HEADER = "hybrid_"
-    /**************************************************/
-    //MARK: - property
-    var context = JSContext()
-
-    var requestNative: (@convention(block) String -> Bool)?
     
+    let USER_AGENT_HEADER = "hybrid_"
+    var context = JSContext()
+    var requestNative: (@convention(block) String -> Bool)?
     var myWebView = UIWebView()
     var urlStr = "" {
         didSet {
@@ -25,8 +22,6 @@ class MLWebView: UIView {
             self.loadUrl()
         }
     }
-//    weak var delegate: UIViewController? = UIApplication.sharedApplication().keyWindow?.rootViewController
-
     var errorDataView: UIView?
     var motionManager: CMMotionManager = CMMotionManager()
     
@@ -46,7 +41,6 @@ class MLWebView: UIView {
     func initUI () {
         self.myWebView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)
         self.myWebView.backgroundColor = UIColor.whiteColor()
-        
         self.myWebView.delegate = self
         self.addSubview(self.myWebView)
     }

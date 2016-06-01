@@ -59,13 +59,13 @@ class MLTools: NSObject {
     }
 
     func handleEvent(funType: String, args: [String: AnyObject], callbackID: String = "", webView: UIWebView) {
-                print("   ")
-                print("****************************************")
-                print("funType    === \(funType)")
-                print("args       === \(args)")
-                print("callbackID === \(callbackID)")
-                print("****************************************")
-                print("   ")
+//        print("   ")
+//        print("****************************************")
+//        print("funType    === \(funType)")
+//        print("args       === \(args)")
+//        print("callbackID === \(callbackID)")
+//        print("****************************************")
+//        print("   ")
         if funType == UpdateHeader {
             self.updateHeader(args, webView: webView)
         } else if funType == Back {
@@ -82,7 +82,6 @@ class MLTools: NSObject {
             self.setNavigationBarHidden(args, callbackID: callbackID)
         }
     }
-
 
     func toJSONString(dict: NSDictionary!)->NSString{
         if let jsonData = try? NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted) {
