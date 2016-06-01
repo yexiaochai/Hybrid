@@ -11,8 +11,6 @@ import UIKit
 class MLTools: NSObject {
 
     //地址相关
-    //    let BASE_URL = "http://medlinker.com/webapp/"
-//    let BASE_URL = "http://kuai.baidu.com/webapp/"
     let BASE_URL = "http://yexiaochai.github.io/Hybrid/webapp/"
 
     
@@ -60,13 +58,13 @@ class MLTools: NSObject {
     }
 
     func handleEvent(funType: String, args: [String: AnyObject], callbackID: String = "", webView: UIWebView) {
-        print("   ")
-        print("****************************************")
-        print("funType    === \(funType)")
-        print("args       === \(args)")
-        print("callbackID === \(callbackID)")
-        print("****************************************")
-        print("   ")
+//        print("   ")
+//        print("****************************************")
+//        print("funType    === \(funType)")
+//        print("args       === \(args)")
+//        print("callbackID === \(callbackID)")
+//        print("****************************************")
+//        print("   ")
         if funType == UpdateHeader {
             self.updateHeader(args, webView: webView)
         } else if funType == Back {
@@ -378,6 +376,7 @@ class MLTools: NSObject {
             }
         })
     }
+    
     func loadZip(key: String, value: String, urlString: String) {
         //创建NSURL对象
         let url:NSURL! = NSURL(string: urlString)
@@ -386,15 +385,45 @@ class MLTools: NSObject {
         urlRequest.HTTPMethod = "GET"
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
             if let responseData = data {
-                if let zipPath = NSBundle.mainBundle().pathForResource("DogHybirdResources/" + key, ofType: "zip") {
+                do{
+                    //
+                    //                        let keyPath = zipPath.stringByReplacingOccurrencesOfString(".zip", withString: "")
+                    let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                    let documentPath = documentPaths[0]
+                    
+                    let docPath = documentPath + "/" + key
+                    let zipPath = docPath + ".zip"
+                    
+                    //                        zipPath = NSBundle.mainBundle().pathForResource("DogHybirdResources/" + key, ofType: "zip") {
+                    
+                    //删除目录下所有文件
+                    if let fileArray : [AnyObject] = NSFileManager.defaultManager().subpathsAtPath(docPath) {
+                        for f in fileArray {
+                            try NSFileManager.defaultManager().removeItemAtPath(docPath + "/\(f)")
+                        }
+                    }
                     responseData.writeToFile(zipPath, atomically: true)
-                    let unzipPath = zipPath.stringByReplacingOccurrencesOfString(key + ".zip", withString: "")
-                    SSZipArchive.unzipFileAtPath(zipPath, toDestination: unzipPath)
+                    SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath)
+                    
                     print("下载并解压了 \(key)")
+                    //取得当前应用下路径
+                    let newKeyPath = documentPath + "/" + key
+                    print("newKeyPath \(newKeyPath)")
+                    
+                    let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath)
+                    //                    循环出力取得路径
+                    print("key == \(key)")
+                    
+                    for file in fileArray! {
+                        print("     \(file)")
+                    }
                     var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
-
                     defaultsDic[key] = value
                     NSUserDefaults.standardUserDefaults().setObject(defaultsDic, forKey: "LocalResources")
+                    //                        try NSFileManager.defaultManager().removeItemAtPath(zipPath)
+                }
+                catch let error as NSError{
+                    print("删除文件 \(key) 报错 == \(error.localizedDescription)")
                 }
             }
             else {
