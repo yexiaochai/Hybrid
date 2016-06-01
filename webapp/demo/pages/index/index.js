@@ -18,7 +18,7 @@
             this.commonstyle = commonStyle;
             this.style = indexStyle;
 
-            alert(222);
+            alert(111);
 
             this.events = {
                 'click .js-items li': function (e) {
