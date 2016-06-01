@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var hybirdUrlTextField: UITextField!
     @IBAction func buttonClick(sender: AnyObject) {
+        
+        if let zipPath = NSBundle.mainBundle().pathForResource("DogHybirdResources/blade", ofType: "zip") {
+            let unzipPath = zipPath.stringByReplacingOccurrencesOfString("blade.zip", withString: "")
+            SSZipArchive.unzipFileAtPath(zipPath, toDestination: unzipPath)
+        }
 
         MLTools().analysisUrl(self.hybirdUrlTextField.text)
 //        let web = MLWebViewController()
@@ -24,7 +29,7 @@ class ViewController: UIViewController {
         self.hybirdUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22index2%22%2C%22type%22%3A%22native%22%2C%22navigateion%22%3A%22none%22%7D"
     }
     override func viewDidAppear(animated: Bool) {
-        self.hybirdUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22http%3A%2F%2Fkuai.baidu.com%2Fwebapp%2Fdemo%2Findex.html%22%2C%22type%22%3A%22h5%22%7D"
+        self.hybirdUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22http%3A%2F%2Fyexiaochai.github.io%2FHybrid%2Fwebapp%2Fdemo%2Findex.html%22%2C%22type%22%3A%22h5%22%7D"
 
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
