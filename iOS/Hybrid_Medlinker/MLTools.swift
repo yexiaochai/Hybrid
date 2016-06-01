@@ -12,7 +12,10 @@ class MLTools: NSObject {
 
     //地址相关
     //    let BASE_URL = "http://medlinker.com/webapp/"
-    let BASE_URL = "http://kuai.baidu.com/webapp/"
+//    let BASE_URL = "http://kuai.baidu.com/webapp/"
+    let BASE_URL = "http://yexiaochai.github.io/Hybrid/webapp/"
+
+    
     let USER_AGENT_HEADER = "hybrid_"
     
     //事件类型

@@ -88,15 +88,15 @@ class MLWebView: UIView {
 extension MLWebView: UIWebViewDelegate {
     
     func webViewDidStartLoad(webView: UIWebView) {
-        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-            vc.startLoveEggAnimating()
-        }
+//        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
+//            vc.startLoveEggAnimating()
+//        }
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-            vc.stopAnimating()
-        }
+//        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
+//            vc.stopAnimating()
+//        }
 
         //        self.requestNative = { input in
         //            let args = MLWebView().decodeJsonStr(input)
