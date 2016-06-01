@@ -13,10 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var hybirdUrlTextField: UITextField!
     @IBAction func buttonClick(sender: AnyObject) {
         
-//        if let zipPath = NSBundle.mainBundle().pathForResource("DogHybirdResources/blade", ofType: "zip") {
-//            let unzipPath = zipPath.stringByReplacingOccurrencesOfString("blade.zip", withString: "")
-//            SSZipArchive.unzipFileAtPath(zipPath, toDestination: unzipPath)
-//        }
 
         MLTools().analysisUrl(self.hybirdUrlTextField.text)
 //        let web = MLWebViewController()

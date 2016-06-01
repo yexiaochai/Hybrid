@@ -26,7 +26,8 @@ class MLTools: NSObject {
     let Post = "post"
     let ShowLoading = "showloading"
     let ShowHeader = "showheader"
-    
+    let CheckVersion = "checkver"
+
     //Event前缀
     let HybirdEvent = "Hybrid.callback"
     
@@ -59,13 +60,13 @@ class MLTools: NSObject {
     }
 
     func handleEvent(funType: String, args: [String: AnyObject], callbackID: String = "", webView: UIWebView) {
-//        print("   ")
-//        print("****************************************")
-//        print("funType    === \(funType)")
-//        print("args       === \(args)")
-//        print("callbackID === \(callbackID)")
-//        print("****************************************")
-//        print("   ")
+        print("   ")
+        print("****************************************")
+        print("funType    === \(funType)")
+        print("args       === \(args)")
+        print("callbackID === \(callbackID)")
+        print("****************************************")
+        print("   ")
         if funType == UpdateHeader {
             self.updateHeader(args, webView: webView)
         } else if funType == Back {
@@ -80,7 +81,11 @@ class MLTools: NSObject {
             self.showLoading(args, callbackID: callbackID)
         } else if funType == ShowHeader {
             self.setNavigationBarHidden(args, callbackID: callbackID)
+        } else if funType == CheckVersion {
+            self.checkVersion()
         }
+        
+        
     }
 
     func toJSONString(dict: NSDictionary!)->NSString{
@@ -337,6 +342,64 @@ class MLTools: NSObject {
                 }
             }, failure: { (sessionDataTask, error) in
                 print("hybirdPost error == \(error)")
+        })
+    }
+    
+    func checkVersion() {
+        //创建NSURL对象
+        let url:NSURL! = NSURL(string: "http://yexiaochai.github.io/Hybrid/webapp/hybrid_ver.json")
+        //创建请求对象
+        let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        urlRequest.HTTPMethod = "GET"
+        //响应对象
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+            do{//发送请求
+                if let responseData = data {
+                    let dictionary = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
+                    print(dictionary)
+                    if let dataDic = dictionary as? [String: String] {
+                        for (key, value) in dataDic {
+                            let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
+                            if value > defaultsDic[key] {
+                                self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip")
+                            }
+                            else {
+                                print("不更新 \(key).zip")
+                            }
+                        }
+                    }
+                }
+                else {
+                    print("data空")
+                }
+            }
+            catch let error as NSError{
+                print(error)
+            }
+        })
+    }
+    func loadZip(key: String, value: String, urlString: String) {
+        //创建NSURL对象
+        let url:NSURL! = NSURL(string: urlString)
+        //创建请求对象
+        let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        urlRequest.HTTPMethod = "GET"
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+            if let responseData = data {
+                if let zipPath = NSBundle.mainBundle().pathForResource("DogHybirdResources/" + key, ofType: "zip") {
+                    responseData.writeToFile(zipPath, atomically: true)
+                    let unzipPath = zipPath.stringByReplacingOccurrencesOfString(key + ".zip", withString: "")
+                    SSZipArchive.unzipFileAtPath(zipPath, toDestination: unzipPath)
+                    print("下载并解压了 \(key)")
+                    var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
+
+                    defaultsDic[key] = value
+                    NSUserDefaults.standardUserDefaults().setObject(defaultsDic, forKey: "LocalResources")
+                }
+            }
+            else {
+                print("data 为空")
+            }
         })
     }
 
