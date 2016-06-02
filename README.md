@@ -25,3 +25,22 @@ https://github.com/yexiaochai/blade
 http://www.cnblogs.com/nildog/p/5536081.html
 
 
+# forward接口
+
+### 基本使用
+{
+  tagname: 'forward',
+  param: {
+    //需要去的页面
+    topage: 'http://www.baidu.com',
+    //以h5的方式打开上面的页面
+    type: 'h5',
+    //动画方式,暂时支持push(左进) pop(右出) present(下进,使用这种动画默认从下面返回)
+    //该参数可以没有
+    animate: 'push'
+
+  }
+
+}
+
+
