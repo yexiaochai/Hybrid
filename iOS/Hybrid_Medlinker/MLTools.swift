@@ -135,6 +135,17 @@ class MLTools: NSObject {
         return string
     }
 
+    func currentNavi() -> UINavigationController {
+        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            if vc is UINavigationController {
+                return vc as! UINavigationController
+            }
+            else {
+                return vc.navigationController ?? UINavigationController()
+            }
+        }
+        return UINavigationController()
+    }
     
     ///////////
     func updateHeader(args: [String: AnyObject], webView: UIWebView) {
@@ -306,9 +317,7 @@ class MLTools: NSObject {
     func setNavigationBarHidden(args: [String: AnyObject], callbackID: String) {
         let hidden: Bool = !(args["display"] as? Bool ?? true)
         let animated: Bool = args["animate"] as? Bool ?? true
-        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-            vc.navigationController?.setNavigationBarHidden(hidden, animated: animated)
-        }
+        self.currentNavi().setNavigationBarHidden(hidden, animated: animated)
     }
 
     
