@@ -35,22 +35,16 @@ class MLWebViewController: UIViewController {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = true
         NSURLCache.sharedURLCache().removeAllCachedResponses()
-
         
         self.webView = MLWebView(frame: CGRectMake(0, viewInitY, self.view.bounds.size.width, self.view.bounds.height - viewInitY))
         self.webView.autoresizingMask = [ .FlexibleHeight, .FlexibleWidth ]
-//        self.webView.delegate = self
-
         self.navigationController?.delegate = self
         //手势监听器
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(MLWebViewController.edgePanGesture(_:)))
         edgePan.edges = UIRectEdge.Left
         self.view.addGestureRecognizer(edgePan)
-
         self.view.addSubview(self.webView)
-        
         if let path = self.URLPath {
-            
             if let request = self.getRequestFromUrl(path) {
                 self.webView.loadRequest(request)
             }
