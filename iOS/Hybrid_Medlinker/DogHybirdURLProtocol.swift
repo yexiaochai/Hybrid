@@ -67,8 +67,7 @@ class DogHybirdURLProtocol: NSURLProtocol {
                 let type = cachePath.componentsSeparatedByString(".").last!
                 let fileData = NSData(contentsOfFile: cachePath)
                 let url = NSURL(fileURLWithPath: cachePath)
-                let dataLength = fileData?.length ?? 0
-                let response = NSURLResponse(URL: url, MIMEType: contentTpye[type], expectedContentLength: dataLength, textEncodingName: "UTF-8")
+                let response = NSURLResponse(URL: url, MIMEType: contentTpye[type], expectedContentLength: fileData?.length ?? 0, textEncodingName: "UTF-8")
                 client.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
                 client.URLProtocol(self, didLoadData: fileData!)
                 client.URLProtocolDidFinishLoading(self)
