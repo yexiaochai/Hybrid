@@ -273,7 +273,6 @@ class MLTools: NSObject {
         let animated: Bool = args["animate"] as? Bool ?? true
         self.currentNavi().setNavigationBarHidden(hidden, animated: animated)
     }
-
     
     func hybirdGet(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
         let sessionManager = AFHTTPSessionManager(baseURL: nil)
@@ -322,7 +321,12 @@ class MLTools: NSObject {
                         for (key, value) in dataDic {
                             let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
                             if value > defaultsDic[key] {
-                                self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip")
+                                self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
+                                    if !success {
+                                        let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
+                                        alert.show()
+                                    }
+                                })
                             }
                             else {
                                 print("不更新 \(key).zip")
@@ -340,7 +344,7 @@ class MLTools: NSObject {
         })
     }
     
-    func loadZip(key: String, value: String, urlString: String) {
+    func loadZip(key: String, value: String, urlString: String, completion: ((success: Bool, msg: String) -> Void)?) {
         //创建NSURL对象
         let url:NSURL! = NSURL(string: urlString)
         //创建请求对象
@@ -370,24 +374,24 @@ class MLTools: NSObject {
 //                        for file in fileArray {
 //                            print("     \(file)")
 //                        }
-                        print("fileArray.count == \(fileArray.count)")
+                        print("包含文件 \(fileArray.count)")
                     }
                     else {
                         print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
                         print("fileArray 为空")
                     }
-                    
+                    try NSFileManager.defaultManager().removeItemAtPath(zipPath)
                     var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
                     defaultsDic[key] = value
                     NSUserDefaults.standardUserDefaults().setObject(defaultsDic, forKey: "LocalResources")
-                    try NSFileManager.defaultManager().removeItemAtPath(zipPath)
+                    completion?(success: true, msg: "")
                 }
                 catch let error as NSError{
-                    print("删除文件 \(key) 报错 == \(error.localizedDescription)")
+                    completion?(success: false, msg: error.localizedDescription)
                 }
             }
             else {
-                print("更新包 为空")
+                completion?(success: false, msg: "更新包 为空")
             }
         })
     }
