@@ -25,6 +25,7 @@ class MLWebView: UIView {
     var errorDataView: UIView?
     var motionManager: CMMotionManager = CMMotionManager()
     
+    let tool = MLTools()
     /**************************************************/
     //MARK: - life cycle
     
@@ -127,7 +128,7 @@ extension MLWebView: UIWebViewDelegate {
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        MLTools().analysisUrl(request.URL?.absoluteString, webView: webView)
+        self.tool.analysisUrl(request.URL?.absoluteString, webView: webView)
         return true
     }
     

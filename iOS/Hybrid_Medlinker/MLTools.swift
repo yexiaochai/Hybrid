@@ -68,7 +68,7 @@ class MLTools: NSObject {
         if funType == UpdateHeader {
             self.updateHeader(args, webView: webView)
         } else if funType == Back {
-            self.back(args)
+            self.back(args, webView: webView)
         } else if funType == Forward {
             self.forward(args)
         } else if funType == Get {
@@ -149,12 +149,39 @@ class MLTools: NSObject {
     
     func currentVC() -> UIViewController {
         return UIApplication.sharedApplication().keyWindow?.rootViewController ?? UIViewController()
+//        var result = UIViewController()
+//        var window = UIApplication.sharedApplication().keyWindow
+//        if window?.windowLevel != UIWindowLevelNormal {
+//            for tempWindow in UIApplication.sharedApplication().windows {
+//                if tempWindow.windowLevel == UIWindowLevelNormal {
+//                    window = tempWindow
+//                    break
+//                }
+//            }
+//        }
+//        let frontView = window?.subviews.first
+//        let nextResponder = frontView?.nextResponder()
+//        if nextResponder is UIViewController {
+//            result = nextResponder as! UIViewController
+//        }
+//        else {
+//            result = window?.rootViewController ?? UIViewController()
+//        }
+//        return result
     }
 
+    func viewInController(view: UIView) -> UIViewController {
+        var nextResponder = view.nextResponder()
+        while !(nextResponder is UIViewController) {
+            nextResponder = nextResponder!.nextResponder()
+        }
+        return nextResponder as? UIViewController ?? UIViewController()
+    }
+    
     func updateHeader(args: [String: AnyObject], webView: UIWebView) {
         if let header = Hybrid_headerModel.yy_modelWithJSON(args) {
             if let titleModel = header.title, let rightButtons = header.right, let leftButtons = header.left {
-                let navigationItem = self.currentNavi().viewControllers.last?.navigationItem ?? UINavigationItem()
+                let navigationItem = self.viewInController(webView).navigationItem ?? UINavigationItem()
                 navigationItem.titleView = self.setUpNaviTitleView(titleModel,webView: webView)
                 navigationItem.setRightBarButtonItems(self.setUpNaviButtons(rightButtons,webView: webView), animated: true)
                 navigationItem.setLeftBarButtonItems(self.setUpNaviButtons(leftButtons,webView: webView), animated: true)
@@ -192,7 +219,7 @@ class MLTools: NSObject {
                 let backString = self.callBack("", errno: 0, msg: "success", callback: buttonModel.callback,webView: webView)
                 if buttonModel.tagname == "back" && backString == "" {
                     //假死 则执行本地的普通返回事件
-                    self.back(["":""])
+                    self.back(["":""], webView: webView)
                 }
             })
             let menuButton = UIBarButtonItem(customView: button)
@@ -201,12 +228,13 @@ class MLTools: NSObject {
         return buttons.reverse()
     }
     
-    func back(args: [String: AnyObject]) {
-        if self.currentNavi().viewControllers.count > 1 {
-            self.currentNavi().popViewControllerAnimated(true)
+    func back(args: [String: AnyObject], webView: UIWebView) {
+        let navi = self.viewInController(webView).navigationController ?? self.currentNavi()
+        if navi.viewControllers.count > 1 {
+            navi.popViewControllerAnimated(true)
         }
         else {
-            self.currentVC().dismissViewControllerAnimated(true, completion: nil)
+            navi.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     

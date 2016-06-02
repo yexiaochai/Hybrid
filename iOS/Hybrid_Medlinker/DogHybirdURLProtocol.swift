@@ -31,11 +31,11 @@ class DogHybirdURLProtocol: NSURLProtocol {
             let path = MLTools().LocalResources + fileName
             let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
             if NSFileManager.defaultManager().fileExistsAtPath(documentPath + "/\(fileName).\(type)") {
-                print("从doc中读取资源 \(fileName)")
+//                print("从doc中读取资源 \(fileName)")
                 return documentPath + "/\(fileName).\(type)"
             }
             else if let filePath = NSBundle.mainBundle().pathForResource(path, ofType: type) {
-                print("读取预先打入包中的资源 \(filePath.componentsSeparatedByString("/").last)")
+//                print("读取预先打入包中的资源 \(filePath.componentsSeparatedByString("/").last)")
                 return filePath
             }
         }
