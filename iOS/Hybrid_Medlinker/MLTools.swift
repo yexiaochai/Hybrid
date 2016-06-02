@@ -149,25 +149,6 @@ class MLTools: NSObject {
     
     func currentVC() -> UIViewController {
         return UIApplication.sharedApplication().keyWindow?.rootViewController ?? UIViewController()
-//        var result = UIViewController()
-//        var window = UIApplication.sharedApplication().keyWindow
-//        if window?.windowLevel != UIWindowLevelNormal {
-//            for tempWindow in UIApplication.sharedApplication().windows {
-//                if tempWindow.windowLevel == UIWindowLevelNormal {
-//                    window = tempWindow
-//                    break
-//                }
-//            }
-//        }
-//        let frontView = window?.subviews.first
-//        let nextResponder = frontView?.nextResponder()
-//        if nextResponder is UIViewController {
-//            result = nextResponder as! UIViewController
-//        }
-//        else {
-//            result = window?.rootViewController ?? UIViewController()
-//        }
-//        return result
     }
 
     func viewInController(view: UIView) -> UIViewController {
@@ -255,11 +236,13 @@ class MLTools: NSObject {
                     self.currentVC().presentViewController(navi, animated: true, completion: nil)
                 }
                 else {
+                    let vc = self.currentNavi().viewControllers.last as? MLWebViewController
                     if let animate = args["animate"] as? String where animate == "pop" {
-                        webViewController.animateType = .Pop
+                        vc?.animateType = .Pop
+                        
                     }
                     else {
-                        webViewController.animateType = .Normal
+                        vc?.animateType = .Normal
                     }
                     self.currentNavi().pushViewController(webViewController, animated: true)
                 }
@@ -395,19 +378,19 @@ class MLTools: NSObject {
                     SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath)
                     
                     print("下载并解压了 \(key)")
-                    //取得当前应用下路径
-                    let newKeyPath = documentPath + "/" + key
-                    if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
-//                        print("key == \(key)")
-//                        for file in fileArray {
-//                            print("     \(file)")
-//                        }
-                        print("包含文件 \(fileArray.count)")
-                    }
-                    else {
-                        print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
-                        print("fileArray 为空")
-                    }
+//                    //取得当前应用下路径
+//                    let newKeyPath = documentPath + "/" + key
+//                    if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
+////                        print("key == \(key)")
+////                        for file in fileArray {
+////                            print("     \(file)")
+////                        }
+//                        print("包含文件 \(fileArray.count)")
+//                    }
+//                    else {
+//                        print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
+//                        print("fileArray 为空")
+//                    }
                     try NSFileManager.defaultManager().removeItemAtPath(zipPath)
                     var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
                     defaultsDic[key] = value
