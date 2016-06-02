@@ -147,15 +147,14 @@ class MLTools: NSObject {
         return UINavigationController()
     }
     
-    ///////////
+    func currentVC() -> UIViewController {
+        return UIApplication.sharedApplication().keyWindow?.rootViewController ?? UIViewController()
+    }
+
     func updateHeader(args: [String: AnyObject], webView: UIWebView) {
         if let header = Hybrid_headerModel.yy_modelWithJSON(args) {
-            if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController, let titleModel = header.title, let rightButtons = header.right, let leftButtons = header.left {
-                var navigationItem = vc.navigationItem
-                if vc is UINavigationController {
-                    let currentNavi = vc as! UINavigationController
-                    navigationItem = currentNavi.viewControllers.last?.navigationItem ?? UINavigationItem()
-                }
+            if let titleModel = header.title, let rightButtons = header.right, let leftButtons = header.left {
+                let navigationItem = self.currentNavi().viewControllers.last?.navigationItem ?? UINavigationItem()
                 navigationItem.titleView = self.setUpNaviTitleView(titleModel,webView: webView)
                 navigationItem.setRightBarButtonItems(self.setUpNaviButtons(rightButtons,webView: webView), animated: true)
                 navigationItem.setLeftBarButtonItems(self.setUpNaviButtons(leftButtons,webView: webView), animated: true)
@@ -164,8 +163,7 @@ class MLTools: NSObject {
     }
     
     func setUpNaviTitleView(titleModel:Hybrid_titleModel, webView: UIWebView) -> HybridNaviTitleView {
-        let naviTitleView = HybridNaviTitleView()
-        naviTitleView.frame = CGRectMake(0, 0, 150, 30)
+        let naviTitleView = HybridNaviTitleView(frame: CGRectMake(0, 0, 150, 30))
         let leftUrl = NSURL(string: titleModel.lefticon) ?? NSURL()
         let rightUrl = NSURL(string: titleModel.righticon) ?? NSURL()
         naviTitleView.loadTitleView(titleModel.title, subtitle: titleModel.subtitle, lefticonUrl: leftUrl, righticonUrl: rightUrl, callback: titleModel.callback, currentWebView: webView)
@@ -176,14 +174,11 @@ class MLTools: NSObject {
         var buttons = [UIBarButtonItem]()
         for buttonModel in buttonModels {
             let button = UIButton()
-            
             let titleWidth = buttonModel.value.stringWidthWith(14, height: 20)
             let buttonWidth = titleWidth > 30 ? titleWidth : 30
             button.frame = CGRectMake(0, 0, buttonWidth, 30)
-            
             button.titleLabel?.font = UIFont.systemFontOfSize(14)
             button.setTitleColor(UIColor.blackColor(), forState: .Normal)
-            
             if buttonModel.value.characters.count > 0 {
                 button.setTitle(buttonModel.value, forState: .Normal)
             }
@@ -194,7 +189,7 @@ class MLTools: NSObject {
                 button.setImage(UIImage(named: NaviImageHeader + buttonModel.tagname), forState: .Normal)
             }
             button.addBlockForControlEvents(.TouchUpInside, block: { (sender) in
-                let backString = self.callBack("", errno: 0, msg: "成功", callback: buttonModel.callback,webView: webView)
+                let backString = self.callBack("", errno: 0, msg: "success", callback: buttonModel.callback,webView: webView)
                 if buttonModel.tagname == "back" && backString == "" {
                     //假死 则执行本地的普通返回事件
                     self.back(["":""])
@@ -207,109 +202,68 @@ class MLTools: NSObject {
     }
     
     func back(args: [String: AnyObject]) {
-        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-            var currentNavi = vc.navigationController ?? UINavigationController()
-            if vc is UINavigationController {
-                currentNavi = vc as! UINavigationController
-            }
-            if currentNavi.viewControllers.count > 1 {
-                currentNavi.popViewControllerAnimated(true)
-            }
-            else {
-                vc.dismissViewControllerAnimated(true, completion: nil)
-            }
+        if self.currentNavi().viewControllers.count > 1 {
+            self.currentNavi().popViewControllerAnimated(true)
+        }
+        else {
+            self.currentVC().dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
     func forward(args: [String: AnyObject] ) {
-        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-            if  args["type"] as? String == "h5" {
-                if let url = args["topage"] as? String {
-                    let webViewController = MLWebViewController()
-                    webViewController.hidesBottomBarWhenPushed = true
-                    let localUrl = LocalResources + url.stringByReplacingOccurrencesOfString(".html", withString: "")
-                    if let _ = NSBundle.mainBundle().pathForResource(localUrl, ofType: "html") {
-                        //设置本地资源路径
-                        webViewController.localUrl = localUrl
-                    }
-                    else {
-                        webViewController.URLPath = url
-                    }
-                    if let animate = args["animate"] as? String where animate == "present" {
-                        let navi = UINavigationController(rootViewController: webViewController)
-                        vc.presentViewController(navi, animated: true, completion: nil)
-                    }
-                    else {
-                        if let animate = args["animate"] as? String where animate == "pop" {
-                            webViewController.animateType = .Pop
-                        }
-                        else {
-                            webViewController.animateType = .Normal
-                        }
-                        if vc is UINavigationController {
-                            
-                            let currentNavi = vc as! UINavigationController
-                            if let currentVC = currentNavi.viewControllers.last as? MLWebViewController {
-                                currentVC.navigationController?.pushViewController(webViewController, animated: true)
-                            }
-                            else {
-                                currentNavi.pushViewController(webViewController, animated: true)
-                            }
-                        }
-                        else {
-                            if let navi = vc.navigationController {
-                                navi.pushViewController(webViewController, animated: true)
-                            }
-                            else {
-                                let navi = UINavigationController(rootViewController: webViewController)
-                                let viewController = UIApplication.sharedApplication().keyWindow?.rootViewController ?? UIViewController()
-                                viewController.presentViewController(navi, animated: true, completion: nil)
-                            }
-                        }
-                        
-                    }
+        if  args["type"] as? String == "h5" {
+            if let url = args["topage"] as? String {
+                let webViewController = MLWebViewController()
+                webViewController.hidesBottomBarWhenPushed = true
+                let localUrl = LocalResources + url.stringByReplacingOccurrencesOfString(".html", withString: "")
+                if let _ = NSBundle.mainBundle().pathForResource(localUrl, ofType: "html") {
+                    webViewController.localUrl = localUrl
                 }
-            } else {
-                //这里指定跳转到本地某页面   需要一个判断映射的方法
-                if  args["topage"] as! String == "index2" {
-                    let webTestViewController = WebTestViewController.instance()
-                    if let animate =  args["animate"] as? String where animate == "present" {
-                        let navi = UINavigationController(rootViewController: webTestViewController)
-                        vc.presentViewController(navi, animated: true, completion: nil)
+                else {
+                    webViewController.URLPath = url
+                }
+                if let animate = args["animate"] as? String where animate == "present" {
+                    let navi = UINavigationController(rootViewController: webViewController)
+                    self.currentVC().presentViewController(navi, animated: true, completion: nil)
+                }
+                else {
+                    if let animate = args["animate"] as? String where animate == "pop" {
+                        webViewController.animateType = .Pop
                     }
                     else {
-                        if let animate =  args["navigateion"] as? String where animate == "none" {
-                            vc.navigationController?.navigationBarHidden = true
-                        }
-                        else {
-                            vc.navigationController?.navigationBarHidden = false
-                        }
-                        if let navi = vc.navigationController {
-                            navi.pushViewController(webTestViewController, animated: true)
-                        }
-                        else {
-                            let navi = UINavigationController(rootViewController: webTestViewController)
-                            let viewController = UIApplication.sharedApplication().keyWindow?.rootViewController ?? UIViewController()
-                            viewController.presentViewController(navi, animated: true, completion: nil)
-                        }
+                        webViewController.animateType = .Normal
                     }
+                    self.currentNavi().pushViewController(webViewController, animated: true)
                 }
             }
-        }
-        else {
-            print("UIApplication.sharedApplication().keyWindow?.rootViewController not found!")
+        } else {
+            //这里指定跳转到本地某页面   需要一个判断映射的方法
+            if  args["topage"] as! String == "index2" {
+                let webTestViewController = WebTestViewController.instance()
+                if let animate =  args["animate"] as? String where animate == "present" {
+                    let navi = UINavigationController(rootViewController: webTestViewController)
+                    self.currentVC().presentViewController(navi, animated: true, completion: nil)
+                }
+                else {
+                    if let animate =  args["navigateion"] as? String where animate == "none" {
+                        self.currentNavi().navigationBarHidden = true
+                    }
+                    else {
+                        self.currentNavi().navigationBarHidden = false
+                    }
+                    self.currentNavi().pushViewController(webTestViewController, animated: true)
+                }
+            }
         }
     }
     
     func showLoading(args: [String: AnyObject], callbackID: String) {
         dispatch_async(dispatch_get_main_queue()) {
-            if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController  {
-                if args["display"] as? Bool ?? true {
-                    vc.startLoveEggAnimating()
-                }
-                else {
-                    vc.stopAnimating()
-                }
+            if args["display"] as? Bool ?? true {
+                self.currentVC().startLoveEggAnimating()
+            }
+            else {
+                self.currentVC().stopAnimating()
             }
         }
     }
@@ -327,10 +281,9 @@ class MLTools: NSObject {
         parameters.removeValueForKey("url")
         let url = args["url"] as? String ?? ""
         sessionManager.GET(url, parameters: parameters, progress: { (progress) in
-            
             }, success: { (sessionDataTask, jsonObject) in
                 if let callbackString = try? self.jsonStringWithObject(jsonObject!) {
-                    self.callBack(callbackString, errno: 0, msg: "成功", callback: callbackID, webView: webView)
+                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
                 }
             }, failure: { (sessionDataTask, error) in
                 print("hybirdGet error == \(error)")
@@ -345,7 +298,7 @@ class MLTools: NSObject {
         sessionManager.POST(url, parameters: parameters, progress: { (progress) in
             }, success: { (sessionDataTask, jsonObject) in
                 if let callbackString = try? self.jsonStringWithObject(jsonObject!) {
-                    self.callBack(callbackString, errno: 0, msg: "成功", callback: callbackID,webView: webView)
+                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID,webView: webView)
                 }
             }, failure: { (sessionDataTask, error) in
                 print("hybirdPost error == \(error)")
@@ -353,16 +306,7 @@ class MLTools: NSObject {
     }
     
     func checkVersion() {
-        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-            if vc is UINavigationController {
-                let currentNavi = vc as! UINavigationController
-                currentNavi.popToRootViewControllerAnimated(true)
-            }
-            else {
-                vc.navigationController?.popToRootViewControllerAnimated(true)
-            }
-        }
-
+        self.currentNavi().popToRootViewControllerAnimated(true)
         //创建NSURL对象
         let url:NSURL! = NSURL(string: "http://yexiaochai.github.io/Hybrid/webapp/hybrid_ver.json")
         //创建请求对象
@@ -387,11 +331,11 @@ class MLTools: NSObject {
                     }
                 }
                 else {
-                    print("data空")
+                    print("data null")
                 }
             }
             catch let error as NSError{
-                print(error)
+                print(error.localizedDescription)
             }
         })
     }
@@ -436,14 +380,14 @@ class MLTools: NSObject {
                     var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
                     defaultsDic[key] = value
                     NSUserDefaults.standardUserDefaults().setObject(defaultsDic, forKey: "LocalResources")
-                    //                        try NSFileManager.defaultManager().removeItemAtPath(zipPath)
+                    try NSFileManager.defaultManager().removeItemAtPath(zipPath)
                 }
                 catch let error as NSError{
                     print("删除文件 \(key) 报错 == \(error.localizedDescription)")
                 }
             }
             else {
-                print("data 为空")
+                print("更新包 为空")
             }
         })
     }

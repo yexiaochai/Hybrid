@@ -29,14 +29,13 @@ class DogHybirdURLProtocol: NSURLProtocol {
                 let type = tempArray.last!
                 tempArray.removeLast()
                 let path = MLTools().LocalResources + tempArray.joinWithSeparator(".")
-                let filePath = NSBundle.mainBundle().pathForResource(path, ofType: type)
-                if let zipPath = filePath {
+                if let filePath = NSBundle.mainBundle().pathForResource(path, ofType: type) {
                     if types.contains(type) {
+                        print("读取缓存 \(filePath)")
                         return true
                     }
                     else {
-                        print(zipPath)
-                        print("发现文件 但是不处理 \(type) 类型")
+                        print("发现文件\(filePath) 但是不处理 \(type) 类型")
                     }
                 }
                 else {
@@ -45,6 +44,7 @@ class DogHybirdURLProtocol: NSURLProtocol {
                     let newPath = path.stringByReplacingOccurrencesOfString("DogHybirdResources/", withString: "")
                     let fileData = NSFileManager.defaultManager().contentsAtPath(documentPath + "/\(newPath).\(type)")
                     if fileData?.length > 0 {
+                        print("doc读取缓存 \(documentPath + "/\(newPath).\(type)")")
                         return true
                     }
                 }
