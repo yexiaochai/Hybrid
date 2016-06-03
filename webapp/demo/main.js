@@ -4,7 +4,7 @@
     var viewRoot = 'pages';
     var hybridInfo = _.getHybridInfo();
 
-    var version = new Date().getTime();
+    var version = 201602291722;
     require.config({
         shim: {
         },
