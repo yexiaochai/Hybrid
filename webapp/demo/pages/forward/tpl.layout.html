@@ -11,9 +11,9 @@ topage要求是native同事告诉h5的字符串,点击就能跳转到对应nativ
 hasnavigation为跳转后是否需要导航条,true为显示,false不显示,不传就为true
 animate为动画参数,可以没有该字段,可以取值为:
 none: 没有动画
-push: 从左边进入,默认动画
-pop: 从右边出去,
-present: 从下面进来(这种时候页面默认从下面出去)
+push: 新页面左进,旧页面左出
+pop: 旧页面右出,新页面右进,
+present: 新页面从下面进来(这种时候页面默认从下面出去)
 */
 _.requestHybrid({
     tagname: 'forward',
