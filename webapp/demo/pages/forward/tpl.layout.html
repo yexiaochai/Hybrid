@@ -8,6 +8,7 @@ type取值为h5||native
 topage为将要跳转的页面
 如果是H5,要求topage为一个完整的url;如果是native
 topage要求是native同事告诉h5的字符串,点击就能跳转到对应native页面
+navigation为跳转后是否需要导航条
 animate为动画参数,可以没有该字段,可以取值为:
 none: 没有动画
 push: 从左边进入,默认动画
@@ -83,7 +84,7 @@ _.requestHybrid({
     param: {
         topage: 'index2',
         type: 'native',
-        navigateion: 'none'
+        navigation: 'none'
     }
 });
 </code>
