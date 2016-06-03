@@ -577,7 +577,7 @@ define([
             if(!this.curView) return;
 
             //hybrid跳转封装
-            if(_.getHybridInfo().platform !== 'hybrid') {
+            if(_.getHybridInfo().platform == 'hybrid') {
 
                 if (viewId.indexOf('/') != -1) {
                     hybridPage = viewId + '.html';
