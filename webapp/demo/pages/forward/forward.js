@@ -14,6 +14,8 @@
             this.template = layoutHtml;
             this.commonstyle = commonStyle;
 
+            this.showToast('forward');
+
             this.events = {
                 'click .js-btn0': function () {
                     this.forward('index');
