@@ -1,5 +1,71 @@
 ﻿
 
+<pre>
+<code>
+/*
+header是否展示
+display: true||false,true展示||false隐藏
+animate: true||false,true为有动画 ||false为没有动画
+*/
+_.requestHybrid({
+    tagname: 'showheader',
+    param: {
+        display: true,
+        animate: true
+    }
+});
+
+/*
+更新header
+left与right参数说明:
+left与right为一个数组,每个项目为一个对象
+tagname是每个按钮的标志,一定要存在,且不能重复,Native需要对特定tagname设置图标
+icon为图标,为一个url地址,可以没有
+value如果设置了value便显示为文字,不设置便显示tagbname对应图标
+callback为点击时候执行的回调
+*/
+/*
+title为一个对象,包含参数:
+tagname暂时为title,如果以后title有其它表现形式
+title为字符串,主标题,必须设置
+subtitle为字符串,可以为空,设置了就具有子标题
+callback点击标题的时候执行的回调,可以为空
+lefticon,righticon为标题左右图标,为一个url地址
+ */
+_.requestHybrid({
+    tagname: 'updateheader',
+    left: [
+        {
+            tagname: 'back',
+            icon: '...',
+            callback: function () {
+                this.showToast('图标读取线上资源');
+            }
+        }
+    ],
+    title: {
+        tagname: 'title',
+        title: 'title',
+        subtitle: '',
+        lefticon : '',
+        righticon : '',
+        callback: function(){}
+    },
+    right: [
+        {
+            tagname: 'search',
+            icon: '...',
+            callback: function () {
+                this.showToast('图标读取线上资源');
+            }
+        }
+    ]
+});
+
+</code>
+</pre>
+
+
 <div class="btn-primary js-setheader0" >
     Header基本设置
 </div>

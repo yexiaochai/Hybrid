@@ -10,6 +10,7 @@
              ) {
 
     return _.inherit(AbstractView, {
+
         propertys: function ($super) {
 
             $super();

@@ -102,12 +102,12 @@ define([], function () {
     },
 
     hide: function () {
-      _.requestHybrid({
-        tagname: 'showheader',
-        param: {
-          display: false
-        }
-      });
+_.requestHybrid({
+  tagname: 'showheader',
+  param: {
+    display: false
+  }
+});
     },
 
     //只更新title
