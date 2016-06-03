@@ -364,38 +364,48 @@ class MLTools: NSObject {
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
             if let responseData = data {
                 do{
-                    let documentPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-                    let documentPath = documentPaths[0]
-                    let docPath = documentPath + "/" + key
-                    let zipPath = docPath + ".zip"
+                    let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+                    let filePath = documentPath + "/" + key
+                    let zipPath = filePath + ".zip"
                     //删除目录下所有文件
-                    if let fileArray : [AnyObject] = NSFileManager.defaultManager().subpathsAtPath(docPath) {
+                    if let fileArray : [AnyObject] = NSFileManager.defaultManager().subpathsAtPath(filePath) {
                         for f in fileArray {
-                            try NSFileManager.defaultManager().removeItemAtPath(docPath + "/\(f)")
+                            if NSFileManager.defaultManager().fileExistsAtPath(filePath + "/\(f)") {
+                                try NSFileManager.defaultManager().removeItemAtPath(filePath + "/\(f)")
+                            }
                         }
                     }
-                    responseData.writeToFile(zipPath, atomically: true)
-                    SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath)
-                    
-                    print("下载并解压了 \(key)")
-//                    //取得当前应用下路径
-//                    let newKeyPath = documentPath + "/" + key
-//                    if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
-////                        print("key == \(key)")
-////                        for file in fileArray {
-////                            print("     \(file)")
-////                        }
-//                        print("包含文件 \(fileArray.count)")
-//                    }
-//                    else {
-//                        print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
-//                        print("fileArray 为空")
-//                    }
-                    try NSFileManager.defaultManager().removeItemAtPath(zipPath)
-                    var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
-                    defaultsDic[key] = value
-                    NSUserDefaults.standardUserDefaults().setObject(defaultsDic, forKey: "LocalResources")
-                    completion?(success: true, msg: "")
+                    if responseData.writeToFile(zipPath, atomically: true) {
+                        if SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath) {
+                            print("下载并解压了 \(key)")
+                            //                    //取得当前应用下路径
+                            //                    let newKeyPath = documentPath + "/" + key
+                            //                    if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
+                            ////                        print("key == \(key)")
+                            ////                        for file in fileArray {
+                            ////                            print("     \(file)")
+                            ////                        }
+                            //                        print("包含文件 \(fileArray.count)")
+                            //                    }
+                            //                    else {
+                            //                        print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
+                            //                        print("fileArray 为空")
+                            //                    }
+                            if NSFileManager.defaultManager().fileExistsAtPath(zipPath) {
+                                try NSFileManager.defaultManager().removeItemAtPath(zipPath)
+                            }
+                            var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
+                            defaultsDic[key] = value
+                            NSUserDefaults.standardUserDefaults().setObject(defaultsDic, forKey: "LocalResources")
+                            completion?(success: true, msg: "")
+                        }
+                        else {
+                            completion?(success: false, msg: "解压失败 \(zipPath)")
+                        }
+                    }
+                    else {
+                        completion?(success: false, msg: "写入失败 \(zipPath)")
+                    }
                 }
                 catch let error as NSError{
                     completion?(success: false, msg: error.localizedDescription)
