@@ -1,0 +1,11 @@
+.idea/*
+
+.DS_Store
+*.DS_Store
+.project
+
+webapp/grunt/node_modules/*
+
+npm-debug.log
+
+
