@@ -40,7 +40,7 @@
                         param: {
                             topage: 'index2',
                             type: 'native',
-                            navigation: 'none'
+                            hasnavigation: false
                         }
                     });
                 }
