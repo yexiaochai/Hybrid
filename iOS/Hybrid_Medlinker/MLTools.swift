@@ -331,7 +331,7 @@ class MLTools: NSObject {
                     if let dataDic = dictionary as? [String: String] {
                         for (key, value) in dataDic {
                             let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
-                            if value > defaultsDic[key] {
+                            if value.compare(defaultsDic[key]!, options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
                                 self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
                                     if !success {
                                         let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
