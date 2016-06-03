@@ -331,7 +331,7 @@ class MLTools: NSObject {
                     if let dataDic = dictionary as? [String: String] {
                         for (key, value) in dataDic {
                             let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
-                            if value.compare(defaultsDic[key]!, options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
+                            if value.compare(defaultsDic[key] ?? "", options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
                                 self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
                                     if !success {
                                         let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
@@ -373,26 +373,33 @@ class MLTools: NSObject {
                             if NSFileManager.defaultManager().fileExistsAtPath(filePath + "/\(f)") {
                                 try NSFileManager.defaultManager().removeItemAtPath(filePath + "/\(f)")
                             }
+                            else {
+                                print("删除文件 \(filePath + "/\(f)") 不存在")
+                            }
                         }
                     }
                     if responseData.writeToFile(zipPath, atomically: true) {
                         if SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath) {
                             print("下载并解压了 \(key)")
-                            //                    //取得当前应用下路径
-                            //                    let newKeyPath = documentPath + "/" + key
-                            //                    if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
-                            ////                        print("key == \(key)")
-                            ////                        for file in fileArray {
-                            ////                            print("     \(file)")
-                            ////                        }
-                            //                        print("包含文件 \(fileArray.count)")
-                            //                    }
-                            //                    else {
-                            //                        print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
-                            //                        print("fileArray 为空")
-                            //                    }
+                            //取得当前应用下路径
+                            let newKeyPath = documentPath + "/" + key
+                            if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
+                                                        print("key == \(key)")
+                                                        for file in fileArray {
+                                                            print("     \(file)")
+                                                        }
+                                print("包含文件 \(fileArray.count)")
+                            }
+                            else {
+                                print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
+                                print("fileArray 为空")
+                            }
+
                             if NSFileManager.defaultManager().fileExistsAtPath(zipPath) {
                                 try NSFileManager.defaultManager().removeItemAtPath(zipPath)
+                            }
+                            else {
+                                print("删除文件 \(zipPath) 不存在")
                             }
                             var defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
                             defaultsDic[key] = value

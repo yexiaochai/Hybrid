@@ -18,7 +18,7 @@
             this.template = layoutHtml;
             this.commonstyle = commonStyle;
             this.style = indexStyle;
-alert(444)
+alert(5555555555)
             this.events = {
                 'click .js-items li': function (e) {
                     var el = $(e.currentTarget);
