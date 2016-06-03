@@ -256,7 +256,7 @@ class MLTools: NSObject {
                     self.currentVC().presentViewController(navi, animated: true, completion: nil)
                 }
                 else {
-                    if let animate =  args["navigation"] as? String where animate == "none" {
+                    if let hidden =  args["hasnavigation"] as? Bool where hidden == false {
                         self.currentNavi().navigationBarHidden = true
                     }
                     else {
