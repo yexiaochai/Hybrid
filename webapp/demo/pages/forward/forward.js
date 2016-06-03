@@ -14,7 +14,6 @@
             this.template = layoutHtml;
             this.commonstyle = commonStyle;
 
-            this.showToast('forward');
 
             this.events = {
                 'click .js-btn0': function () {
@@ -71,6 +70,7 @@
             $super();
 
             this.on('onShow', function () {
+                this.showToast('forward');
 
 
             });
