@@ -15,6 +15,7 @@
 
             $super();
 
+            alert(navigator.userAgent)
             this.template = layoutHtml;
             this.commonstyle = commonStyle;
             this.style = indexStyle;
