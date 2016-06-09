@@ -81,7 +81,8 @@
                 _.requestHybrid({
                     tagname: 'showloading',
                     param: {
-                        display: false
+                        display: false,
+                        text: 'text'
                     }
                 });
                 $('body').addClass('baidubox');
