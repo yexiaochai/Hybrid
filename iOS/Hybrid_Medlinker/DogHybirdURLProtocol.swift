@@ -1,5 +1,5 @@
 //
-//  DogHybirdURLProtocol.swift
+//  DogHybridURLProtocol.swift
 //  Hybrid_Medlinker
 //
 //  Created by caiyang on 16/5/30.
@@ -10,11 +10,11 @@ import UIKit
 import Foundation
 
 let webAppBaseUrl = "http://yexiaochai.github.io/Hybrid/webapp/"
-let DogHybirdURLProtocolHandled = "DogHybirdURLProtocolHandled"
+let DogHybridURLProtocolHandled = "DogHybridURLProtocolHandled"
 let types = ["html","js","css","jpg","png"]
 let contentTpye = ["html": "text/html", "js": "application/javascript", "css": "text/css", "jpg": "image/jpeg", "png": "image/png"]
 
-class DogHybirdURLProtocol: NSURLProtocol {
+class DogHybridURLProtocol: NSURLProtocol {
     
     //查找本地文件是否存在
     private class func findCache(request: NSURLRequest) -> String? {
@@ -52,7 +52,7 @@ class DogHybirdURLProtocol: NSURLProtocol {
 
     override class func canInitWithRequest(request: NSURLRequest) -> Bool {
         //如果被标记为已处理 直接跳过
-        if let hasHandled = NSURLProtocol.propertyForKey(DogHybirdURLProtocolHandled, inRequest: request) as? Bool where hasHandled == true {
+        if let hasHandled = NSURLProtocol.propertyForKey(DogHybridURLProtocolHandled, inRequest: request) as? Bool where hasHandled == true {
             print("重复的url == \(request.URL?.absoluteString)")
             return false
         }
@@ -69,9 +69,9 @@ class DogHybirdURLProtocol: NSURLProtocol {
     override func startLoading() {
         //标记请求  防止重复处理
         let mutableReqeust: NSMutableURLRequest = self.request.mutableCopy() as! NSMutableURLRequest
-        NSURLProtocol.setProperty(true, forKey: DogHybirdURLProtocolHandled, inRequest: mutableReqeust)
+        NSURLProtocol.setProperty(true, forKey: DogHybridURLProtocolHandled, inRequest: mutableReqeust)
         if let url = self.request.URL?.absoluteString where url.hasPrefix(webAppBaseUrl) {
-            if let cachePath = DogHybirdURLProtocol.findCache(self.request), let client: NSURLProtocolClient = self.client {
+            if let cachePath = DogHybridURLProtocol.findCache(self.request), let client: NSURLProtocolClient = self.client {
 //                print("读取了缓存资源 \(cachePath)")
                 let type = cachePath.componentsSeparatedByString(".").last ?? ""
                 let fileData = NSData(contentsOfFile: cachePath)

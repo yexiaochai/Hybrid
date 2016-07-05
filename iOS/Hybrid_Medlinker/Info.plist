@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>hybird</string>
+			<string>hybrid</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>hybrid</string>

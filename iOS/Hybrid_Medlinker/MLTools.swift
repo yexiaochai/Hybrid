@@ -28,11 +28,11 @@ class MLTools: NSObject {
     let CheckVersion = "checkver"
 
     //Event前缀
-    let HybirdEvent = "Hybrid.callback"
+    let HybridEvent = "Hybrid.callback"
     
     //资源路径相关
-    let NaviImageHeader = "hybird_navi_"
-    let LocalResources = "DogHybirdResources/"
+    let NaviImageHeader = "hybrid_navi_"
+    let LocalResources = "DogHybridResources/"
 
     func analysisUrl(url: String?, webView: UIWebView = UIWebView()) {
         if let requestStr = url {
@@ -73,9 +73,9 @@ class MLTools: NSObject {
         } else if funType == Forward {
             self.forward(args)
         } else if funType == Get {
-            self.hybirdGet(args, callbackID: callbackID, webView: webView)
+            self.hybridGet(args, callbackID: callbackID, webView: webView)
         } else if funType == Post {
-            self.hybirdPost(args, callbackID: callbackID, webView: webView)
+            self.hybridPost(args, callbackID: callbackID, webView: webView)
         } else if funType == ShowLoading {
             self.showLoading(args, callbackID: callbackID)
         } else if funType == ShowHeader {
@@ -107,7 +107,7 @@ class MLTools: NSObject {
                     "msg": msg,
                     "callback": callback]
         let dataString = self.toJSONString(data)
-        return webView.stringByEvaluatingJavaScriptFromString(self.HybirdEvent + "(\(dataString));") ?? ""
+        return webView.stringByEvaluatingJavaScriptFromString(self.HybridEvent + "(\(dataString));") ?? ""
     }
 
     /**
@@ -286,7 +286,7 @@ class MLTools: NSObject {
         self.currentNavi().setNavigationBarHidden(hidden, animated: animated)
     }
     
-    func hybirdGet(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
+    func hybridGet(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
         let sessionManager = AFHTTPSessionManager(baseURL: nil)
         var parameters = args
         parameters.removeValueForKey("url")
@@ -297,11 +297,11 @@ class MLTools: NSObject {
                     self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
                 }
             }, failure: { (sessionDataTask, error) in
-                print("hybirdGet error == \(error)")
+                print("hybridGet error == \(error)")
         })
     }
     
-    func hybirdPost(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
+    func hybridPost(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
         let sessionManager = AFHTTPSessionManager(baseURL: nil)
         var parameters = args
         parameters.removeValueForKey("url")
@@ -312,7 +312,7 @@ class MLTools: NSObject {
                     self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID,webView: webView)
                 }
             }, failure: { (sessionDataTask, error) in
-                print("hybirdPost error == \(error)")
+                print("hybridPost error == \(error)")
         })
     }
     

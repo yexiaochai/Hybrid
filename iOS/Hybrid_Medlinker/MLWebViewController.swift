@@ -137,7 +137,7 @@ extension MLWebViewController: UINavigationControllerDelegate {
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == UINavigationControllerOperation.Push {
             if self.animateType == .Pop {
-                return HybirdTransionPush()
+                return HybridTransionPush()
             }
             else {
                 return nil
@@ -148,7 +148,7 @@ extension MLWebViewController: UINavigationControllerDelegate {
     }
     
     func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if animationController is HybirdTransionPush {
+        if animationController is HybridTransionPush {
             return self.percentDrivenTransition
         } else {
             return nil

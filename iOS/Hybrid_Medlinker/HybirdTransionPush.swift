@@ -1,5 +1,5 @@
 //
-//  HybirdTransionPush.swift
+//  HybridTransionPush.swift
 //  Hybrid_Medlinker
 //
 //  Created by caiyang on 16/5/25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HybirdTransionPush: NSObject, UIViewControllerAnimatedTransitioning {
+class HybridTransionPush: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
     }

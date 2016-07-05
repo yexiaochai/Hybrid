@@ -83,7 +83,7 @@
                         </textField>
                     </navigationItem>
                     <connections>
-                        <outlet property="hybirdUrlTextField" destination="aUw-8R-ZI4" id="b5P-tC-bJz"/>
+                        <outlet property="hybridUrlTextField" destination="aUw-8R-ZI4" id="b5P-tC-bJz"/>
                         <segue destination="DvD-pw-4kD" kind="show" identifier="show" id="z8l-KJ-kJD"/>
                     </connections>
                 </viewController>
