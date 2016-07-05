@@ -29,7 +29,7 @@ class HybridNaviTitleView: UIView {
         
         //副标题
         if subtitle.characters.count > 0 {
-            self.subtitleLabel.text = title
+            self.subtitleLabel.text = subtitle
             self.subtitleLabel.font = UIFont.systemFontOfSize(13)
             self.subtitleLabel.textColor = UIColor.blackColor()
             let subtitleWidth = subtitle.stringWidthWith(13, height: 15)

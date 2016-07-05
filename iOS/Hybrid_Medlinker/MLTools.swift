@@ -11,7 +11,8 @@ import UIKit
 class MLTools: NSObject {
 
     //地址相关
-    let BASE_URL = "http://yexiaochai.github.io/Hybrid/webapp/"
+//    let BASE_URL = "http://yexiaochai.github.io/Hybrid/webapp/"
+    let BASE_URL = "http://kq.qa.medlinker.com/webapp/"
 
     
     let USER_AGENT_HEADER = "hybrid_"
@@ -154,7 +155,7 @@ class MLTools: NSObject {
     func viewInController(view: UIView) -> UIViewController {
         var nextResponder = view.nextResponder()
         while !(nextResponder is UIViewController) {
-            nextResponder = nextResponder!.nextResponder()
+            nextResponder = nextResponder?.nextResponder() ?? UIViewController()
         }
         return nextResponder as? UIViewController ?? UIViewController()
     }
