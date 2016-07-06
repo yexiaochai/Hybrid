@@ -195,6 +195,7 @@ class MLTools: NSObject {
                 button.setImageForState(.Normal, withURL: NSURL(string: buttonModel.icon) ?? NSURL())
             }
             else if buttonModel.tagname.characters.count > 0 {
+                button.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
                 button.setImage(UIImage(named: NaviImageHeader + buttonModel.tagname), forState: .Normal)
             }
             button.addBlockForControlEvents(.TouchUpInside, block: { (sender) in
