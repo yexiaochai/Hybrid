@@ -18,35 +18,34 @@ class DogHybridURLProtocol: NSURLProtocol {
     
     //查找本地文件是否存在
     private class func findCache(request: NSURLRequest) -> String? {
-//        if let url = request.URL?.absoluteString where url.hasPrefix(webAppBaseUrl) {
-//            let str = url.stringByReplacingOccurrencesOfString(webAppBaseUrl, withString: "")
-//            var tempArray = str.componentsSeparatedByString("?")
-//            tempArray = tempArray[0].componentsSeparatedByString(".")
-//            let type = tempArray.last!
-//            
-//            print("type == \(type)")
-//            if type == "js" {
-//                print("url == \(url)")
-//            }
-//            if !types.contains(type) {
-//                return nil
-//            }
-//            tempArray.removeLast()
-//            let fileName = tempArray.joinWithSeparator(".")
-//            let path = MLTools().LocalResources + fileName
-//            let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
-//            if NSFileManager.defaultManager().fileExistsAtPath(documentPath + "/\(fileName).\(type)") {
-////                print("从doc中读取资源 \(fileName).\(type)")
-//                return documentPath + "/\(fileName).\(type)"
-//            }
-//            else if let filePath = NSBundle.mainBundle().pathForResource(path, ofType: type) {
-////                print("读取预先打入包中的资源 \(filePath.componentsSeparatedByString("/").last)")
-//                return filePath
-//            }
-//            print("未找到 ------> \(url)")
-//        }
-//        print("不符合规范的 ------> \(request.URL?.absoluteString)")
-
+        if let url = request.URL?.absoluteString where url.hasPrefix(webAppBaseUrl) {
+            let str = url.stringByReplacingOccurrencesOfString(webAppBaseUrl, withString: "")
+            var tempArray = str.componentsSeparatedByString("?")
+            tempArray = tempArray[0].componentsSeparatedByString(".")
+            let type = tempArray.last!
+            
+            print("type == \(type)")
+            if type == "js" {
+                print("url == \(url)")
+            }
+            if !types.contains(type) {
+                return nil
+            }
+            tempArray.removeLast()
+            let fileName = tempArray.joinWithSeparator(".")
+            let path = MLTools().LocalResources + fileName
+            let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+            if NSFileManager.defaultManager().fileExistsAtPath(documentPath + "/\(fileName).\(type)") {
+//                print("从doc中读取资源 \(fileName).\(type)")
+                return documentPath + "/\(fileName).\(type)"
+            }
+            else if let filePath = NSBundle.mainBundle().pathForResource(path, ofType: type) {
+//                print("读取预先打入包中的资源 \(filePath.componentsSeparatedByString("/").last)")
+                return filePath
+            }
+            print("未找到 ------> \(url)")
+        }
+        print("不符合规范的 ------> \(request.URL?.absoluteString)")
         return nil
     }
 

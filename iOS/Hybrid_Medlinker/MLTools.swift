@@ -184,19 +184,20 @@ class MLTools: NSObject {
         for buttonModel in buttonModels {
             let button = UIButton()
             let titleWidth = buttonModel.value.stringWidthWith(14, height: 20)
-            let buttonWidth = titleWidth > 30 ? titleWidth : 30
+            let buttonWidth = titleWidth > 42 ? titleWidth : 42
             button.frame = CGRectMake(0, 0, buttonWidth, 30)
             button.titleLabel?.font = UIFont.systemFontOfSize(14)
             button.setTitleColor(UIColor.blackColor(), forState: .Normal)
-            if buttonModel.value.characters.count > 0 {
-                button.setTitle(buttonModel.value, forState: .Normal)
-            }
             if buttonModel.icon.characters.count > 0 {
                 button.setImageForState(.Normal, withURL: NSURL(string: buttonModel.icon) ?? NSURL())
             }
             else if buttonModel.tagname.characters.count > 0 {
-                button.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0)
+                button.imageEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0)
                 button.setImage(UIImage(named: NaviImageHeader + buttonModel.tagname), forState: .Normal)
+            }
+            if buttonModel.value.characters.count > 0 {
+                button.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0)
+                button.setTitle(buttonModel.value, forState: .Normal)
             }
             button.addBlockForControlEvents(.TouchUpInside, block: { (sender) in
                 let backString = self.callBack("", errno: 0, msg: "success", callback: buttonModel.callback,webView: webView)
