@@ -247,6 +247,7 @@ class MLTools: NSObject {
                     else {
                         vc?.animateType = .Normal
                     }
+                    webViewController.navigationItem.setHidesBackButton(true, animated: false)
                     self.currentNavi().pushViewController(webViewController, animated: true)
                 }
             }
