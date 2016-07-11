@@ -9,10 +9,12 @@
 import UIKit
 
 public class MLHybridTools: NSObject {
+    
+//    static let sharedInstance = MLHybridTools()
 
     //地址相关
 //    let BASE_URL = "http://yexiaochai.github.io/Hybrid/webapp/"
-    let BASE_URL = "http://kq.qa.medlinker.com/webapp/"
+//    var BASE_URL = "http://kq.qa.medlinker.com/webapp/"
 
     
     let USER_AGENT_HEADER = "hybrid_"
