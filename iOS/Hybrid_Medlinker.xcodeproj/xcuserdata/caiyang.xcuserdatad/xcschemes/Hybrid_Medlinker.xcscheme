@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Hybrid_Medlinker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B51F79821D2E471A00603478"
+               BuildableName = "FuckingDogHybrid.framework"
+               BlueprintName = "FuckingDogHybrid"
+               ReferencedContainer = "container:../../Documents/FuckingDogHybrid/FuckingDogHybrid.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -45,6 +59,16 @@
                BlueprintIdentifier = "B5D220491CE46F6900750A50"
                BuildableName = "Hybrid_MedlinkerUITests.xctest"
                BlueprintName = "Hybrid_MedlinkerUITests"
+               ReferencedContainer = "container:Hybrid_Medlinker.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B51F77AF1D2DF59600603478"
+               BuildableName = "DogHybridTests.xctest"
+               BlueprintName = "DogHybridTests"
                ReferencedContainer = "container:Hybrid_Medlinker.xcodeproj">
             </BuildableReference>
          </TestableReference>

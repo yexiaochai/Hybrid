@@ -59,13 +59,13 @@ class MLTools: NSObject {
     }
 
     func handleEvent(funType: String, args: [String: AnyObject], callbackID: String = "", webView: UIWebView) {
-//        print("   ")
-//        print("****************************************")
-//        print("funType    === \(funType)")
-//        print("args       === \(args)")
-//        print("callbackID === \(callbackID)")
-//        print("****************************************")
-//        print("   ")
+        print("   ")
+        print("****************************************")
+        print("funType    === \(funType)")
+        print("args       === \(args)")
+        print("callbackID === \(callbackID)")
+        print("****************************************")
+        print("   ")
         if funType == UpdateHeader {
             self.updateHeader(args, webView: webView)
         } else if funType == Back {
@@ -242,7 +242,6 @@ class MLTools: NSObject {
                     let vc = self.currentNavi().viewControllers.last as? MLWebViewController
                     if let animate = args["animate"] as? String where animate == "pop" {
                         vc?.animateType = .Pop
-                        
                     }
                     else {
                         vc?.animateType = .Normal

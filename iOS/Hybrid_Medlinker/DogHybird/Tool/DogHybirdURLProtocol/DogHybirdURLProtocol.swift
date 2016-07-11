@@ -45,7 +45,7 @@ class DogHybridURLProtocol: NSURLProtocol {
             }
             print("未找到 ------> \(url)")
         }
-        print("不符合规范的 ------> \(request.URL?.absoluteString)")
+//        print("不符合规范的 ------> \(request.URL?.absoluteString)")
         return nil
     }
 
