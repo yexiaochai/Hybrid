@@ -269,6 +269,9 @@ public class MLHybridTools: NSObject {
 //                    self.currentNavi().pushViewController(webTestViewController, animated: true)
 //                }
             }
+            else {
+                print("页面跳转参数不对哟")
+            }
         }
     }
     
