@@ -189,6 +189,7 @@ public class MLHybridTools: NSObject {
             button.titleLabel?.font = UIFont.systemFontOfSize(14)
             button.setTitleColor(UIColor.blackColor(), forState: .Normal)
             if buttonModel.icon.characters.count > 0 {
+                button.setZYHWebImage(buttonModel.icon, defaultImage: "", isCache: true)
 //                button.setImageForState(.Normal, withURL: NSURL(string: buttonModel.icon) ?? NSURL())
             }
             else if buttonModel.tagname.characters.count > 0 {

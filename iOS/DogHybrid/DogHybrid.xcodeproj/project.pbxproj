@@ -64,6 +64,8 @@
 		B51F7B941D2E692800603478 /* HybridNaviTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F7B3D1D2E692800603478 /* HybridNaviTitleView.swift */; };
 		B51F7B961D2E694900603478 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51F7B951D2E694900603478 /* JavaScriptCore.framework */; };
 		B51F7B981D2E694F00603478 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B51F7B971D2E694F00603478 /* libz.tbd */; };
+		B5FA96AB1D3397F300529EA3 /* ZYHWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FA96A91D3397F300529EA3 /* ZYHWebImage.swift */; };
+		B5FA96AC1D3397F300529EA3 /* ZYHWebImageChcheCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FA96AA1D3397F300529EA3 /* ZYHWebImageChcheCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,8 @@
 		B51F7B3D1D2E692800603478 /* HybridNaviTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridNaviTitleView.swift; sourceTree = "<group>"; };
 		B51F7B951D2E694900603478 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		B51F7B971D2E694F00603478 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B5FA96A91D3397F300529EA3 /* ZYHWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYHWebImage.swift; sourceTree = "<group>"; };
+		B5FA96AA1D3397F300529EA3 /* ZYHWebImageChcheCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYHWebImageChcheCenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 		B51F7AE11D2E692800603478 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B5FA96A81D3397EB00529EA3 /* ZYHWebImage */,
 				B51F7AF01D2E692800603478 /* DogHybirdURLProtocol */,
 				B51F7AF21D2E692800603478 /* HybirdTransion */,
 				B51F7AF41D2E692800603478 /* Loading */,
@@ -318,6 +323,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B5FA96A81D3397EB00529EA3 /* ZYHWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				B5FA96A91D3397F300529EA3 /* ZYHWebImage.swift */,
+				B5FA96AA1D3397F300529EA3 /* ZYHWebImageChcheCenter.swift */,
+			);
+			name = ZYHWebImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -424,7 +438,9 @@
 				B51F7B401D2E692800603478 /* MLHybridWebViewController.swift in Sources */,
 				B51F7B521D2E692800603478 /* HybirdTransionPush.swift in Sources */,
 				B51F7B6E1D2E692800603478 /* mztools.c in Sources */,
+				B5FA96AC1D3397F300529EA3 /* ZYHWebImageChcheCenter.swift in Sources */,
 				B51F7B941D2E692800603478 /* HybridNaviTitleView.swift in Sources */,
+				B5FA96AB1D3397F300529EA3 /* ZYHWebImage.swift in Sources */,
 				B51F7B5E1D2E692800603478 /* entropy.c in Sources */,
 				B51F7B421D2E692800603478 /* Hybrid_naviButtonModel.swift in Sources */,
 				B51F7B901D2E692800603478 /* NSObject+YYModel.m in Sources */,
