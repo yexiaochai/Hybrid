@@ -343,6 +343,7 @@ public class MLHybridTools: NSObject {
         }
         
         
+        urlString = "http://www.weather.com.cn/data/sk/101010100.html"
         
         //创建NSURL对象
         let url:NSURL! = NSURL(string: urlString)
@@ -353,14 +354,16 @@ public class MLHybridTools: NSObject {
 
         //响应对象
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
-            if let responseData = data {
+            if let _ = data {
 //                if let callbackString = try? self.jsonStringWithObject(responseData) {
 //                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
 //                }
                 if let callbackString = try? self.jsonStringWithObject(data!) {
                     self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
                 }
-
+                else {
+                    print("jsonStringWithObject error")
+                }
             }
             else {
                 print("data null & error = \(error)")
