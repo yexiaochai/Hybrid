@@ -131,26 +131,25 @@ public class MLHybridTools: NSObject {
     }
 
     func jsonStringWithObject(object: AnyObject) throws -> String {
-        if NSJSONSerialization.isValidJSONObject(object) {
-            let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
-            let string = String(data: data, encoding: NSUTF8StringEncoding)!
-            return string
-
-        }
-        else if let newObject = NSData(base64EncodedData: object as! NSData, options: NSDataBase64DecodingOptions(rawValue: 0)){
-            if NSJSONSerialization.isValidJSONObject(newObject) {
-//                NSData(base64EncodedData:  )
-                let data = try NSJSONSerialization.dataWithJSONObject(newObject, options: NSJSONWritingOptions(rawValue: 0))
-                let string = String(data: data, encoding: NSUTF8StringEncoding)!
-                return string
-            }
-            return ""
-        }
-        return ""
-
-//        let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
-//        let string = String(data: data, encoding: NSUTF8StringEncoding)!
-//        return string
+//        if NSJSONSerialization.isValidJSONObject(object) {
+//            let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
+//            let string = String(data: data, encoding: NSUTF8StringEncoding)!
+//            return string
+//
+//        }
+//        else if let newObject = NSData(base64EncodedData: object as! NSData, options: NSDataBase64DecodingOptions(rawValue: 0)){
+//            if NSJSONSerialization.isValidJSONObject(newObject) {
+////                NSData(base64EncodedData:  )
+//                let data = try NSJSONSerialization.dataWithJSONObject(newObject, options: NSJSONWritingOptions(rawValue: 0))
+//                let string = String(data: data, encoding: NSUTF8StringEncoding)!
+//                return string
+//            }
+//            return ""
+//        }
+//        return ""
+        let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
+        let string = String(data: data, encoding: NSUTF8StringEncoding)!
+        return string
     }
 
     func currentNavi() -> UINavigationController {
@@ -341,10 +340,6 @@ public class MLHybridTools: NSObject {
         if paramString.characters.count > 0 {
             urlString = urlString + "?" + paramString
         }
-        
-        
-        urlString = "http://www.weather.com.cn/data/sk/101010100.html"
-        
         //创建NSURL对象
         let url:NSURL! = NSURL(string: urlString)
         //创建请求对象
@@ -358,9 +353,16 @@ public class MLHybridTools: NSObject {
 //                if let callbackString = try? self.jsonStringWithObject(responseData) {
 //                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
 //                }
-                if let callbackString = try? self.jsonStringWithObject(data!) {
+//                let jsonObject = data as? [String: AnyObject]
+                
+//                let result = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                
+                if let callbackString = NSString(data: data!, encoding: NSUTF8StringEncoding) {
                     self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
                 }
+//                if let callbackString = try? self.jsonStringWithObject(data!) {
+//                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
+//                }
                 else {
                     print("jsonStringWithObject error")
                 }
