@@ -43,12 +43,14 @@ class HybridNaviTitleView: UIView {
 
         //右图标
         self.righticon.frame = CGRectMake(self.titleLabel.frame.origin.x + self.titleLabel.frame.size.width + 5, 0, 15, 15)
+        self.righticon.setZYHWebImage(righticonUrl.absoluteString, defaultImage: "", isCache: true)
 //        self.righticon.setImageWithURL(righticonUrl)
         self.righticon.center.y = self.center.y
         self.addSubview(self.righticon)
         
         //左图标
         self.lefticon.frame = CGRectMake(self.titleLabel.frame.origin.x - 20, 0, 15, 15)
+        self.lefticon.setZYHWebImage(righticonUrl.absoluteString, defaultImage: "", isCache: true)
 //        self.lefticon.setImageWithURL(lefticonUrl)
         self.lefticon.center.y = self.center.y
         self.addSubview(self.lefticon)

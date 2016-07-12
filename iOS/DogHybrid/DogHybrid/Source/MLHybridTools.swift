@@ -131,9 +131,26 @@ public class MLHybridTools: NSObject {
     }
 
     func jsonStringWithObject(object: AnyObject) throws -> String {
-        let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
-        let string = String(data: data, encoding: NSUTF8StringEncoding)!
-        return string
+        if NSJSONSerialization.isValidJSONObject(object) {
+            let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
+            let string = String(data: data, encoding: NSUTF8StringEncoding)!
+            return string
+
+        }
+        else if let newObject = NSData(base64EncodedData: object as! NSData, options: NSDataBase64DecodingOptions(rawValue: 0)){
+            if NSJSONSerialization.isValidJSONObject(newObject) {
+//                NSData(base64EncodedData:  )
+                let data = try NSJSONSerialization.dataWithJSONObject(newObject, options: NSJSONWritingOptions(rawValue: 0))
+                let string = String(data: data, encoding: NSUTF8StringEncoding)!
+                return string
+            }
+            return ""
+        }
+        return ""
+
+//        let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
+//        let string = String(data: data, encoding: NSUTF8StringEncoding)!
+//        return string
     }
 
     func currentNavi() -> UINavigationController {
@@ -250,7 +267,7 @@ public class MLHybridTools: NSObject {
                     else {
                         vc?.animateType = .Normal
                     }
-                    webViewController.navigationItem.setHidesBackButton(true, animated: false)
+//                    webViewController.navigationItem.setHidesBackButton(true, animated: false)
                     self.currentNavi().pushViewController(webViewController, animated: true)
                 }
             }
@@ -309,19 +326,41 @@ public class MLHybridTools: NSObject {
 ////            }, failure: { (sessionDataTask, error) in
 ////                print("hybridGet error == \(error)")
 ////        })
+        var urlString  = args["url"] as? String ?? ""
+        
+        
+        //这里需要处理下 todo
+        var parameters = args["param"] as! [String: AnyObject]
+
+        let paramArray = NSMutableArray()
+        for keyString in parameters.keys {
+            paramArray.addObject("\(keyString)=\(parameters[keyString]!)")
+            //            paramArray.append("\(keyString)=\(parameters[keyString])")
+        }
+        let paramString = paramArray.componentsJoinedByString("&")
+        if paramString.characters.count > 0 {
+            urlString = urlString + "?" + paramString
+        }
+        
+        
         
         //创建NSURL对象
-        let url:NSURL! = NSURL(string: args["url"] as? String ?? "")
+        let url:NSURL! = NSURL(string: urlString)
         //创建请求对象
         let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
         urlRequest.HTTPMethod = "GET"
         
+
         //响应对象
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
             if let responseData = data {
-                if let callbackString = try? self.jsonStringWithObject(responseData) {
+//                if let callbackString = try? self.jsonStringWithObject(responseData) {
+//                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
+//                }
+                if let callbackString = try? self.jsonStringWithObject(data!) {
                     self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
                 }
+
             }
             else {
                 print("data null & error = \(error)")
@@ -332,8 +371,6 @@ public class MLHybridTools: NSObject {
 
     func hybridPost(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
 //        let sessionManager = AFHTTPSessionManager(baseURL: nil)
-        var parameters = args
-        parameters.removeValueForKey("url")
 //        let url = args["url"] as? String ?? ""
 //        sessionManager.POST(url, parameters: parameters, progress: { (progress) in
 //            }, success: { (sessionDataTask, jsonObject) in
@@ -355,11 +392,12 @@ public class MLHybridTools: NSObject {
 //        // 将字符串转换成数据
 //        request.HTTPBody = [str dataUsingEncoding:NSUTF8StringEncoding];
 
+        var parameters = args
+        parameters.removeValueForKey("url")
         let paramArray = NSMutableArray()
         for keyString in parameters.keys {
             paramArray.addObject("\(keyString)=\(parameters[keyString])")
 //            paramArray.append("\(keyString)=\(parameters[keyString])")
-            
         }
         urlRequest.HTTPBody = paramArray.componentsJoinedByString("&").dataUsingEncoding(NSUTF8StringEncoding)
         

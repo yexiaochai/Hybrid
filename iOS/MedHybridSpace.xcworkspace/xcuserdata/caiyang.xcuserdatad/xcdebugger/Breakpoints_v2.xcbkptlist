@@ -2,4 +2,86 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490000583.242772"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "hybridPost(_:callbackID:webView:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490000144.809357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
+            landmarkName = "hybridGet(_:callbackID:webView:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490000233.28838"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
+            landmarkName = "hybridGet(_:callbackID:webView:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.hybridGet (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, callbackID : Swift.String, webView : __ObjC.UIWebView) -&gt; ()"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490000583.771354"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "357"
+                  endingLineNumber = "357"
+                  offsetFromSymbolStart = "4248">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(hybridGet (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, callbackID : Swift.String, webView : __ObjC.UIWebView) -&gt; ()).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490000583.771509"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "358"
+                  endingLineNumber = "358"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
