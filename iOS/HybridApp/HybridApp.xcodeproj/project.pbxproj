@@ -10,11 +10,26 @@
 		B51F7AC81D2E5A2000603478 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F7AC71D2E5A2000603478 /* AppDelegate.swift */; };
 		B51F7ACF1D2E5A2000603478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51F7ACE1D2E5A2000603478 /* Assets.xcassets */; };
 		B51F7AD21D2E5A2000603478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51F7AD01D2E5A2000603478 /* LaunchScreen.storyboard */; };
-		B5BC27BA1D2F72C0008DBDB6 /* DogHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BC27B91D2F72C0008DBDB6 /* DogHybrid.framework */; };
 		B5BC27BC1D2F736D008DBDB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BC27BB1D2F736D008DBDB6 /* ViewController.swift */; };
 		B5BC27BE1D2F7387008DBDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BC27BD1D2F7387008DBDB6 /* Main.storyboard */; };
 		B5FA96A71D338DE500529EA3 /* DogHybridAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FA96A61D338DE500529EA3 /* DogHybridAssets.xcassets */; };
+		B5FA96B11D3513D000529EA3 /* DogHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5FA96B01D3513D000529EA3 /* DogHybrid.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B5FA96B21D35174800529EA3 /* DogHybrid.framework in Resources */ = {isa = PBXBuildFile; fileRef = B5FA96B01D3513D000529EA3 /* DogHybrid.framework */; };
+		B5FA96B41D3517B700529EA3 /* DogHybrid.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5FA96B01D3513D000529EA3 /* DogHybrid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5FA96B31D3517A800529EA3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5FA96B41D3517B700529EA3 /* DogHybrid.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B51F7AC41D2E5A2000603478 /* HybridApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HybridApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +37,10 @@
 		B51F7ACE1D2E5A2000603478 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B51F7AD11D2E5A2000603478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B51F7AD31D2E5A2000603478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5BC27B91D2F72C0008DBDB6 /* DogHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DogHybrid.framework; path = "../../Library/Developer/Xcode/DerivedData/MedHybridSpace-fcdykbtllqurxzfjazpmxvqyrpdt/Build/Products/Debug-iphonesimulator/DogHybrid.framework"; sourceTree = "<group>"; };
 		B5BC27BB1D2F736D008DBDB6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5BC27BD1D2F7387008DBDB6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B5FA96A61D338DE500529EA3 /* DogHybridAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DogHybridAssets.xcassets; sourceTree = "<group>"; };
+		B5FA96B01D3513D000529EA3 /* DogHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DogHybrid.framework; path = "../../../Library/Developer/Xcode/DerivedData/MedHybridSpace-cvpznzygcuhqbqaljiaiioutlwuh/Build/Products/Debug-iphoneos/DogHybrid.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5BC27BA1D2F72C0008DBDB6 /* DogHybrid.framework in Frameworks */,
+				B5FA96B11D3513D000529EA3 /* DogHybrid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +58,7 @@
 		B51F7ABB1D2E5A2000603478 = {
 			isa = PBXGroup;
 			children = (
-				B5BC27B91D2F72C0008DBDB6 /* DogHybrid.framework */,
+				B5FA96B01D3513D000529EA3 /* DogHybrid.framework */,
 				B51F7AC61D2E5A2000603478 /* HybridApp */,
 				B51F7AC51D2E5A2000603478 /* Products */,
 			);
@@ -81,6 +96,7 @@
 				B51F7AC01D2E5A2000603478 /* Sources */,
 				B51F7AC11D2E5A2000603478 /* Frameworks */,
 				B51F7AC21D2E5A2000603478 /* Resources */,
+				B5FA96B31D3517A800529EA3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -129,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FA96B21D35174800529EA3 /* DogHybrid.framework in Resources */,
 				B5BC27BE1D2F7387008DBDB6 /* Main.storyboard in Resources */,
 				B51F7AD21D2E5A2000603478 /* LaunchScreen.storyboard in Resources */,
 				B51F7ACF1D2E5A2000603478 /* Assets.xcassets in Resources */,
@@ -251,6 +268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = HybridApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -263,6 +281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				INFOPLIST_FILE = HybridApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

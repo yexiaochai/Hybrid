@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         self.hybridUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22index2%22%2C%22type%22%3A%22native%22%2C%22navigateion%22%3A%22none%22%7D"
     }
     override func viewDidAppear(animated: Bool) {
-        self.hybridUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22http%3A%2F%2Fyexiaochai.github.io%2FHybrid%2Fwebapp%2Fdemo%2Findex.html%22%2C%22type%22%3A%22h5%22%7D"
-//        self.hybridUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22http%3A%2F%2Fkq.medlinker.com%2Fwebapp%2Fkq-desk%2Fadmorgs.html%22%2C%22type%22%3A%22h5%22%7D"
+//        self.hybridUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22http%3A%2F%2Fyexiaochai.github.io%2FHybrid%2Fwebapp%2Fdemo%2Findex.html%22%2C%22type%22%3A%22h5%22%7D"
+        self.hybridUrlTextField.text = "hybrid://forward?param=%7B%22topage%22%3A%22http%3A%2F%2Fkq.medlinker.com%2Fwebapp%2Fkq-desk%2Fadmorgs.html%22%2C%22type%22%3A%22h5%22%7D"
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
