@@ -9,7 +9,9 @@
 import UIKit
 import Foundation
 
-let webAppBaseUrl = "http://yexiaochai.github.io/Hybrid/webapp/"
+//let webAppBaseUrl = "http://yexiaochai.github.io/Hybrid/webapp/"
+let webAppBaseUrl = "http://kq.qa.medlinker.com/webapp/"
+
 let DogHybridURLProtocolHandled = "DogHybridURLProtocolHandled"
 let types = ["html","js","css","jpg","png"]
 let contentTpye = ["html": "text/html", "js": "application/javascript", "css": "text/css", "jpg": "image/jpeg", "png": "image/png"]
