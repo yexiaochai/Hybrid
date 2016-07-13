@@ -312,29 +312,12 @@ public class MLHybridTools: NSObject {
     }
     
     func hybridGet(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
-//        let sessionManager = AFHTTPSessionManager(baseURL: nil)
-//        var parameters = args
-//        parameters.removeValueForKey("url")
-////        var parametersString = 
-////        let url = args["url"] as? String ?? ""
-////        sessionManager.GET(url, parameters: parameters, progress: { (progress) in
-////            }, success: { (sessionDataTask, jsonObject) in
-////                if let callbackString = try? self.jsonStringWithObject(jsonObject!) {
-////                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
-////                }
-////            }, failure: { (sessionDataTask, error) in
-////                print("hybridGet error == \(error)")
-////        })
         var urlString  = args["url"] as? String ?? ""
-        
-        
         //这里需要处理下 todo
-        var parameters = args["param"] as! [String: AnyObject]
-
+        var parameters = args["param"] as? [String: String] ?? ["": ""]
         let paramArray = NSMutableArray()
         for keyString in parameters.keys {
             paramArray.addObject("\(keyString)=\(parameters[keyString]!)")
-            //            paramArray.append("\(keyString)=\(parameters[keyString])")
         }
         let paramString = paramArray.componentsJoinedByString("&")
         if paramString.characters.count > 0 {
@@ -345,26 +328,44 @@ public class MLHybridTools: NSObject {
         //创建请求对象
         let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
         urlRequest.HTTPMethod = "GET"
-        
-
         //响应对象
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
             if let _ = data {
-//                if let callbackString = try? self.jsonStringWithObject(responseData) {
-//                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
-//                }
-//                let jsonObject = data as? [String: AnyObject]
-                
-//                let result = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                
                 if let callbackString = NSString(data: data!, encoding: NSUTF8StringEncoding) {
                     self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
                 }
-//                if let callbackString = try? self.jsonStringWithObject(data!) {
-//                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
-//                }
                 else {
-                    print("jsonStringWithObject error")
+                    print("callbackString error")
+                }
+            }
+            else {
+                print("data null & error = \(error)")
+            }
+        })
+    }
+
+    func hybridPost(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
+        //创建NSURL对象
+        let url:NSURL! = NSURL(string: args["url"] as? String ?? "")
+        //创建请求对象
+        let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+        urlRequest.HTTPMethod = "POST"
+        var parameters = args
+        parameters.removeValueForKey("url")
+        let paramArray = NSMutableArray()
+        for keyString in parameters.keys {
+            paramArray.addObject("\(keyString)=\(parameters[keyString])")
+        }
+        urlRequest.HTTPBody = paramArray.componentsJoinedByString("&").dataUsingEncoding(NSUTF8StringEncoding)
+        
+        //响应对象
+        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+            if let _ = data {
+                if let callbackString = NSString(data: data!, encoding: NSUTF8StringEncoding) {
+                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
+                }
+                else {
+                    print("callbackString error")
                 }
             }
             else {
@@ -373,86 +374,22 @@ public class MLHybridTools: NSObject {
         })
 
     }
-
-    func hybridPost(args: [String: AnyObject], callbackID: String, webView: UIWebView) {
-//        let sessionManager = AFHTTPSessionManager(baseURL: nil)
-//        let url = args["url"] as? String ?? ""
-//        sessionManager.POST(url, parameters: parameters, progress: { (progress) in
-//            }, success: { (sessionDataTask, jsonObject) in
-//                if let callbackString = try? self.jsonStringWithObject(jsonObject!) {
-//                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID,webView: webView)
-//                }
-//            }, failure: { (sessionDataTask, error) in
-//                print("hybridPost error == \(error)")
-//        })
-        
-        //创建NSURL对象
-        let url:NSURL! = NSURL(string: args["url"] as? String ?? "")
-        //创建请求对象
-        let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
-        urlRequest.HTTPMethod = "POST"
-        
-//        // ? 数据体
-//        NSString *str = [NSString stringWithFormat:@"username=%@&password=%@", self.userName.text, self.userPwd.text];
-//        // 将字符串转换成数据
-//        request.HTTPBody = [str dataUsingEncoding:NSUTF8StringEncoding];
-
-        var parameters = args
-        parameters.removeValueForKey("url")
-        let paramArray = NSMutableArray()
-        for keyString in parameters.keys {
-            paramArray.addObject("\(keyString)=\(parameters[keyString])")
-//            paramArray.append("\(keyString)=\(parameters[keyString])")
-        }
-        urlRequest.HTTPBody = paramArray.componentsJoinedByString("&").dataUsingEncoding(NSUTF8StringEncoding)
-        
-        //响应对象
-        NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
-            if let responseData = data {
-                if let callbackString = try? self.jsonStringWithObject(responseData) {
-                    self.callBack(callbackString, errno: 0, msg: "success", callback: callbackID, webView: webView)
-                }
-            }
-            else {
-                print("data null")
-            }
-        })
-
-    }
     
     func checkVersion() {
         self.currentNavi().popToRootViewControllerAnimated(true)
         //创建NSURL对象
-//        let url:NSURL! = NSURL(string: "http://yexiaochai.github.io/Hybrid/webapp/hybrid_ver.json")
-        
+        //测试
         let url:NSURL! = NSURL(string: "http://h5.qa.medlinker.com/app/version/latestList")
+        //正式
+//        let url:NSURL! = NSURL(string: "http://h5.medlinker.com/app/version/latestList")
 
         //创建请求对象
         let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
         urlRequest.HTTPMethod = "GET"
-//        urlRequest.HTTPBody
         //响应对象
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
             do{//发送请求
                 if let responseData = data {
-//                    let dictionary = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
-//                    print(dictionary)
-//                    if let dataDic = dictionary as? [String: String] {
-//                        for (key, value) in dataDic {
-//                            let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
-//                            if value.compare(defaultsDic[key] ?? "", options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
-//                                self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
-//                                    if !success {
-//                                        let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
-//                                        alert.show()
-//                                    }
-//                                })
-//                            }
-//                            else {
-//                                print("不更新 \(key).zip")
-//                            }
-//                        }
-//                    }
                     let jsonData = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
                     if let dataArray = jsonData["data"] as? [AnyObject] {
                         
@@ -473,28 +410,8 @@ public class MLHybridTools: NSObject {
                             else {
                                 print("不更新 \(channel).zip")
                             }
-
-                            
-//                            for (key, value) in dataDic {
-//                                let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
-//                                if value.compare(defaultsDic[key] ?? "", options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
-//                                    self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
-//                                        if !success {
-//                                            let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
-//                                            alert.show()
-//                                        }
-//                                    })
-//                                }
-//                                else {
-//                                    print("不更新 \(key).zip")
-//                                }
-//                            }
-
                         }
-                        
-
                     }
- 
                 }
                 else {
                     print("data null")
