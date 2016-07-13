@@ -131,25 +131,15 @@ public class MLHybridTools: NSObject {
     }
 
     func jsonStringWithObject(object: AnyObject) throws -> String {
-//        if NSJSONSerialization.isValidJSONObject(object) {
-//            let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
-//            let string = String(data: data, encoding: NSUTF8StringEncoding)!
-//            return string
-//
-//        }
-//        else if let newObject = NSData(base64EncodedData: object as! NSData, options: NSDataBase64DecodingOptions(rawValue: 0)){
-//            if NSJSONSerialization.isValidJSONObject(newObject) {
-////                NSData(base64EncodedData:  )
-//                let data = try NSJSONSerialization.dataWithJSONObject(newObject, options: NSJSONWritingOptions(rawValue: 0))
-//                let string = String(data: data, encoding: NSUTF8StringEncoding)!
-//                return string
-//            }
-//            return ""
-//        }
-//        return ""
-        let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
-        let string = String(data: data, encoding: NSUTF8StringEncoding)!
-        return string
+        if NSJSONSerialization.isValidJSONObject(object) {
+            let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions(rawValue: 0))
+            let string = String(data: data, encoding: NSUTF8StringEncoding)!
+            return string
+
+        }
+        else {
+            return ""
+        }
     }
 
     func currentNavi() -> UINavigationController {
