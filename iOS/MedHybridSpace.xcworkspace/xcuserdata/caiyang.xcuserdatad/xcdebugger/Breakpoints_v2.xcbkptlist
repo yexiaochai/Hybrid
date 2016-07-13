@@ -19,5 +19,53 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490070751.366781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
+            landmarkName = "checkVersion()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(checkVersion () -&gt; ()).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490072054.642212"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "441"
+                  endingLineNumber = "441"
+                  offsetFromSymbolStart = "3203">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(checkVersion () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490072054.64246"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "442"
+                  endingLineNumber = "442"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
