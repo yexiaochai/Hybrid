@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        MLHybridTools().analysisUrl(url.absoluteString)
+        if sourceApplication != "Cy.HybridApp" {
+            MLHybridTools().analysisUrl(url.absoluteString)
+        }
         return true
     }
 

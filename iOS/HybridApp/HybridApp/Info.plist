@@ -23,8 +23,6 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>hybrid</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>hybrid</string>
