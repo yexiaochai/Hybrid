@@ -365,7 +365,7 @@ public class MLHybridTools: NSObject {
 
     }
     
-    func checkVersion() {
+    public func checkVersion() {
         self.currentNavi().popToRootViewControllerAnimated(true)
         //创建NSURL对象
         //测试
