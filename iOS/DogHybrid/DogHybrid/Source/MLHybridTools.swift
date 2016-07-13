@@ -437,19 +437,24 @@ public class MLHybridTools: NSObject {
                         }
                     }
                     if responseData.writeToFile(zipPath, atomically: true) {
-                        if SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath) {
+                        
+                        if SSZipArchive.unzipFileAtPath(zipPath, toDestination: filePath, delegate: self) {
+//                        if SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath) {
                             print("下载并解压了 \(key)")
+                            print("解压zipPath \(zipPath)")
+                            print("解压documentPath \(documentPath)")
+
                             //取得当前应用下路径
                             let newKeyPath = documentPath + "/" + key
                             if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
-                                print("key == \(key)")
-                                for file in fileArray {
-                                    print("\(file)")
-                                }
+//                                print("key == \(key)")
+//                                for file in fileArray {
+//                                    print("\(file)")
+//                                }
                                 print("包含文件 \(fileArray.count)")
                             }
                             else {
-                                print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
+//                                print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
                                 print("fileArray 为空")
                             }
 
@@ -480,6 +485,21 @@ public class MLHybridTools: NSObject {
                 completion?(success: false, msg: "更新包 为空")
             }
         })
+    }
+
+}
+
+extension MLHybridTools: SSZipArchiveDelegate {
+    public func zipArchiveDidUnzipArchiveAtPath(path: String!, zipInfo: unz_global_info, unzippedPath: String!) {
+//        print("zipInfo == \(zipInfo)")
+    }
+
+    public func zipArchiveDidUnzipFileAtIndex(fileIndex: Int, totalFiles: Int, archivePath: String!, unzippedFilePath: String!) {
+        
+    }
+
+    public func zipArchiveDidUnzipArchiveFile(zipFile: String!, entryPath: String!, destPath: String!) {
+//        print(zipFile)
     }
 
 }
