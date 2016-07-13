@@ -10,13 +10,189 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
-            timestampString = "490005800.111735"
+            timestampString = "490085497.552573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
-            landmarkName = "hybridPost(_:callbackID:webView:)"
+            startingLineNumber = "464"
+            endingLineNumber = "464"
+            landmarkName = "checkVersion()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490085551.550957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "checkVersion()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490085553.745678"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "checkVersion()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.checkVersion () -&gt; ()"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490087034.466432"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "435"
+                  endingLineNumber = "435"
+                  offsetFromSymbolStart = "479">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(checkVersion () -&gt; ()).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490087034.466539"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "437"
+                  endingLineNumber = "437"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490085649.619865"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "checkVersion()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(checkVersion () -&gt; ()).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490087034.485383"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "457"
+                  endingLineNumber = "457"
+                  offsetFromSymbolStart = "365">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(checkVersion () -&gt; ()).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490087034.485667"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "457"
+                  endingLineNumber = "457"
+                  offsetFromSymbolStart = "913">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490085817.289669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "511"
+            endingLineNumber = "511"
+            landmarkName = "loadZip(_:value:urlString:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+            timestampString = "490087034.025101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "522"
+            endingLineNumber = "522"
+            landmarkName = "loadZip(_:value:urlString:completion:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(loadZip (Swift.String, value : Swift.String, urlString : Swift.String, completion : Swift.Optional&lt;(success : Swift.Bool, msg : Swift.String) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490087034.486025"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "522"
+                  endingLineNumber = "522"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DogHybrid.MLHybridTools.(loadZip (Swift.String, value : Swift.String, urlString : Swift.String, completion : Swift.Optional&lt;(success : Swift.Bool, msg : Swift.String) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "DogHybrid"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caiyang/Hybrid/iOS/DogHybrid/DogHybrid/Source/MLHybridTools.swift"
+                  timestampString = "490087034.486156"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "522"
+                  endingLineNumber = "522"
+                  offsetFromSymbolStart = "1130">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

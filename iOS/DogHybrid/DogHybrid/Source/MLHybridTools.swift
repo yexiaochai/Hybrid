@@ -423,7 +423,10 @@ public class MLHybridTools: NSObject {
     func checkVersion() {
         self.currentNavi().popToRootViewControllerAnimated(true)
         //创建NSURL对象
-        let url:NSURL! = NSURL(string: "http://yexiaochai.github.io/Hybrid/webapp/hybrid_ver.json")
+//        let url:NSURL! = NSURL(string: "http://yexiaochai.github.io/Hybrid/webapp/hybrid_ver.json")
+        
+        let url:NSURL! = NSURL(string: "http://h5.qa.medlinker.com/app/version/latestList")
+
         //创建请求对象
         let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
         urlRequest.HTTPMethod = "GET"
@@ -432,13 +435,35 @@ public class MLHybridTools: NSObject {
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
             do{//发送请求
                 if let responseData = data {
-                    let dictionary = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
-                    print(dictionary)
-                    if let dataDic = dictionary as? [String: String] {
-                        for (key, value) in dataDic {
+//                    let dictionary = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
+//                    print(dictionary)
+//                    if let dataDic = dictionary as? [String: String] {
+//                        for (key, value) in dataDic {
+//                            let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
+//                            if value.compare(defaultsDic[key] ?? "", options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
+//                                self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
+//                                    if !success {
+//                                        let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
+//                                        alert.show()
+//                                    }
+//                                })
+//                            }
+//                            else {
+//                                print("不更新 \(key).zip")
+//                            }
+//                        }
+//                    }
+                    let jsonData = try NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.AllowFragments)
+                    if let dataArray = jsonData["data"] as? [AnyObject] {
+                        
+                        for dataDic in dataArray {
+                            let channel = dataDic["channel"] as? String ?? ""
+                            let version = dataDic["version"] as? String ?? ""
+                            let src = dataDic["src"] as? String ?? ""
+                            
                             let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
-                            if value.compare(defaultsDic[key] ?? "", options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
-                                self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
+                            if version.compare(defaultsDic[channel] ?? "", options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
+                                self.loadZip(channel, value: version, urlString: src, completion: { (success, msg) in
                                     if !success {
                                         let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
                                         alert.show()
@@ -446,10 +471,30 @@ public class MLHybridTools: NSObject {
                                 })
                             }
                             else {
-                                print("不更新 \(key).zip")
+                                print("不更新 \(channel).zip")
                             }
+
+                            
+//                            for (key, value) in dataDic {
+//                                let defaultsDic = NSUserDefaults.standardUserDefaults().valueForKey("LocalResources") as? [String: String] ?? ["": ""]
+//                                if value.compare(defaultsDic[key] ?? "", options: NSStringCompareOptions.NumericSearch) == .OrderedDescending {
+//                                    self.loadZip(key, value: value, urlString: "http://yexiaochai.github.io/Hybrid/webapp/" + key + ".zip", completion: { (success, msg) in
+//                                        if !success {
+//                                            let alert = UIAlertView(title: "更新失败", message: msg, delegate: nil, cancelButtonTitle: "确定")
+//                                            alert.show()
+//                                        }
+//                                    })
+//                                }
+//                                else {
+//                                    print("不更新 \(key).zip")
+//                                }
+//                            }
+
                         }
+                        
+
                     }
+ 
                 }
                 else {
                     print("data null")
@@ -490,10 +535,10 @@ public class MLHybridTools: NSObject {
                             //取得当前应用下路径
                             let newKeyPath = documentPath + "/" + key
                             if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
-                                                        print("key == \(key)")
-                                                        for file in fileArray {
-                                                            print("     \(file)")
-                                                        }
+                                print("key == \(key)")
+                                for file in fileArray {
+                                    print("\(file)")
+                                }
                                 print("包含文件 \(fileArray.count)")
                             }
                             else {
