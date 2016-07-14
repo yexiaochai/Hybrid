@@ -420,6 +420,9 @@ public class MLHybridTools: NSObject {
         let urlRequest:NSMutableURLRequest = NSMutableURLRequest(URL: url)
         urlRequest.HTTPMethod = "GET"
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+            if error != nil {
+                completion?(success: false, msg: error!.localizedDescription)
+            }
             if let responseData = data {
                 do{
                     let documentPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
@@ -437,26 +440,8 @@ public class MLHybridTools: NSObject {
                         }
                     }
                     if responseData.writeToFile(zipPath, atomically: true) {
-                        
                         if SSZipArchive.unzipFileAtPath(zipPath, toDestination: filePath, delegate: self) {
-//                        if SSZipArchive.unzipFileAtPath(zipPath, toDestination: documentPath) {
                             print("下载并解压了 \(key)")
-                            print("解压zipPath \(zipPath)")
-                            print("解压documentPath \(documentPath)")
-
-                            //取得当前应用下路径
-                            let newKeyPath = documentPath + "/" + key
-                            if let fileArray = NSFileManager.defaultManager().subpathsAtPath(newKeyPath) {
-//                                print("key == \(key)")
-//                                for file in fileArray {
-//                                    print("\(file)")
-//                                }
-                                print("包含文件 \(fileArray.count)")
-                            }
-                            else {
-//                                print(NSFileManager.defaultManager().subpathsAtPath(documentPath))
-                                print("fileArray 为空")
-                            }
 
                             if NSFileManager.defaultManager().fileExistsAtPath(zipPath) {
                                 try NSFileManager.defaultManager().removeItemAtPath(zipPath)
@@ -490,16 +475,17 @@ public class MLHybridTools: NSObject {
 }
 
 extension MLHybridTools: SSZipArchiveDelegate {
-    public func zipArchiveDidUnzipArchiveAtPath(path: String!, zipInfo: unz_global_info, unzippedPath: String!) {
-//        print("zipInfo == \(zipInfo)")
-    }
+    //解压资源回调方法
+//    public func zipArchiveDidUnzipArchiveAtPath(path: String!, zipInfo: unz_global_info, unzippedPath: String!) {
+////        print("zipInfo == \(zipInfo)")
+//    }
 
     public func zipArchiveDidUnzipFileAtIndex(fileIndex: Int, totalFiles: Int, archivePath: String!, unzippedFilePath: String!) {
-        
+//        print(" 解压文件: \n fileIndex == \(fileIndex) \n totalFiles == \(totalFiles) \n unzippedFilePath == \(unzippedFilePath)")
     }
 
-    public func zipArchiveDidUnzipArchiveFile(zipFile: String!, entryPath: String!, destPath: String!) {
-//        print(zipFile)
-    }
+//    public func zipArchiveDidUnzipArchiveFile(zipFile: String!, entryPath: String!, destPath: String!) {
+//        print("zipArchiveDidUnzipArchiveFile")
+//    }
 
 }
