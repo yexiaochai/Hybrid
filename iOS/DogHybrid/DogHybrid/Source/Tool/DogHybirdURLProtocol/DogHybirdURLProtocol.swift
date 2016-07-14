@@ -25,11 +25,6 @@ public class DogHybridURLProtocol: NSURLProtocol {
             var tempArray = str.componentsSeparatedByString("?")
             tempArray = tempArray[0].componentsSeparatedByString(".")
             let type = tempArray.last!
-            
-            print("type == \(type)")
-            if type == "js" {
-                print("url == \(url)")
-            }
             if !types.contains(type) {
                 return nil
             }

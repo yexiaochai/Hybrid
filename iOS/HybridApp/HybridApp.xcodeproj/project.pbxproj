@@ -37,6 +37,8 @@
 		B51F7ACE1D2E5A2000603478 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B51F7AD11D2E5A2000603478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B51F7AD31D2E5A2000603478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55244471D3768A100570FBB /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B55244491D3768A700570FBB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B5BC27BB1D2F736D008DBDB6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5BC27BD1D2F7387008DBDB6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B5FA96A61D338DE500529EA3 /* DogHybridAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DogHybridAssets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		B51F7ABB1D2E5A2000603478 = {
 			isa = PBXGroup;
 			children = (
+				B55244491D3768A700570FBB /* libz.tbd */,
+				B55244471D3768A100570FBB /* JavaScriptCore.framework */,
 				B5FA96B01D3513D000529EA3 /* DogHybrid.framework */,
 				B51F7AC61D2E5A2000603478 /* HybridApp */,
 				B51F7AC51D2E5A2000603478 /* Products */,

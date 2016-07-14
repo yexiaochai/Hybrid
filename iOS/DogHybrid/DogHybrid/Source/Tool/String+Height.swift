@@ -11,7 +11,7 @@ extension String{
     
     //MARK:获得string内容高度
     
-    func stringHeightWith(fontSize:CGFloat,width:CGFloat)->CGFloat{
+    func hybridStringHeightWith(fontSize:CGFloat,width:CGFloat)->CGFloat{
         let font = UIFont.systemFontOfSize(fontSize)
         let size = CGSizeMake(width,CGFloat.max)
         let paragraphStyle = NSMutableParagraphStyle()
@@ -24,8 +24,7 @@ extension String{
     }
     
     //MARK:获得string内容宽度
-    
-    func stringWidthWith(fontSize:CGFloat,height:CGFloat)->CGFloat{
+    func hybridStringWidthWith(fontSize:CGFloat,height:CGFloat)->CGFloat{
         let font = UIFont.systemFontOfSize(fontSize)
         let size = CGSizeMake(CGFloat.max,height)
         let paragraphStyle = NSMutableParagraphStyle()

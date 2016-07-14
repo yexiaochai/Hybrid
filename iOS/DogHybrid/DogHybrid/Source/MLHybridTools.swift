@@ -182,7 +182,7 @@ public class MLHybridTools: NSObject {
         var buttons = [UIBarButtonItem]()
         for buttonModel in buttonModels {
             let button = UIButton()
-            let titleWidth = buttonModel.value.stringWidthWith(14, height: 20)
+            let titleWidth = buttonModel.value.hybridStringWidthWith(14, height: 20)
             let buttonWidth = titleWidth > 42 ? titleWidth : 42
             button.frame = CGRectMake(0, 0, buttonWidth, 30)
             button.titleLabel?.font = UIFont.systemFontOfSize(14)

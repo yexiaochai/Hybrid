@@ -21,7 +21,7 @@ class HybridNaviTitleView: UIView {
         self.titleLabel.text = title
         self.titleLabel.font = UIFont.systemFontOfSize(17)
         self.titleLabel.textColor = UIColor.blackColor()
-        let titleWidth = title.stringWidthWith(17, height: 22)
+        let titleWidth = title.hybridStringWidthWith(17, height: 22)
         self.titleLabel.frame = CGRectMake(0, 0, titleWidth, 22)
         self.titleLabel.center = self.center
         self.titleLabel.textAlignment = .Center
@@ -32,7 +32,7 @@ class HybridNaviTitleView: UIView {
             self.subtitleLabel.text = subtitle
             self.subtitleLabel.font = UIFont.systemFontOfSize(13)
             self.subtitleLabel.textColor = UIColor.blackColor()
-            let subtitleWidth = subtitle.stringWidthWith(13, height: 15)
+            let subtitleWidth = subtitle.hybridStringWidthWith(13, height: 15)
             self.subtitleLabel.frame = CGRectMake(0, 0, subtitleWidth, 22)
             self.subtitleLabel.center = self.center
             self.subtitleLabel.center.y = self.center.y + 10
@@ -43,14 +43,18 @@ class HybridNaviTitleView: UIView {
 
         //右图标
         self.righticon.frame = CGRectMake(self.titleLabel.frame.origin.x + self.titleLabel.frame.size.width + 5, 0, 15, 15)
-        self.righticon.setZYHWebImage(righticonUrl.absoluteString, defaultImage: "", isCache: true)
+        if righticonUrl.absoluteString.characters.count > 0 {
+            self.righticon.setZYHWebImage(righticonUrl.absoluteString, defaultImage: "", isCache: true)
+        }
 //        self.righticon.setImageWithURL(righticonUrl)
         self.righticon.center.y = self.center.y
         self.addSubview(self.righticon)
         
         //左图标
         self.lefticon.frame = CGRectMake(self.titleLabel.frame.origin.x - 20, 0, 15, 15)
-        self.lefticon.setZYHWebImage(righticonUrl.absoluteString, defaultImage: "", isCache: true)
+        if lefticonUrl.absoluteString.characters.count > 0 {
+            self.lefticon.setZYHWebImage(lefticonUrl.absoluteString, defaultImage: "", isCache: true)
+        }
 //        self.lefticon.setImageWithURL(lefticonUrl)
         self.lefticon.center.y = self.center.y
         self.addSubview(self.lefticon)
