@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medlinker.hybridsdk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true"
+        android:theme="@style/HybridAppTheme">
+        <activity
+            android:name=".ui.HybridWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HybridStyle" />
+        <!--<activity-->
+            <!--android:name=".ui.HybridEnterActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/HybridStyle">-->
+            <!--<intent-filter>-->
+                <!--<data-->
+                    <!--android:host="forward"-->
+                    <!--android:scheme="hybrid" />-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
+
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!--<category android:name="android.intent.category.BROWSABLE" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+    </application>
+
+</manifest>
