@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/hybrid_navgation_icon_size"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/hybrid_navgation_left"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.medlinker.hybridsdk.widget.DraweeView
+            android:id="@+id/hybrid_icon_left"
+            android:layout_width="@dimen/hybrid_navgation_icon_size"
+            android:layout_height="@dimen/hybrid_navgation_icon_size"
+            android:scaleType="centerInside"
+            fresco:actualImageScaleType="focusCrop" />
+
+        <LinearLayout
+            android:id="@+id/hybrid_navgation_title_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hybrid_navgation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/background_dark" />
+
+            <TextView
+                android:id="@+id/hybrid_navgation_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/background_dark" />
+        </LinearLayout>
+
+        <com.medlinker.hybridsdk.widget.DraweeView
+            android:id="@+id/hybrid_icon_right"
+            android:layout_width="@dimen/hybrid_navgation_icon_size"
+            android:layout_height="@dimen/hybrid_navgation_icon_size"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hybrid_navgation_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:orientation="horizontal" />
+
+</FrameLayout>

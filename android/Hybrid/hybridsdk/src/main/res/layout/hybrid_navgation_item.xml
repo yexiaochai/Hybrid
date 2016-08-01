@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hybrid_navigation_item_group"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="4dp">
+
+    <com.medlinker.hybridsdk.widget.DraweeView
+        android:id="@+id/hybrid_icon"
+        android:layout_width="@dimen/hybrid_navgation_icon_size"
+        android:layout_height="@dimen/hybrid_navgation_icon_size"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/hybrid_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+</LinearLayout>
