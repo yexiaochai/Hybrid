@@ -24,7 +24,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Hybrid_Medlinker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="HybridApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -85,16 +85,55 @@
                     <connections>
                         <outlet property="hybridUrlTextField" destination="aUw-8R-ZI4" id="b5P-tC-bJz"/>
                         <segue destination="DvD-pw-4kD" kind="show" identifier="show" id="z8l-KJ-kJD"/>
+                        <segue destination="eJr-6E-JFY" kind="show" identifier="login" id="kNj-7T-N1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-316" y="409"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zzk-T6-JEI">
+            <objects>
+                <viewController id="eJr-6E-JFY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UUo-P9-JFl"/>
+                        <viewControllerLayoutGuide type="bottom" id="i6e-yw-1wD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="si5-9M-imS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vI-Gf-KxF">
+                                <rect key="frame" x="225" y="310" width="150" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CAm-2M-p0I">
+                                <rect key="frame" x="200" y="250" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="登录手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TQD-j0-tTR">
+                                <rect key="frame" x="200" y="200" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pf6-oa-Vgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="1219"/>
+        </scene>
         <!--Title-->
         <scene sceneID="Ybv-br-pOm">
             <objects>
-                <viewController storyboardIdentifier="WebTestViewController" id="DvD-pw-4kD" customClass="WebTestViewController" customModule="Hybrid_Medlinker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebTestViewController" id="DvD-pw-4kD" customClass="WebTestViewController" customModule="HybridApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CzL-eY-PsS"/>
                         <viewControllerLayoutGuide type="bottom" id="FHV-Lo-Kxj"/>

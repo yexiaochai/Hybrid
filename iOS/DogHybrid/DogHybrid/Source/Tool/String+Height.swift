@@ -10,7 +10,6 @@ import Foundation
 extension String{
     
     //MARK:获得string内容高度
-    
     func hybridStringHeightWith(fontSize:CGFloat,width:CGFloat)->CGFloat{
         let font = UIFont.systemFontOfSize(fontSize)
         let size = CGSizeMake(width,CGFloat.max)
@@ -35,7 +34,6 @@ extension String{
         let width = Int(rect.size.width) + 1
         return CGFloat(width)
     }
-
 
 }
 
