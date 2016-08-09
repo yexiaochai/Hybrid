@@ -99,7 +99,6 @@ class MLHybridWebViewController: UIViewController {
     }
     
     func deleteViewController() {
-        
         var webViewControllers: [UIViewController] = []
         if let viewControllers = self.navigationController?.viewControllers {
             for vc in viewControllers {
