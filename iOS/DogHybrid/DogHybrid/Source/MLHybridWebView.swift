@@ -84,16 +84,10 @@ class MLHybridWebView: UIView {
 extension MLHybridWebView: UIWebViewDelegate {
     
     func webViewDidStartLoad(webView: UIWebView) {
-//        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-//            vc.startLoveEggAnimating()
-//        }
+
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-//        if let vc = UIApplication.sharedApplication().keyWindow?.rootViewController {
-//            vc.stopAnimating()
-//        }
-
         //        self.requestNative = { input in
         //            let args = MLHybridWebView().decodeJsonStr(input)
         //            if let tagname = args["tagname"] as? String {

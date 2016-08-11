@@ -140,6 +140,17 @@ public class MLHybridTools: NSObject {
             if vc is UINavigationController {
                 return vc as! UINavigationController
             }
+            else if vc is UITabBarController{
+                let currentVC = vc as! UITabBarController
+                let tabVC = currentVC.viewControllers![currentVC.selectedIndex]
+                if tabVC is UINavigationController {
+                    return tabVC as! UINavigationController
+                }
+                else {
+                    return tabVC.navigationController ?? UINavigationController()
+                }
+            }
+
             else {
                 return vc.navigationController ?? UINavigationController()
             }
@@ -250,6 +261,9 @@ public class MLHybridTools: NSObject {
                         vc?.animateType = .Normal
                     }
 //                    webViewController.navigationItem.setHidesBackButton(true, animated: false)
+                    print("self.currentNavi() == \(self.currentNavi())")
+                    print("webViewController == \(webViewController)")
+
                     self.currentNavi().pushViewController(webViewController, animated: true)
                 }
             }

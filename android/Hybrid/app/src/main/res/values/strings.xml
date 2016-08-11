@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hybrid</string>
+    <string name="title_activity_demo1">Demo1</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

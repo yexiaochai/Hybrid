@@ -199,12 +199,12 @@
 		B51F7AE11D2E692800603478 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B552444B1D376BCF00570FBB /* String+Size */,
 				B5FA96A81D3397EB00529EA3 /* ZYHWebImage */,
 				B51F7AF01D2E692800603478 /* DogHybirdURLProtocol */,
 				B51F7AF21D2E692800603478 /* HybirdTransion */,
 				B51F7AF41D2E692800603478 /* Loading */,
 				B51F7AF71D2E692800603478 /* SSZipArchive */,
-				B51F7B1C1D2E692800603478 /* String+Height.swift */,
 				B51F7B321D2E692800603478 /* YYkit */,
 			);
 			path = Tool;
@@ -321,6 +321,14 @@
 				B51F7B3D1D2E692800603478 /* HybridNaviTitleView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B552444B1D376BCF00570FBB /* String+Size */ = {
+			isa = PBXGroup;
+			children = (
+				B51F7B1C1D2E692800603478 /* String+Height.swift */,
+			);
+			name = "String+Size";
 			sourceTree = "<group>";
 		};
 		B5FA96A81D3397EB00529EA3 /* ZYHWebImage */ = {

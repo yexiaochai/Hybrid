@@ -1,0 +1,21 @@
+1.如果你的activity只是实现一个webview加载一个url。
+1.1你的activity继承HybridBaseActivity。
+1.2调用HybridBaseActivity中的loadUrl方法。
+1.3你可以参考DemoMainActivity帮助你快速理解上面所描述的内容。
+
+2.如果你的activity除了webview加载url以外还有其他的交互。
+2.1在你的webview设置webSettings:
+WebSettings settings = webView.getSettings();
+settings.setAllowFileAccess(true);
+settings.setJavaScriptEnabled(true);
+settings.setDomStorageEnabled(true);
+2.2设置webviewClient对象必须是HyBridWebViewClient(或子类)的instance。
+
+3.配置forward方法navitivea对应的activity。
+3.1eg:h5链接是"hybrid://demo",我们希望对应的activity是DemoActivity(这是一个activity的子类),那么DemoActivity在AndroidManifest.xml需要配置如下,
+ <intent-filter>
+    <action android:name="medlinker.hybrid.demo" />
+    <category android:name="android.intent.category.DEFAULT" />
+ </intent-filter>
+3.2DemoActivity在跳转的时候需要传达参数,那么在h5链接中传入即可,在DemoActivity通过getIntent获取extras参数,其实key和h5中param的参数key对应。
+4.如果webview需要添加jsinterface ,那么这个interface的类必须继承HybridJsInterface。别名使用HybridConfig.JSInterface。
