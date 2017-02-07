@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03689e4e-9a4c-4d7a-955c-18fed9b863b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/demo/nativeui.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html" afterPath="$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html" afterPath="$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html" />
     </list>
     <ignored path="Hybrid.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +29,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="share.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="share.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/share.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7068063">
-                  <caret line="133" column="44" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="44" />
+                <state vertical-scroll-proportion="-8.888889">
+                  <caret line="143" column="25" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="nativeui.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.59572303">
+                  <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -53,11 +66,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8434238">
-                  <caret line="211" column="8" selection-start-line="211" selection-start-column="8" selection-end-line="211" selection-end-column="8" />
+                <state vertical-scroll-proportion="-21.166666">
+                  <caret line="191" column="6" selection-start-line="191" selection-start-column="6" selection-end-line="191" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.6419624">
+                  <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-9.375">
+                  <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -75,9 +108,14 @@
       <list>
         <option value="$PROJECT_DIR$/webapp/hybrid_ver.json" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/index/index.js" />
-        <option value="$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/share/share.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/closewebview/closewebview.js" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/closewebview/tpl.layout.html" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/closewebview.js" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
       </list>
     </option>
   </component>
@@ -189,6 +227,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="share" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hybrid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hybrid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nativeui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -365,8 +429,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/webapp/demo/pages/share" />
+      <recent name="$PROJECT_DIR$/webapp/demo/pages/closewebview" />
       <recent name="$PROJECT_DIR$/webapp/demo" />
+      <recent name="$PROJECT_DIR$/webapp/demo/pages/share" />
     </key>
   </component>
   <component name="RunManager">
@@ -420,6 +485,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="03689e4e-9a4c-4d7a-955c-18fed9b863b1" name="Default" comment="" />
@@ -463,7 +531,13 @@
       <option name="project" value="LOCAL" />
       <updated>1486370936999</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="demo">
+      <created>1486371010124</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1486371010124</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -488,6 +562,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -544,14 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="13" column="59" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/header/header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -573,16 +647,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/share.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7068063">
-          <caret line="133" column="44" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="44" />
+        <state vertical-scroll-proportion="-8.888889">
+          <caret line="143" column="25" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8434238">
-          <caret line="211" column="8" selection-start-line="211" selection-start-column="8" selection-end-line="211" selection-end-column="8" />
+        <state vertical-scroll-proportion="-21.166666">
+          <caret line="191" column="6" selection-start-line="191" selection-start-column="6" selection-end-line="191" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6419624">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59572303">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding />
         </state>
       </provider>
