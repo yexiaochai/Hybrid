@@ -706,21 +706,23 @@
 (function () {
     window.Hybrid = window.Hybrid || {};
     window.Hybrid.ui = window.Hybrid.ui || {};
-    Hybrid.callback = function (data) {
+
+
+    Hybrid.callback = function(data) {
         var callbackId = data.callback;
-        if(!callbackId) return;
+        if (!callbackId) return;
 
         //alert(typeof data);
         //alert(callbackId);
         //
         //showFormatData(Hybrid);
 
-        if(typeof data == 'string') data = JSON.parse(data);
+        if (typeof data == 'string') data = JSON.parse(data);
 
-        if(callbackId.indexOf('header_') != -1 && Hybrid['Header_Event']) {
-            Hybrid['Header_Event'][callbackId] && Hybrid['Header_Event'][callbackId](data);
+        if (callbackId.indexOf('header_') != -1 && Hybrid['Header_Event']) {
+            Hybrid['Header_Event'][callbackId] && Hybrid['Header_Event'][callbackId](data.data || {});
         } else {
-            Hybrid[callbackId] && Hybrid[callbackId](data);
+            Hybrid[callbackId] && Hybrid[callbackId](data.data || {}, data);
         }
         return true;
     };
