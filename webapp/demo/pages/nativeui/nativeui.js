@@ -66,8 +66,7 @@ _.requestHybrid({
     },
     //输入结束的回调或者说点击发送时候的回调
     callback: function (data) {
-        var content = data.content;//文字内容
-        scope.$('.js-val01').html(content);
+        scope.$('.js-val01').html(data);
     }
 });
 
