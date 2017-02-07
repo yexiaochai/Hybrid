@@ -58,7 +58,7 @@ _.requestHybrid({
         */
         type: 'Done',
         //如果设计了btnTxt type属性便失效,文本变成多行输入,并且多一个按钮,模仿头条
-        btnTxt: '按钮文字',
+        btnTxt: '发送',
 
         tips: '描述信息',
         textMin: 20, //文字要求最少输入字符数
