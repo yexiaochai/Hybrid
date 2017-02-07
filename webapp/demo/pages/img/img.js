@@ -18,12 +18,14 @@
             this.events = {
                 'click .js-btn01': function () {
 
-                    /*
-                    关闭当前页面,回到native上一步操作
-                     */
-                    _.requestHybrid({
-                        tagname: 'closeWindow'
-                    });
+//图片预览
+_.requestHybrid({
+    tagname: 'gallery',
+    param: {
+        index: 1,                  // 当前图片的位置（从0开始）
+        imgs: ['https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3989549683,2209638352&fm=21&gp=0.jpg', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=442231815,540611561&fm=21&gp=0.jpg', 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2761864997,1285877088&fm=21&gp=0.jpg', 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=187384747,1056525225&fm=23&gp=0.jpg']   // 图片地址数组
+    }
+});
 
                 }
             };
