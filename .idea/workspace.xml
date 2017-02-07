@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03689e4e-9a4c-4d7a-955c-18fed9b863b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" afterPath="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" />
     </list>
     <ignored path="Hybrid.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +26,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="img.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="img.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/img.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.31413612">
-                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="27" selection-end-column="3" />
+                <state vertical-scroll-proportion="-25.555555">
+                  <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="nativeui.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.5036649">
+                  <caret line="37" column="24" selection-start-line="40" selection-start-column="8" selection-end-line="41" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -39,11 +50,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/tpl.layout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.36012527">
-                  <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                <state vertical-scroll-proportion="-17.5">
+                  <caret line="28" column="27" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.20354906">
+                  <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -65,12 +86,12 @@
         <option value="$PROJECT_DIR$/webapp/demo/pages/closewebview/closewebview.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/closewebview/tpl.layout.html" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/closewebview.js" />
-        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" />
-        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/share/share.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html" />
-        <option value="$PROJECT_DIR$/webapp/demo/pages/img/img.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/img/tpl.layout.html" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/img/img.js" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" />
       </list>
     </option>
   </component>
@@ -483,7 +504,37 @@
       <option name="project" value="LOCAL" />
       <updated>1486440212953</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="demo">
+      <created>1486447715400</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1486447715400</updated>
+    </task>
+    <task id="LOCAL-00017" summary="demo">
+      <created>1486451292468</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1486451292468</updated>
+    </task>
+    <task id="LOCAL-00018" summary="demo">
+      <created>1486453598285</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1486453598286</updated>
+    </task>
+    <task id="LOCAL-00019" summary="demo">
+      <created>1486459064989</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1486459064989</updated>
+    </task>
+    <task id="LOCAL-00020" summary="demo">
+      <created>1486460325589</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1486460325589</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -599,14 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.791668">
-          <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/share.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.7777777">
@@ -623,22 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22097759">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/img.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31413612">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="27" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28183717">
@@ -647,10 +674,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/img.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.555555">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/tpl.layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36012527">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="28" column="27" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5036649">
+          <caret line="37" column="24" selection-start-line="40" selection-start-column="8" selection-end-line="41" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20354906">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
