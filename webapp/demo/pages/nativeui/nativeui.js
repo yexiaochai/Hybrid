@@ -39,6 +39,7 @@ _.requestHybrid({
          Search   —>  搜索
         */
         type: 'Done',
+        tips: '描述信息',
         textMin: 20, //文字要求最少输入字符数
         textMax: 500 //文字要求最多输入字符数
     },
