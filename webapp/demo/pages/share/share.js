@@ -30,19 +30,19 @@
                      5 分享到新浪微博
                      6 复制链接
                      */
-                    _.requestHybrid({
-                        tagname: 'openNativeUI',
-                        param: {
-                            title: '分享标题',
-                            desc: '分享描述',
-                            image: 'http://medlinker.com/h5/interlocution/static/img/icon-camera.png',
-                            link: 'http://medlinker.com'
-                        },
-                        callback: function(data) {
-                            //分享成功时候的回调
+_.requestHybrid({
+    tagname: 'openNativeUI',
+    param: {
+        title: '分享标题',
+        desc: '分享描述',
+        image: 'http://medlinker.com/h5/interlocution/static/img/icon-camera.png',
+        link: 'http://medlinker.com'
+    },
+    callback: function(data) {
+        //分享成功时候的回调
 alert('分享成功');
-                        }
-                    });
+    }
+});
 
                 },
                 'click .js-btn02': function () {
@@ -170,6 +170,27 @@ alert('分享成功');
                     });
 
                 },
+              'click .js-btn08': function () {
+
+                /*
+                 分享到新浪
+                 如果没有传递参数则
+                 title&desc直接取title标签的title
+                 image取第一张图片的链接,没有就为空
+                 link取网页的url
+                 native图标包括:
+                 */
+                _.requestHybrid({
+                  tagname: 'setShareOpts',
+                  param: {
+                    title: '分享标题',
+                    desc: '分享描述',
+                    image: 'http://medlinker.com/h5/interlocution/static/img/icon-camera.png',
+                    link: 'http://medlinker.com'
+                  }
+                });
+
+              },
                 'click .js-btn07': function () {
 
                     //复制当前网页链接
