@@ -44,6 +44,20 @@ _.requestHybrid({
     }
 });
 
+                },
+                'click .js-btn03': function () {
+
+                    /*
+                     获取网络状态
+                     */
+                    _.requestHybrid({
+                        tagname: 'getNetworkType',
+                        callback: function(data) {
+                            //data.networkType 2g 3g 4g wifi
+                            scope.showToast(data.networkType);
+                        }
+                    });
+
                 }
             };
 
