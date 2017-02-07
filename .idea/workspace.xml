@@ -40,8 +40,8 @@
           <file leaf-file-name="nativeui.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.610998">
-                  <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+                <state vertical-scroll-proportion="0.36659878">
+                  <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -77,8 +77,8 @@
           <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.87473905">
-                  <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+                <state vertical-scroll-proportion="0.9217119">
+                  <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -469,7 +469,13 @@
       <option name="project" value="LOCAL" />
       <updated>1486438130479</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="demo">
+      <created>1486438478838</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1486438478838</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -611,16 +617,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87473905">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.9217119">
+          <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.610998">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.36659878">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
           <folding />
         </state>
       </provider>

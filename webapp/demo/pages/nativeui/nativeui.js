@@ -47,16 +47,44 @@ _.requestHybrid({
                 },
                 'click .js-btn03': function () {
 
-                    /*
-                     获取网络状态
-                     */
-                    _.requestHybrid({
-                        tagname: 'getNetworkType',
-                        callback: function(data) {
-                            //data.networkType 2g 3g 4g wifi
-                            scope.showToast(data.networkType);
-                        }
-                    });
+/*
+ 获取网络状态
+ */
+_.requestHybrid({
+    tagname: 'getNetworkType',
+    callback: function(data) {
+        //data.networkType 2g 3g 4g wifi
+        scope.showToast(data.networkType);
+    }
+});
+
+                },
+                'click .js-btn04': function () {
+
+//获取经纬度信息
+_.requestHybrid({
+    tagname: 'getLocation',
+    callback: function(data) {
+        var latitude = data.latitude; // 纬度，浮点数，范围为90 ~ -90
+        var longitude = data.longitude; // 经度，浮点数，范围为180 ~ -180。
+        var speed = data.speed; // 速度，以米/每秒计
+        var accuracy = data.accuracy; // 位置精度
+
+//根据经纬度等信息打开native地图
+        _.requestHybrid({
+            tagname: 'openLocation',
+            params: {
+                latitude: latitude, // 纬度，浮点数，范围为90 ~ -90
+                longitude: longitude, // 经度，浮点数，范围为180 ~ -180。
+                name: '你现在的位置', // 位置名
+                address: '详细地址', // 地址详情说明
+                scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
+                infoUrl: 'http://medlinker.com' // 在查看位置界面底部显示的超链接,可点击跳转
+            }
+        });
+
+    }
+});
 
                 }
             };
