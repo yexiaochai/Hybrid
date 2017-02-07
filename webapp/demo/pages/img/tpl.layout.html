@@ -22,3 +22,42 @@ _.requestHybrid({
 </div>
 
 
+<pre>
+<code>
+//图片上传
+_.requestHybrid({
+    tagname: 'uploadImage',
+    param: {
+        //业务参数
+        //文件所属分类,包括（transform(出转诊),casem(病例), question(问题), post(帖子), help(求助), secret(深夜病房), logo, avatar(头像)，chat(聊天), idCard(身份证), profile(用户信息),panel, spread, media,live)
+        bucket: 'transform',
+        //1代表文件传入公共盘，所有人可以访问。0代表私人盘，需要授权访问
+        isPublic: 1,
+        //水印文字 ,如果没传参数则没有水印
+        waterText: '水印文字',
+
+        //以下是基本参数
+        //1-9张限制
+        count: 1,
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+    },
+    callback: function(data) {
+        var urls = data.urls;
+        var img;
+        for(var url in urls) {
+            img = $('<img src="' + url + '" >');
+            scope.$('.js-wrap').append(img);
+        }
+    }
+});
+</code>
+</pre>
+
+<div class="js-wrap">
+
+</div>
+
+<div class="btn-primary js-btn02" >
+    上传图片
+</div>
