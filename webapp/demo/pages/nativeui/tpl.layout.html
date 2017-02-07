@@ -24,15 +24,20 @@ _.requestHybrid({
 _.requestHybrid({
     tagname: 'showKeyboard',
     param: {
-        //键盘按钮文案
-        btnText: '确定',
+        /*键盘按钮文案
+         GO 	      —>    前往
+         Done      —>    完成
+         Send      —>    发送
+         Search   —>  搜索
+        */
+        type: 'Done',
         textMin: 20, //文字要求最少输入字符数
         textMax: 500 //文字要求最多输入字符数
     },
     //输入结束的回调或者说点击发送时候的回调
     callback: function (data) {
         var content = data.content;//文字内容
-        scope.$('js-val01').html(content);
+        scope.$('.js-val01').html(content);
     }
 });
 

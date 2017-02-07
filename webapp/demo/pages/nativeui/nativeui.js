@@ -32,8 +32,13 @@
 _.requestHybrid({
     tagname: 'showKeyboard',
     param: {
-        //键盘按钮文案
-        btnText: '确定',
+        /*键盘按钮文案
+         GO 	      —>    前往
+         Done      —>    完成
+         Send      —>    发送
+         Search   —>  搜索
+        */
+        type: 'Done',
         textMin: 20, //文字要求最少输入字符数
         textMax: 500 //文字要求最多输入字符数
     },
