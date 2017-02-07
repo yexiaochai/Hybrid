@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03689e4e-9a4c-4d7a-955c-18fed9b863b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" afterPath="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
     </list>
     <ignored path="Hybrid.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +39,8 @@
           <file leaf-file-name="nativeui.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.59572303">
-                  <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+                <state vertical-scroll-proportion="0.73319757">
+                  <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -539,7 +540,13 @@
       <option name="project" value="LOCAL" />
       <updated>1486438020336</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="demo">
+      <created>1486438062120</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1486438062120</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -671,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59572303">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.166666">
@@ -691,6 +690,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2348643">
           <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73319757">
+          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
           <folding />
         </state>
       </provider>
