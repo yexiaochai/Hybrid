@@ -33,12 +33,14 @@ _.requestHybrid({
     tagname: 'showKeyboard',
     param: {
         /*键盘按钮文案
-         GO 	      —>    前往
          Done      —>    完成
          Send      —>    发送
          Search   —>  搜索
         */
         type: 'Done',
+        //如果设计了btnTxt type属性便失效,文本变成多行输入,并且多一个按钮,模仿头条
+        btnTxt: '按钮文字',
+
         tips: '描述信息',
         textMin: 20, //文字要求最少输入字符数
         textMax: 500 //文字要求最多输入字符数
