@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03689e4e-9a4c-4d7a-955c-18fed9b863b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" afterPath="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" afterPath="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
     </list>
     <ignored path="Hybrid.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +29,8 @@
           <file leaf-file-name="img.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/img.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-25.555555">
-                  <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="48" column="64" selection-start-line="36" selection-start-column="8" selection-end-line="48" selection-end-column="64" />
                   <folding />
                 </state>
               </provider>
@@ -39,8 +39,18 @@
           <file leaf-file-name="nativeui.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5036649">
-                  <caret line="37" column="24" selection-start-line="40" selection-start-column="8" selection-end-line="41" selection-end-column="23" />
+                <state vertical-scroll-proportion="0.56020945">
+                  <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="share.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/share.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="190" column="19" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -49,7 +59,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/tpl.layout.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -63,8 +73,18 @@
           <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.20354906">
-                  <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.5772443">
+                  <caret line="113" column="12" selection-start-line="113" selection-start-column="12" selection-end-line="113" selection-end-column="12" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tpl.layout.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-19.291666">
+                  <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -82,16 +102,17 @@
       <list>
         <option value="$PROJECT_DIR$/webapp/hybrid_ver.json" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/index/index.js" />
-        <option value="$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/closewebview/closewebview.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/closewebview/tpl.layout.html" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/closewebview.js" />
-        <option value="$PROJECT_DIR$/webapp/demo/pages/share/share.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/index/tpl.layout.html" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/img/tpl.layout.html" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/img/img.js" />
-        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/share/share.js" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html" />
+        <option value="$PROJECT_DIR$/webapp/blade/libs/underscore.extend.js" />
         <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html" />
+        <option value="$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js" />
       </list>
     </option>
   </component>
@@ -130,6 +151,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,14 +355,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hybrid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hybrid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../work/h5/webapp/d2d" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../work/h5/webapp/mass" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -534,14 +573,158 @@
       <option name="project" value="LOCAL" />
       <updated>1486460325589</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="demo">
+      <created>1486460394114</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1486460394114</updated>
+    </task>
+    <task id="LOCAL-00022" summary="demo">
+      <created>1486460844226</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1486460844226</updated>
+    </task>
+    <task id="LOCAL-00023" summary="demo">
+      <created>1486465833654</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1486465833654</updated>
+    </task>
+    <task id="LOCAL-00024" summary="demo">
+      <created>1486467713960</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1486467713960</updated>
+    </task>
+    <task id="LOCAL-00025" summary="demo">
+      <created>1486468449615</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1486468449615</updated>
+    </task>
+    <task id="LOCAL-00026" summary="demo">
+      <created>1486468606807</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1486468606807</updated>
+    </task>
+    <task id="LOCAL-00027" summary="demo">
+      <created>1486471644427</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1486471644427</updated>
+    </task>
+    <task id="LOCAL-00028" summary="demo">
+      <created>1486522693297</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1486522693297</updated>
+    </task>
+    <task id="LOCAL-00029" summary="demo">
+      <created>1486523014613</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1486523014613</updated>
+    </task>
+    <task id="LOCAL-00030" summary="demo">
+      <created>1486523025228</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1486523025228</updated>
+    </task>
+    <task id="LOCAL-00031" summary="demo">
+      <created>1486523178234</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1486523178234</updated>
+    </task>
+    <task id="LOCAL-00032" summary="demo">
+      <created>1486523791465</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1486523791465</updated>
+    </task>
+    <task id="LOCAL-00033" summary="demo">
+      <created>1486523853530</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1486523853530</updated>
+    </task>
+    <task id="LOCAL-00034" summary="demo">
+      <created>1486524586467</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1486524586468</updated>
+    </task>
+    <task id="LOCAL-00035" summary="demo">
+      <created>1486524857492</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1486524857492</updated>
+    </task>
+    <task id="LOCAL-00036" summary="demo">
+      <created>1486524871554</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1486524871554</updated>
+    </task>
+    <task id="LOCAL-00037" summary="demo">
+      <created>1486525241639</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1486525241639</updated>
+    </task>
+    <task id="LOCAL-00038" summary="demo">
+      <created>1486527999589</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1486527999589</updated>
+    </task>
+    <task id="LOCAL-00039" summary="demo">
+      <created>1486532757346</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1486532757346</updated>
+    </task>
+    <task id="LOCAL-00040" summary="demo">
+      <created>1486532775133</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1486532775134</updated>
+    </task>
+    <task id="LOCAL-00041" summary="demo">
+      <created>1486532816229</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1486532816229</updated>
+    </task>
+    <task id="LOCAL-00042" summary="demo">
+      <created>1486535361088</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1486535361088</updated>
+    </task>
+    <task id="LOCAL-00043" summary="demo">
+      <created>1486536375669</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1486536375669</updated>
+    </task>
+    <task id="LOCAL-00044" summary="demo">
+      <created>1486536527755</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1486536527755</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16166404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16166404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -595,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -603,7 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.0">
           <caret line="24" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="196" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -631,33 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/blade/libs/underscore.extend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="727" column="8" selection-start-line="727" selection-start-column="8" selection-end-line="727" selection-end-column="8" />
-          <folding>
-            <marker date="1468227945000" expanded="true" signature="24515:24529" placeholder="..." />
-            <marker date="1468227945000" expanded="true" signature="24928:24942" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.166666">
-          <caret line="191" column="6" selection-start-line="191" selection-start-column="6" selection-end-line="191" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/share.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7777777">
-          <caret line="31" column="23" selection-start-line="18" selection-start-column="0" selection-end-line="31" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -670,14 +823,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28183717">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/img/img.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.555555">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="64" selection-start-line="36" selection-start-column="8" selection-end-line="48" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -690,18 +842,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/tpl.layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5036649">
-          <caret line="37" column="24" selection-start-line="40" selection-start-column="8" selection-end-line="41" selection-end-column="23" />
+        <state vertical-scroll-proportion="-19.291666">
+          <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/tpl.layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20354906">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5772443">
+          <caret line="113" column="12" selection-start-line="113" selection-start-column="12" selection-end-line="113" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/blade/libs/underscore.extend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22505091">
+          <caret line="829" column="36" selection-start-line="829" selection-start-column="29" selection-end-line="829" selection-end-column="36" />
+          <folding>
+            <marker date="1486536369000" expanded="true" signature="24574:24588" placeholder="..." />
+            <marker date="1486536369000" expanded="true" signature="24987:25001" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/share/share.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="190" column="19" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/demo/pages/nativeui/nativeui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56020945">
+          <caret line="109" column="39" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
           <folding />
         </state>
       </provider>
