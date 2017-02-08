@@ -59,14 +59,14 @@ _.requestHybrid({
         type: 'Done',
         //如果设计了btnTxt type属性便失效,文本变成多行输入,并且多一个按钮,模仿头条
         btnTxt: '发送',
-        value:  scope.$('.js-val01').html().trim(),
+        value:  scope.$('.js-val01').val().trim(),
         tips: '描述信息',
         textMin: 20, //文字要求最少输入字符数
         textMax: 500 //文字要求最多输入字符数
     },
     //输入结束的回调或者说点击发送时候的回调
     callback: function (data) {
-        scope.$('.js-val01').html(data);
+        scope.$('.js-val01').val(data);
     }
 });
 
