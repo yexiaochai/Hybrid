@@ -730,6 +730,8 @@
     var bridgePostMsg = function (params) {
         var url = _getHybridUrl(params);
 
+        console.log(url);
+
         //兼容ios6
         var ifr = $('<iframe style="display: none;" src="' + url + '"/>');
         $('body').append(ifr);
