@@ -62,7 +62,7 @@ _.requestHybrid({
         value:  scope.$('.js-val01').val().trim(),
         tips: '描述信息',
         textMin: 5, //文字要求最少输入字符数
-        textMax: 500 //文字要求最多输入字符数
+        textMax: 20 //文字要求最多输入字符数
     },
     //输入结束的回调或者说点击发送时候的回调
     callback: function (data) {
