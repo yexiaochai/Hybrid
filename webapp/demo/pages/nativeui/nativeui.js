@@ -101,7 +101,7 @@ _.requestHybrid({
                              Send      —>    发送
                              Search   —>  搜索
                              */
-                            type: 'Done',
+                            type: 'Search',
                             //如果设计了btnTxt type属性便失效,文本变成多行输入,并且多一个按钮,模仿头条
                             //btnTxt: '发送',
                             value:  scope.$('.js-val01').val().trim(),
