@@ -136,8 +136,8 @@ _.requestHybrid({
 _.requestHybrid({
     tagname: 'getLocation',
     callback: function(data) {
-        var latitude = data.lat; // 纬度，浮点数，范围为90 ~ -90
-        var longitude = data.lng; // 经度，浮点数，范围为180 ~ -180。
+        var latitude = data.pos.lat; // 纬度，浮点数，范围为90 ~ -90
+        var longitude = data.pos.lng; // 经度，浮点数，范围为180 ~ -180。
         //var speed = data.speed; // 速度，以米/每秒计
         //var accuracy = data.accuracy; // 位置精度
 
