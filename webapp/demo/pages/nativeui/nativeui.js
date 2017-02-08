@@ -144,7 +144,7 @@ _.requestHybrid({
 //根据经纬度等信息打开native地图
         _.requestHybrid({
             tagname: 'openMap',
-            params: {
+            param: {
                 latitude: latitude, // 纬度，浮点数，范围为90 ~ -90
                 longitude: longitude, // 经度，浮点数，范围为180 ~ -180。
                 name: '你现在的位置', // 位置名
