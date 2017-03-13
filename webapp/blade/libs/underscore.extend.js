@@ -1,5 +1,5 @@
 //继承相关逻辑
-(function () {
+(function() {
 
     // 全局可能用到的变量
     var arr = [];
@@ -11,7 +11,7 @@
      * @param  {object}   methods 被创建类的成员，扩展的方法和属性
      * @return {function}         继承之后的子类
      */
-    _.inherit = function (origin, methods) {
+    _.inherit = function(origin, methods) {
 
         // 参数检测，该继承方法，只支持一个参数创建类，或者两个参数继承类
         if (arguments.length === 0 || arguments.length > 2) throw '参数错误';
@@ -39,8 +39,7 @@
 
         if (parent) {
             // 中间过渡类，防止parent的构造函数被执行
-            var subclass = function () {
-            };
+            var subclass = function() {};
             subclass.prototype = parent.prototype;
             klass.prototype = new subclass();
 
@@ -57,11 +56,11 @@
                 var argslist = /^\s*function\s*\(([^\(\)]*?)\)\s*?\{/i.exec(value.toString())[1].replace(/\s/g, '').split(',');
                 //只有在第一个参数为$super情况下才需要处理（是否具有重复方法需要用户自己决定）
                 if (argslist[0] === '$super' && ancestor[k]) {
-                    value = (function (methodName, fn) {
-                        return function () {
+                    value = (function(methodName, fn) {
+                        return function() {
                             var scope = this;
                             var args = [
-                                function () {
+                                function() {
                                     return ancestor[methodName].apply(scope, arguments);
                                 }
                             ];
@@ -91,8 +90,7 @@
         }
 
         if (!klass.prototype.initialize)
-            klass.prototype.initialize = function () {
-            };
+            klass.prototype.initialize = function() {};
 
         klass.prototype.constructor = klass;
 
@@ -101,13 +99,68 @@
 
 })();
 
+//时间间距类
+(function() {
+    var Unit = {
+        year: 1000 * 60 * 60 * 24 * 365, //不考虑闰年
+        day: 1000 * 60 * 60 * 24,
+        hour: 1000 * 60 * 60,
+        minute: 1000 * 60
+    }
+    /*
+     规则：
+     (1)1小时以内：刚刚
+     (2)24小时以内：n小时
+     (3)超过24小时：天
+     (4)超过3天： 显示日期 6月15日
+     产品说暂时不考虑超过年，
+     目前还是设置好，
+     (5)超过年用2014年6月15日，显示全
+
+     依赖dateUtil
+     */
+    _.beforeIntervalTime = function(before, current) { //传入的值全部是毫秒
+        current = current || new Date().getTime();
+        var interval = current - before;
+        if (interval < 0) return '参数错误';
+        //规则(5)
+        if (interval >= Unit.year) return _.dateUtil.format(before, 'Y年M月D日');
+        //规则(4)
+        if (interval >= Unit.day * 3) return _.dateUtil.format(before, 'M月D日');
+        //规则(3)
+        if (interval >= Unit.day) return Math.floor(interval / Unit.day) + '天前';
+        //规则(2)
+        if (interval >= Unit.hour) return Math.floor(interval / Unit.hour) + '小时前';
+        //规则(1)
+        if (interval >= 0) return '刚刚';
+    };
+
+    /*
+     规则：
+     (1)24小时以内：n小时n秒
+     (2)超过24小时：天
+
+     依赖dateUtil
+     */
+    _.afterIntervalTime = function(after, current) {
+        current = current || new Date().getTime();
+        var interval = after - current;
+        if (interval < 0) return '00:00';
+        //规则(2)
+        if (interval >= Unit.day) return Math.floor(interval / Unit.day) + '天';
+        //规则(1)
+        if (interval >= 0) return Math.floor(interval / Unit.hour) + '小时' + Math.floor(interval % Unit.hour / Unit.minute) + '分';
+    };
+
+})();
+
 
 //倒计时工具类
-(function () {
+(function() {
 
     var timerKeys = {};
 
-    _.countdownTimer = function (second, changeCallback, endCallback) {
+    _.countdownTimer = function(second, changeCallback, endCallback) {
 
         //首次得形成一个唯一的key
         var key = _.uniqueId('timer_');
@@ -119,24 +172,30 @@
 
     };
 
-    _.clearCountdownTimer = function (key) {
-        if (timerKeys[key]) delete timerKeys[key];
+    _.clearCountdownTimer = function(key) {
+        if (timerKeys[key]) {
+            delete timerKeys[key];
+            return;
+        }
+        for (var k in timerKeys) {
+            delete timerKeys[k];
+        }
     };
 
-    _.countdownRepeat = function (key, second, changeCallback, endCallback) {
+    _.countdownRepeat = function(key, second, changeCallback, endCallback) {
 
         if (!timerKeys[key]) return;
 
         if (second > 0) {
-            changeCallback(second);
+            changeCallback(second, key);
         } else {
-            endCallback(second);
+            endCallback(second, key);
             return;
         }
 
         second--;
 
-        setTimeout(function () {
+        setTimeout(function() {
             _.countdownRepeat(key, second, changeCallback, endCallback);
         }, 1000)
     };
@@ -145,21 +204,20 @@
 })();
 
 //基础方法
-(function () {
+(function() {
 
-    _.mySubstr = function (str, len, appendStr) {
+    _.mySubstr = function(str, len, appendStr) {
         if (!str || !len) return;
         return str.length > len ? str.substr(0, len) + (appendStr || '...') : str;
     };
 
-    _.getByteLen = function (val) {
+    _.getByteLen = function(val) {
         var len = 0;
         for (var i = 0; i < val.length; i++) {
             var length = val.charCodeAt(i);
             if (length >= 0 && length <= 128) {
                 len += 1;
-            }
-            else {
+            } else {
                 len += 2;
             }
         }
@@ -167,7 +225,7 @@
     };
 
     //中英文筛选,以中文为标准中文size为2英文数字为1
-    _.mySubstr2 = function (str, len) {
+    _.mySubstr2 = function(str, len) {
         if (!str || !len) return;
         //计算真实的长度
         var _len = _.getByteLen(str);
@@ -177,28 +235,27 @@
             var length = str.charCodeAt(i);
             if (length >= 0 && length <= 128) {
                 tmpLen += 1;
-            }
-            else {
+            } else {
                 tmpLen += 2;
             }
-            if(tmpLen >= len * 2) break;
+            if (tmpLen >= len * 2) break;
         }
 
         return str.length > i ? str.substr(0, i) + '...' : str;
     };
 
-    _.removeHTMLTag = function (str) {
+    _.removeHTMLTag = function(str) {
         if (!str) return;
         str = str.replace(/<\/?[^>]*>/g, ''); //去除HTML tag
         str = str.replace(/[ | ]*\n/g, '\n'); //去除行尾空白
         //str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
-        str = str.replace(/ /ig, ''); //去掉 
+        str = str.replace(/ /ig, ''); //去掉
         return str;
     };
 
     // //获取url参数
     // //这个方法还是有问题
-    _.getUrlParam = function (url, key) {
+    _.getUrlParam = function(url, key) {
         if (!url) url = window.location.href;
 
         var searchReg = /([^&=?]+)=([^&]+)/g;
@@ -231,7 +288,7 @@
         return key ? urlParams[key] : urlParams;
     };
 
-    _.isWeiXin = function () {
+    _.isWeiXin = function() {
         var ua = window.navigator.userAgent.toLowerCase();
         if (ua.match(/MicroMessenger/i) == 'micromessenger') {
             return true;
@@ -239,7 +296,7 @@
             return false;
         }
     };
-    _.isMedlinker = function () {
+    _.isMedlinker = function() {
         var ua = window.navigator.userAgent.toLowerCase();
         if (ua.match(/medlinker\/\d/i)) {
             return true;
@@ -247,236 +304,32 @@
             return false;
         }
     };
+    /**
+     * 自定义图片尺寸
+     */
+    _.formatQiniuImage = function(img, w, h) {
+        var _w = w || 200,
+          _h = h || '';
+        if (img) {
+            if (_h === '') {
+                return img.indexOf('?') > -1 ? img + '&imageView2/2/w/' + _w : img + '?imageView2/2/w/' + _w;
+            } else {
+                return img.indexOf('?') > -1 ? img + '&imageView2/1/w/' + _w + '/h/' + _h : img + '?imageView2/1/w/' + _w + '/h/' + _h;
+            }
+        }
 
-    _.removeAllSpace = function (str) {
+    };
+    _.removeAllSpace = function(str) {
         if (str) str = str.toString();
         else return '';
         return str.replace(/\s+/g, "");
-    };
-
-    _.getMD5String = function (string) {
-
-        function RotateLeft(lValue, iShiftBits) {
-            return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
-        }
-
-        function AddUnsigned(lX, lY) {
-            var lX4, lY4, lX8, lY8, lResult;
-            lX8 = (lX & 0x80000000);
-            lY8 = (lY & 0x80000000);
-            lX4 = (lX & 0x40000000);
-            lY4 = (lY & 0x40000000);
-            lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
-            if (lX4 & lY4) {
-                return (lResult ^ 0x80000000 ^ lX8 ^ lY8);
-            }
-            if (lX4 | lY4) {
-                if (lResult & 0x40000000) {
-                    return (lResult ^ 0xC0000000 ^ lX8 ^ lY8);
-                } else {
-                    return (lResult ^ 0x40000000 ^ lX8 ^ lY8);
-                }
-            } else {
-                return (lResult ^ lX8 ^ lY8);
-            }
-        }
-
-        function F(x, y, z) {
-            return (x & y) | ((~x) & z);
-        }
-
-        function G(x, y, z) {
-            return (x & z) | (y & (~z));
-        }
-
-        function H(x, y, z) {
-            return (x ^ y ^ z);
-        }
-
-        function I(x, y, z) {
-            return (y ^ (x | (~z)));
-        }
-
-        function FF(a, b, c, d, x, s, ac) {
-            a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
-            return AddUnsigned(RotateLeft(a, s), b);
-        };
-
-        function GG(a, b, c, d, x, s, ac) {
-            a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
-            return AddUnsigned(RotateLeft(a, s), b);
-        };
-
-        function HH(a, b, c, d, x, s, ac) {
-            a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
-            return AddUnsigned(RotateLeft(a, s), b);
-        };
-
-        function II(a, b, c, d, x, s, ac) {
-            a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
-            return AddUnsigned(RotateLeft(a, s), b);
-        };
-
-        function ConvertToWordArray(string) {
-            var lWordCount;
-            var lMessageLength = string.length;
-            var lNumberOfWords_temp1 = lMessageLength + 8;
-            var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % 64)) / 64;
-            var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
-            var lWordArray = Array(lNumberOfWords - 1);
-            var lBytePosition = 0;
-            var lByteCount = 0;
-            while (lByteCount < lMessageLength) {
-                lWordCount = (lByteCount - (lByteCount % 4)) / 4;
-                lBytePosition = (lByteCount % 4) * 8;
-                lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) << lBytePosition));
-                lByteCount++;
-            }
-            lWordCount = (lByteCount - (lByteCount % 4)) / 4;
-            lBytePosition = (lByteCount % 4) * 8;
-            lWordArray[lWordCount] = lWordArray[lWordCount] | (0x80 << lBytePosition);
-            lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
-            lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
-            return lWordArray;
-        };
-
-        function WordToHex(lValue) {
-            var WordToHexValue = "", WordToHexValue_temp = "", lByte, lCount;
-            for (lCount = 0; lCount <= 3; lCount++) {
-                lByte = (lValue >>> (lCount * 8)) & 255;
-                WordToHexValue_temp = "0" + lByte.toString(16);
-                WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
-            }
-            return WordToHexValue;
-        };
-
-        function Utf8Encode(string) {
-            string = string.replace(/\r\n/g, "\n");
-            var utftext = "";
-
-            for (var n = 0; n < string.length; n++) {
-
-                var c = string.charCodeAt(n);
-
-                if (c < 128) {
-                    utftext += String.fromCharCode(c);
-                }
-                else if ((c > 127) && (c < 2048)) {
-                    utftext += String.fromCharCode((c >> 6) | 192);
-                    utftext += String.fromCharCode((c & 63) | 128);
-                }
-                else {
-                    utftext += String.fromCharCode((c >> 12) | 224);
-                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
-                    utftext += String.fromCharCode((c & 63) | 128);
-                }
-
-            }
-
-            return utftext;
-        };
-
-        var x = Array();
-        var k, AA, BB, CC, DD, a, b, c, d;
-        var S11 = 7, S12 = 12, S13 = 17, S14 = 22;
-        var S21 = 5, S22 = 9, S23 = 14, S24 = 20;
-        var S31 = 4, S32 = 11, S33 = 16, S34 = 23;
-        var S41 = 6, S42 = 10, S43 = 15, S44 = 21;
-
-        string = Utf8Encode(string);
-
-        x = ConvertToWordArray(string);
-
-        a = 0x67452301;
-        b = 0xEFCDAB89;
-        c = 0x98BADCFE;
-        d = 0x10325476;
-
-        for (k = 0; k < x.length; k += 16) {
-            AA = a;
-            BB = b;
-            CC = c;
-            DD = d;
-            a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
-            d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
-            c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
-            b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
-            a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
-            d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
-            c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
-            b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
-            a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
-            d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
-            c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
-            b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
-            a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
-            d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
-            c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
-            b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
-            a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
-            d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
-            c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
-            b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
-            a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
-            d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
-            c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
-            b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
-            a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
-            d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
-            c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
-            b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
-            a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
-            d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
-            c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
-            b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
-            a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
-            d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
-            c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
-            b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
-            a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
-            d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
-            c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
-            b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
-            a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
-            d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
-            c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
-            b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
-            a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
-            d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
-            c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
-            b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
-            a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
-            d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
-            c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
-            b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
-            a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
-            d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
-            c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
-            b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
-            a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
-            d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
-            c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
-            b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
-            a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
-            d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
-            c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
-            b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
-            a = AddUnsigned(a, AA);
-            b = AddUnsigned(b, BB);
-            c = AddUnsigned(c, CC);
-            d = AddUnsigned(d, DD);
-        }
-
-        var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
-
-        return temp.toLowerCase();
     };
 
 })();
 
 
 //日期操作类
-(function () {
+(function() {
 
     /**
      * @description 静态日期操作类，封装系列日期操作方法
@@ -486,9 +339,11 @@
     _.dateUtil = {
 
         //根据一个日期获取所有信息
-        getDetail: function (date) {
+        getDetail: function(date) {
             if (!date) date = new Date();
-            var d, now = new Date(), dateInfo = {}, _diff;
+            var d, now = new Date(),
+              dateInfo = {},
+              _diff;
             var weekDayArr = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
 
             if (_.isNumber(date)) {
@@ -525,7 +380,7 @@
          * @description 数字操作，
          * @return {string} 返回处理后的数字
          */
-        formatNum: function (n) {
+        formatNum: function(n) {
             if (n < 10) return '0' + n;
             return n;
         },
@@ -533,7 +388,7 @@
          * @description 将字符串转换为日期，支持格式y-m-d ymd (y m r)以及标准的
          * @return {Date} 返回日期对象
          */
-        parse: function (dateStr, formatStr) {
+        parse: function(dateStr, formatStr) {
             if (typeof dateStr === 'undefined') return null;
             if (typeof formatStr === 'string') {
                 var _d = new Date(formatStr);
@@ -541,7 +396,7 @@
                 var arrStr = formatStr.replace(/[^ymd]/g, '').split('');
                 if (!arrStr && arrStr.length != 3) return null;
 
-                var formatStr = formatStr.replace(/y|m|d/g, function (k) {
+                var formatStr = formatStr.replace(/y|m|d/g, function(k) {
                     switch (k) {
                         case 'y':
                             return '(\\d{4})';
@@ -567,7 +422,7 @@
          * @description将日期格式化为字符串
          * @return {string} 常用格式化字符串
          */
-        format: function (date, format) {
+        format: function(date, format) {
             if (arguments.length < 2 && !date.getTime) {
                 format = date;
                 date = new Date();
@@ -578,7 +433,7 @@
             }
 
             typeof format != 'string' && (format = 'Y年M月D日 H时F分S秒');
-            return format.replace(/Y|y|M|m|D|d|H|h|F|f|S|s/g, function (a) {
+            return format.replace(/Y|y|M|m|D|d|H|h|F|f|S|s/g, function(a) {
                 switch (a) {
                     case "y":
                         return (date.getFullYear() + "").slice(2);
@@ -610,14 +465,14 @@
         // @description 是否为为日期对象，该方法可能有坑，使用需要慎重
         // @param year {num} 日期对象
         // @return {boolean} 返回值
-        isDate: function (d) {
+        isDate: function(d) {
             if ((typeof d == 'object') && (d instanceof Date)) return true;
             return false;
         },
         // @description 是否为闰年
         // @param year {num} 可能是年份或者为一个date时间
         // @return {boolean} 返回值
-        isLeapYear: function (year) {
+        isLeapYear: function(year) {
             //传入为时间格式需要处理
             if (_.dateUtil.isDate(year)) year = year.getFullYear()
             if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) return true;
@@ -628,7 +483,7 @@
         // @param year {num} 可能是年份或者为一个date时间
         // @param year {num} 月份
         // @return {num} 返回天数
-        getDaysOfMonth: function (year, month) {
+        getDaysOfMonth: function(year, month) {
             //自动减一以便操作
             month--;
             if (_.dateUtil.isDate(year)) {
@@ -642,7 +497,7 @@
         // @param year {num} 可能是年份或者为一个date时间
         // @param year {num} 月份
         // @return {num} 当月一号为星期几0-6
-        getBeginDayOfMouth: function (year, month) {
+        getBeginDayOfMouth: function(year, month) {
             //自动减一以便操作
             month--;
             if ((typeof year == 'object') && (year instanceof Date)) {
@@ -654,7 +509,7 @@
         },
 
         //不同时区皆返回北京时间
-        getBeijingDate: function (d) {
+        getBeijingDate: function(d) {
             var tmp, localTime, localOffset, beijiTime, utc;
             if (!_.isDate(d)) {
                 tmp = d;
@@ -676,7 +531,7 @@
             return d;
         },
 
-        setBeijingDate: function (d) {
+        setBeijingDate: function(d) {
             var tmp, localTime, localOffset, beijiTime, utc;
             if (!_.isDate(d)) {
                 tmp = d;
@@ -702,11 +557,41 @@
 
 })();
 
+
 //Hybrid基本逻辑
-(function () {
+(function() {
     window.Hybrid = window.Hybrid || {};
     window.Hybrid.ui = window.Hybrid.ui || {};
-
+    //Hybrid.callback = function (data) {
+    //    var callbackId = data.callback;
+    //    if(!callbackId) return;
+    //
+    //    //alert(typeof data);
+    //    //alert(callbackId);
+    //    //
+    //    //showFormatData(Hybrid);
+    //
+    //    if(typeof data == 'string') data = JSON.parse(data);
+    //
+    //    if(data.errno) data.errcode = 0;
+    //
+    //    data = data.data;
+    //
+    //    if(typeof data == 'string' && data.length > 0) data = JSON.parse(data);
+    //
+    //
+    //    if(data.errcode !== 0) {
+    //        APP && APP.showToast(data.errmsg);
+    //        return;
+    //    }
+    //
+    //    if(callbackId.indexOf('header_') != -1 && Hybrid['Header_Event']) {
+    //        Hybrid['Header_Event'][callbackId] && Hybrid['Header_Event'][callbackId](data || {});
+    //    } else {
+    //        Hybrid[callbackId] && Hybrid[callbackId](data || {});
+    //    }
+    //    return true;
+    //};
 
     Hybrid.callback = function(data) {
         var callbackId = data.callback;
@@ -727,15 +612,23 @@
         return true;
     };
 
-    var bridgePostMsg = function (params) {
+    var bridgePostMsg = function(params) {
         var url = _getHybridUrl(params);
-
-        console.log(url);
 
         //兼容ios6
         var ifr = $('<iframe style="display: none;" src="' + url + '"/>');
-        $('body').append(ifr);
-        setTimeout(function () {
+
+        console.log(params.tagname + '-hybrid请求发出-' + new Date().getTime() + 'url: ' + url)
+
+        //Android情况协议发的太快会有问题
+        if ($.os.android) {
+            setTimeout(function() {
+                $('body').append(ifr);
+            })
+        } else {
+            $('body').append(ifr);
+        }
+        setTimeout(function() {
             ifr.remove();
             ifr = null;
         }, 1000);
@@ -749,15 +642,17 @@
             //Android实现
             var ifr = $('<iframe style="display: none;" src="' + url + '"/>');
             $('body').append(ifr);
-            setTimeout(function () {
+            setTimeout(function() {
                 ifr.remove();
                 ifr = null;
             }, 1000)
         }
     };
 
-    var _getHybridUrl = function (params) {
-        var k, paramStr = '', url = 'hybrid://', flag = '?';
+    var _getHybridUrl = function(params) {
+        var k, paramStr = '',
+          url = 'med' + (getHybridInfo().app || 'medlinker') + 'hybrid://',
+          flag = '?';
         url += params.tagname; //时间戳，防止url不起效
 
         if (params.callback) {
@@ -772,8 +667,8 @@
         return url;
     };
 
-    _setEvent = function (t, tmpFn) {
-        window.Hybrid[t] = function (data) {
+    _setEvent = function(t, tmpFn) {
+        window.Hybrid[t] = function(data) {
             tmpFn(data);
             delete window.Hybrid[t];
         };
@@ -784,8 +679,8 @@
         var tmpFn, data = {};
         var t;
 
-        for(var key in events) {
-            t = 'hybrid_' + tagname +  '_' + key;
+        for (var key in events) {
+            t = 'hybrid_' + tagname + '_' + key;
             data[key] = t;
             tmpFn = events[key];
             _setEvent(t, tmpFn);
@@ -794,13 +689,13 @@
         return data;
     };
 
-    var requestHybrid = function (params) {
-        if(!params.tagname) {
+    var requestHybrid = function(params) {
+        if (!params.tagname) {
             alert('必须包含tagname');
         }
         //生成唯一执行函数，执行后销毁
-        var tt = (new Date().getTime());
-        var t = 'hybrid_' + params.tagname +  '_' + tt;
+        var tt = (new Date().getTime()) + '_' + _.uniqueId() + '_';
+        var t = 'hybrid_' + params.tagname + '_' + tt;
         var tmpFn;
 
         ////针对组件通信做的特殊处理
@@ -813,27 +708,30 @@
             tmpFn = params.callback;
             params.callback = t;
 
-            window.Hybrid[t] = function (data) {
+            window.Hybrid[t] = function(data) {
+
+                console.log(params.tagname + '-hybrid请求响应-' + new Date().getTime())
+
                 tmpFn(data);
-                delete window.Hybrid[t];
+                //delete window.Hybrid[t];
             }
         }
 
         bridgePostMsg(params);
     };
 
-    var getHybridInfo = function () {
+    var getHybridInfo = function() {
         var platform_version = {};
         var na = navigator.userAgent;
         na = na.toLowerCase();
-
-        var info = na.match(/hybrid_\d\.\d\.\d/);
+        var info = na.match(/med_hybrid_\w+_\d\.\d\.\d/);
 
         if (info && info[0]) {
             info = info[0].split('_');
-            if (info && info.length == 2) {
-                platform_version.platform = info[0];
-                platform_version.version = info[1];
+            if (info && info.length == 4) {
+                platform_version.platform = info[1];
+                platform_version.app = info[2];
+                platform_version.version = info[3];
             }
         }
 
@@ -846,30 +744,30 @@
         return platform_version;
     };
 
-    var getVer = function () {
+    var getVer = function() {
         var ver = getHybridInfo().version.replace(/\./g, '');
         if (ver) return parseInt(ver);
         return 0;
     };
 
     //版本在多少
-    var versionAt = function (ver) {
+    var versionAt = function(ver) {
         if (ver == getVer()) return true;
         return false;
     };
 
-    var versionBefore = function (ver) {
+    var versionBefore = function(ver) {
         if (getVer() < ver) return true;
         return false;
 
     };
 
-    var versionAfter = function (ver) {
+    var versionAfter = function(ver) {
         if (getVer() > ver) return true;
         return false;
     };
 
-    var hybridCallback = function (opts) {
+    var hybridCallback = function(opts) {
         //undefined, baidu_bus,
         var platform = _.getHybridInfo().platform || 'web';
         var mapping = {
@@ -883,14 +781,18 @@
         if (typeof callback == 'function') callback();
     };
 
-    var registerHeaderCallback = function (ns, name, callback) {
+    var registerHeaderCallback = function(ns, name, callback) {
         if (!window.Hybrid[ns]) window.Hybrid[ns] = {};
         window.Hybrid[ns][name] = callback;
     };
 
-    var unRegisterHeaderCallback = function (ns) {
+    var unRegisterHeaderCallback = function(ns) {
         if (!window.Hybrid[ns]) return;
         delete window.Hybrid[ns];
+    };
+
+    var isHybrid = function() {
+        return getHybridInfo().platform == 'hybrid';
     };
 
     _.registerHeaderCallback = registerHeaderCallback;
@@ -905,8 +807,261 @@
     _.versionAt = versionAt;
     _.versionBefore = versionBefore;
     _.versionAfter = versionAfter;
+    _._getHybridUrl = _getHybridUrl;
+    _.isHybrid = isHybrid;
+
+    // -------------------
+    // 代替openApp的一些功能
+    var ua = navigator.userAgent.toLowerCase();
+    var host = location.host;
+
+    var ENV = {
+        iOS: /(iphone|ipad|ipod|ios)/.test(ua),
+        Android: /android/.test(ua),
+        Chrome: /chrome/.test(ua),
+        QQ: /qq\//.test(ua),
+        weixin: /micromessenger/.test(ua),
+        weibo: /weibo/.test(ua),
+        momo: /momowebview/.test(ua),
+        aliapp: /aliapp/.test(ua),
+        medlinker: /med_hybrid_medlinker/.test(ua),
+        ylt: /med_hybrid_surgery/.test(ua),
+        dev: /dev.pdt5/.test(host),
+        tset: /test.pdt5/.test(host),
+        qa: /qa/.test(host)
+    };
+
+    ENV.version = (function() {
+        var version = '';
+        if (ENV.medlinker) {
+            var match = ua.match(/medlinker\/([\d.]+)/);
+            version = match && match[1] || version;
+        }
+        return version;
+    }());
+
+    ENV.matchVersion = function(v) {
+        return (new RegExp('^' + v)).test(ENV.version);
+    };
+
+    ENV.gteVersion = function(v) {
+        return (parseInt(ENV.version, 10) >= v);
+    };
+
+    // 支付
+    var PAY = {};
+
+    // 支付后的回调
+    PAY.payCallBack = function(status) {
+        _.requestHybrid({
+            tagname: 'paycallback',
+            param: {
+                status: status
+            }
+        });
+    };
+
+    // 阿里支付
+    PAY.payByAliPay = function(payInfo, Callback) {
+        _.requestHybrid({
+            tagname: 'paybyalipay',
+            param: {
+                payInfo: payInfo
+            },
+            callback: Callback
+        });
+    };
+
+    // 微信支付
+    PAY.payByWxPay = function(payInfo, Callback) {
+        _.requestHybrid({
+            tagname: 'paybywxpay',
+            param: {
+                payInfo: payInfo
+            },
+            callback: Callback
+        });
+    };
+
+    //ios 内购
+    PAY.iosbuy = function(pid, pnum) {
+        _.requestHybrid({
+            tagname: 'iosbuy',
+            param: {
+                pid: pid,
+                pnum: pnum
+            }
+        });
+    };
+
+
+    //封装native跳转
+    _.nativeForward = function (path, param) {
+        if(!path) return;
+        var topage = path;
+        if(!param) param = {};
+        var index = 0;
+        var arr = [], tmp = {};
+
+        for(var k in param ) {
+            tmp = {};
+            tmp.k = k;
+            tmp.v = param[k];
+            arr.push(tmp);
+        }
+
+        for(var i = 0, len = arr.length; i < len; i++) {
+            if(i == 0) {
+                topage += '?' + arr[i].k + '=' + encodeURIComponent(arr[i].v);
+            } else {
+                topage += '&' + arr[i].k + '=' + encodeURIComponent(arr[i].v);
+            }
+        }
+
+        _.requestHybrid({
+            tagname: 'forward',
+            param: {
+                topage: topage,
+                type: 'native'
+            }
+        });
+    };
+
+    ENV = ENV || {};
+
+    ENV.version = getHybridInfo().version || '';
+
+    _.med = {
+        env: ENV,
+        payCallBack: PAY.payCallBack,
+        payByAliPay: PAY.payByAliPay,
+        payByWxPay: PAY.payByWxPay,
+        iosbuy: PAY.iosbuy,
+        open: function (url) {
+            _.requestHybrid({
+                tagname: 'forward',
+                param: {
+                    topage: url,
+                    type: 'native'
+                }
+            });
+        },
+        setShareData: function (obj) {
+            _.requestHybrid({
+                tagname: 'share',
+                param: {
+                    title: obj.title,
+                    desc: obj.desc,
+                    image: obj.image,
+                    link: obj.url
+                },
+                callback: function(data) {
+                    //分享成功时候的回调
+                }
+            });
+        },
+        share: function (obj) {
+            _.requestHybrid({
+                tagname: 'share',
+                param: {
+                    title: obj.title,
+                    desc: obj.desc,
+                    image: obj.image,
+                    link: obj.url
+                }
+            });
+        },
+        //***bug***此处需要蔡杨改造
+        screenshot: function() {
+            _.requestHybrid({
+                tagname: 'medScreenshot'
+            });
+        },
+        //***bug***此处需要蔡杨改造
+        openLink: function (url) {
+
+            //适配在浏览器里面打开app
+            if(!isHybrid()) {
+                //var url = window.location.href + extra;
+                //return '/link?url=' + encodeURIComponent(url);
+
+                window.location = 'medmedlinkerhybrid://link?url=' + encodeURIComponent(url);
+                return;
+            }
+
+            _.requestHybrid({
+                tagname: 'forward',
+                param: {
+                    topage: '/link?url=' + encodeURIComponent(url),
+                    type: 'native'
+                }
+            });
+        },
+        medReward: function (type, id, callback ) {
+            _.requestHybrid({
+                tagname: 'medReward',
+                param: {
+                    dataId: id + '',
+                    type: type
+                },
+                callback: function(data) {
+                    callback && callback();
+                }
+            });
+        },
+        //***bug***此处需要蔡杨改造
+        medComment: function (data ,callback) {
+            //唤起输入文字的软键盘
+            _.requestHybrid({
+                tagname: 'showKeyboard',
+                param: {
+
+                    /*===图片参数===*/
+                    //如果该键盘带参数的话一定要传以下参数
+                    hasImg: 1, //必须传hasImg为1,否则认为键盘没有图片
+
+                    //文件所属分类,包括（transform(出转诊),casem(病例), question(问题), post(帖子), help(求助), secret(深夜病房), logo, avatar(头像)，chat(聊天), idCard(身份证), profile(用户信息),panel, spread, media,live)
+                    bucket: 'transform',
+                    //1代表文件传入公共盘，所有人可以访问。0代表私人盘，需要授权访问
+                    isPublic: 1,
+                    //水印文字 ,如果没传参数则没有水印
+                    //waterText: '水印文字',
+
+                    //以下是基本参数
+                    //1-9张限制
+                    count: 1,
+                    sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                    sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+                    /*===图片参数===*/
+
+                    /*键盘按钮文案
+                     Done      —>    完成
+                     Send      —>    发送
+                     Search   —>  搜索
+                     */
+                    type: 'Done',
+                    //如果设计了btnTxt type属性便失效,文本变成多行输入,并且多一个按钮,模仿头条
+                    btnTxt: '确定',
+                    value:  '',
+                    tips: '',
+                    textMin: 1, //文字要求最少输入字符数
+                    textMax: 50000 //文字要求最多输入字符数
+                },
+                //输入结束的回调或者说点击发送时候的回调
+                callback: function (data) {
+                    callback(JSON.stringify({
+                        text: data.text,
+                        ids: data.ids,
+                        urls: data.urls
+                    }))
+                }
+            });
+        }
+    };
+
+    //因为先加载我们这个再加载系统MED,所以我们这个会被覆盖
+    window.MED = _.med;
+
+
 
 })();
-
-
-
