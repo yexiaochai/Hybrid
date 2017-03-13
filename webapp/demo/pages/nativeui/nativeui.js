@@ -80,7 +80,7 @@ _.requestHybrid({
 
                             /*===图片参数===*/
                             //如果该键盘带参数的话一定要传以下参数
-                            hasImg: 1, //必须传hasImg为1,否则认为键盘没有图片
+                            hasImg: 0, //必须传hasImg为1,否则认为键盘没有图片
 
                             //文件所属分类,包括（transform(出转诊),casem(病例), question(问题), post(帖子), help(求助), secret(深夜病房), logo, avatar(头像)，chat(聊天), idCard(身份证), profile(用户信息),panel, spread, media,live)
                             bucket: 'transform',
