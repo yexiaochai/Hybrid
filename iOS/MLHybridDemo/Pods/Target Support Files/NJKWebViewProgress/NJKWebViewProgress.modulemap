@@ -1,0 +1,6 @@
+framework module NJKWebViewProgress {
+  umbrella header "NJKWebViewProgress-umbrella.h"
+
+  export *
+  module * { export * }
+}
