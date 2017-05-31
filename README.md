@@ -26,7 +26,7 @@ http://www.cnblogs.com/nildog/p/5536081.html
 
 # forward接口
 
-### 基本使用
+### 基本使用（待补充）
 {
   tagname: 'forward',
   param: {
