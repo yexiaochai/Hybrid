@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ActivityPopView" customModule="Surgery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2L-JW-iGT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.49646832191780821" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlr-91-ljM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTc-8x-Bns">
+                            <rect key="frame" x="47" y="144" width="280" height="379"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZMU-WD-shT">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="379"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pug-5i-PTJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="379"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="callBackAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sjz-Ym-TVX"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3X-hU-wIo">
+                                    <rect key="frame" x="229" y="0.0" width="51" height="51"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="51" id="OEa-q8-Fzn"/>
+                                        <constraint firstAttribute="width" constant="51" id="gBL-dd-7dZ"/>
+                                    </constraints>
+                                    <state key="normal" image="activityClose"/>
+                                    <connections>
+                                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="QTT-Lq-igP"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Pug-5i-PTJ" secondAttribute="trailing" id="6oA-b8-yTl"/>
+                                <constraint firstAttribute="width" constant="280" id="EWY-MZ-Srp"/>
+                                <constraint firstAttribute="trailing" secondItem="J3X-hU-wIo" secondAttribute="trailing" id="HDk-hz-xgv"/>
+                                <constraint firstItem="J3X-hU-wIo" firstAttribute="top" secondItem="VTc-8x-Bns" secondAttribute="top" id="LMd-JK-mER"/>
+                                <constraint firstItem="ZMU-WD-shT" firstAttribute="top" secondItem="VTc-8x-Bns" secondAttribute="top" id="ShF-t4-llC"/>
+                                <constraint firstAttribute="trailing" secondItem="ZMU-WD-shT" secondAttribute="trailing" id="VlD-ZM-4IJ"/>
+                                <constraint firstItem="Pug-5i-PTJ" firstAttribute="leading" secondItem="VTc-8x-Bns" secondAttribute="leading" id="WY7-7V-jbl"/>
+                                <constraint firstAttribute="bottom" secondItem="Pug-5i-PTJ" secondAttribute="bottom" id="ffl-Ke-jWe"/>
+                                <constraint firstItem="ZMU-WD-shT" firstAttribute="leading" secondItem="VTc-8x-Bns" secondAttribute="leading" id="mCG-9X-0qJ"/>
+                                <constraint firstAttribute="height" constant="379" id="nOv-BV-lZ0"/>
+                                <constraint firstAttribute="bottom" secondItem="ZMU-WD-shT" secondAttribute="bottom" id="tJS-3c-CsM"/>
+                                <constraint firstItem="Pug-5i-PTJ" firstAttribute="top" secondItem="VTc-8x-Bns" secondAttribute="top" id="wfo-5i-8Gw"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="VTc-8x-Bns" firstAttribute="centerY" secondItem="qlr-91-ljM" secondAttribute="centerY" id="YPf-5d-Y9E"/>
+                        <constraint firstItem="VTc-8x-Bns" firstAttribute="centerX" secondItem="qlr-91-ljM" secondAttribute="centerX" id="bTR-xX-R9R"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="A2L-JW-iGT" secondAttribute="bottom" id="Gbg-NA-X7r"/>
+                <constraint firstItem="qlr-91-ljM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LV8-jy-M5J"/>
+                <constraint firstItem="A2L-JW-iGT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SLe-UH-5en"/>
+                <constraint firstAttribute="bottom" secondItem="qlr-91-ljM" secondAttribute="bottom" id="d3H-Sp-ZXK"/>
+                <constraint firstAttribute="trailing" secondItem="A2L-JW-iGT" secondAttribute="trailing" id="guh-n8-GLJ"/>
+                <constraint firstItem="A2L-JW-iGT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kkQ-wP-3mH"/>
+                <constraint firstAttribute="trailing" secondItem="qlr-91-ljM" secondAttribute="trailing" id="lA8-bc-MwI"/>
+                <constraint firstItem="qlr-91-ljM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tYN-Uo-1kb"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundView" destination="A2L-JW-iGT" id="tp4-8E-Ird"/>
+                <outlet property="contentView" destination="VTc-8x-Bns" id="jBu-YB-DYx"/>
+                <outlet property="imageView" destination="ZMU-WD-shT" id="yP7-0E-Gym"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="60.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="activityClose" width="31" height="31"/>
+    </resources>
+</document>

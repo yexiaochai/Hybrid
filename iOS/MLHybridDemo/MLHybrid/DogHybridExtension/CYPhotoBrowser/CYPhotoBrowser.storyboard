@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jw2-va-Aip">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Browser-->
+        <scene sceneID="enY-yD-nPD">
+            <objects>
+                <viewController storyboardIdentifier="CYPhotoBrowser" id="Jw2-va-Aip" customClass="CYPhotoBrowser" customModule="MedLinker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j4S-L2-Uh4"/>
+                        <viewControllerLayoutGuide type="bottom" id="J13-bf-TXz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xFY-8h-BaV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyD-k2-Cni">
+                                <rect key="frame" x="315" y="593" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="DaM-sm-U5i"/>
+                                    <constraint firstAttribute="height" constant="60" id="THe-Rz-Pfb"/>
+                                </constraints>
+                                <state key="normal" image="galleryDownload"/>
+                                <connections>
+                                    <action selector="downloadClick:" destination="Jw2-va-Aip" eventType="touchUpInside" id="nYU-cC-RXv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wd-86-gDM">
+                                <rect key="frame" x="157" y="614" width="60" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="H3w-OF-7NL"/>
+                                    <constraint firstAttribute="height" constant="17" id="u2k-C8-PBT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.3921568627" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Wd-86-gDM" firstAttribute="centerX" secondItem="xFY-8h-BaV" secondAttribute="centerX" id="IL5-UK-pft"/>
+                            <constraint firstItem="J13-bf-TXz" firstAttribute="top" secondItem="6Wd-86-gDM" secondAttribute="bottom" constant="36" id="RGs-bd-reK"/>
+                            <constraint firstItem="J13-bf-TXz" firstAttribute="top" secondItem="nyD-k2-Cni" secondAttribute="bottom" constant="14" id="Zmh-pw-dRL"/>
+                            <constraint firstAttribute="trailing" secondItem="nyD-k2-Cni" secondAttribute="trailing" id="lwe-aP-xcS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicatorLabel" destination="6Wd-86-gDM" id="nQc-gm-bWD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2e-71-GIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="-42.728635682158924"/>
+        </scene>
+        <!--Photo Detail Controller-->
+        <scene sceneID="dvt-nV-sN2">
+            <objects>
+                <viewController storyboardIdentifier="CYPhotoDetailController" automaticallyAdjustsScrollViewInsets="NO" id="uT3-ur-Uw5" customClass="CYPhotoDetailController" customModule="MedLinker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GuS-dm-kZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="iAB-8Z-WHG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QUa-aZ-tNS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ni9-Hk-nTS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="uT3-ur-Uw5" id="AGf-GO-leh"/>
+                                    <outletCollection property="gestureRecognizers" destination="clT-jQ-ub7" appends="YES" id="5Xr-6x-6SZ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iAB-8Z-WHG" firstAttribute="top" secondItem="ni9-Hk-nTS" secondAttribute="bottom" id="M32-NK-Ns2"/>
+                            <constraint firstItem="ni9-Hk-nTS" firstAttribute="top" secondItem="QUa-aZ-tNS" secondAttribute="top" id="NAv-TZ-I9g"/>
+                            <constraint firstItem="ni9-Hk-nTS" firstAttribute="leading" secondItem="QUa-aZ-tNS" secondAttribute="leading" id="hLR-1h-2x3"/>
+                            <constraint firstAttribute="trailing" secondItem="ni9-Hk-nTS" secondAttribute="trailing" id="zEh-Y6-BzT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="ni9-Hk-nTS" id="KlC-4n-J7S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REu-8j-KYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="clT-jQ-ub7">
+                    <connections>
+                        <action selector="back:" destination="uT3-ur-Uw5" id="Wba-k3-9mU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="436" y="-43.628185907046479"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="galleryDownload" width="17" height="17"/>
+    </resources>
+</document>

@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAA32E0ABD1843260458F5CE /* Pods_MLHybridDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1A6CFC099073442A78DFCF /* Pods_MLHybridDemo.framework */; };
+		B59162C01EDEBEE500D1B466 /* MLHybridContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162671EDEBEE400D1B466 /* MLHybridContentView.swift */; };
+		B59162C11EDEBEE500D1B466 /* MLHybridTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162681EDEBEE500D1B466 /* MLHybridTools.swift */; };
+		B59162C21EDEBEE500D1B466 /* MLHybridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162691EDEBEE500D1B466 /* MLHybridViewController.swift */; };
+		B59162C31EDEBEE500D1B466 /* Hybrid_headerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591626B1EDEBEE500D1B466 /* Hybrid_headerModel.swift */; };
+		B59162C41EDEBEE500D1B466 /* Hybrid_naviButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591626C1EDEBEE500D1B466 /* Hybrid_naviButtonModel.swift */; };
+		B59162C51EDEBEE500D1B466 /* Hybrid_titleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591626D1EDEBEE500D1B466 /* Hybrid_titleModel.swift */; };
+		B59162C81EDEBEE500D1B466 /* DogHybirdURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162751EDEBEE500D1B466 /* DogHybirdURLProtocol.swift */; };
+		B59162C91EDEBEE500D1B466 /* HybirdTransionPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162771EDEBEE500D1B466 /* HybirdTransionPush.swift */; };
+		B59162CA1EDEBEE500D1B466 /* UIView+ML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162791EDEBEE500D1B466 /* UIView+ML.swift */; };
+		B59162CB1EDEBEE500D1B466 /* UIViewController+ML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591627A1EDEBEE500D1B466 /* UIViewController+ML.swift */; };
+		B59162CC1EDEBEE500D1B466 /* MLHybridExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591627B1EDEBEE500D1B466 /* MLHybridExtension.swift */; };
+		B59162CD1EDEBEE500D1B466 /* MLHybridLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591627C1EDEBEE500D1B466 /* MLHybridLocation.swift */; };
+		B59162DF1EDEBEE500D1B466 /* ZYHWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162AC1EDEBEE500D1B466 /* ZYHWebImage.swift */; };
+		B59162E01EDEBEE500D1B466 /* ZYHWebImageChcheCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162AD1EDEBEE500D1B466 /* ZYHWebImageChcheCenter.swift */; };
+		B59162E11EDEBEE500D1B466 /* HybridNaviTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162AF1EDEBEE500D1B466 /* HybridNaviTitleView.swift */; };
+		B59162E21EDEBEE500D1B466 /* HybridSearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162B01EDEBEE500D1B466 /* HybridSearchBox.swift */; };
+		B59162E31EDEBEE500D1B466 /* MLHybridInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162B11EDEBEE500D1B466 /* MLHybridInputView.swift */; };
+		B59162E41EDEBEE500D1B466 /* MLHybridMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162B21EDEBEE500D1B466 /* MLHybridMapViewController.swift */; };
+		B59162E51EDEBEE500D1B466 /* MLHybridMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59162B31EDEBEE500D1B466 /* MLHybridMapViewController.xib */; };
+		B59162E61EDEBEE500D1B466 /* MLHybridTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162B41EDEBEE500D1B466 /* MLHybridTextField.swift */; };
+		B59162E71EDEBEE500D1B466 /* MLHybridTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162B51EDEBEE500D1B466 /* MLHybridTextView.swift */; };
+		B59162E81EDEBEE500D1B466 /* MLRefreshDIYHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162B61EDEBEE500D1B466 /* MLRefreshDIYHeader.swift */; };
+		B59162E91EDEBEE500D1B466 /* ActivityPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162B91EDEBEE500D1B466 /* ActivityPopView.swift */; };
+		B59162EA1EDEBEE500D1B466 /* ActivityPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59162BA1EDEBEE500D1B466 /* ActivityPopView.xib */; };
+		B59162EB1EDEBEE500D1B466 /* CYPhotoBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59162BC1EDEBEE500D1B466 /* CYPhotoBrowser.storyboard */; };
+		B59162EC1EDEBEE500D1B466 /* CYPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162BD1EDEBEE500D1B466 /* CYPhotoBrowser.swift */; };
+		B59162ED1EDEBEE500D1B466 /* CYPhotoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162BE1EDEBEE500D1B466 /* CYPhotoDetailController.swift */; };
+		B59162EE1EDEBEE500D1B466 /* MLHybridToolsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162BF1EDEBEE500D1B466 /* MLHybridToolsExtension.swift */; };
+		B59162FF1EDEC7D700D1B466 /* MLPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162F71EDEC7D700D1B466 /* MLPay.swift */; };
+		B59163001EDEC7D700D1B466 /* MLPayForAlipay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162F81EDEC7D700D1B466 /* MLPayForAlipay.swift */; };
+		B59163011EDEC7D700D1B466 /* MLPayForWechat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162F91EDEC7D700D1B466 /* MLPayForWechat.swift */; };
+		B59163051EDEC7D700D1B466 /* WeChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162FD1EDEC7D700D1B466 /* WeChatManager.swift */; };
+		B59163061EDEC7D700D1B466 /* WeChatPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59162FE1EDEC7D700D1B466 /* WeChatPayManager.swift */; };
+		B59163111EDEC80100D1B466 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B59163091EDEC80100D1B466 /* AlipaySDK.bundle */; };
+		B59163121EDEC80100D1B466 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B591630A1EDEC80100D1B466 /* AlipaySDK.framework */; };
+		B59163131EDEC80100D1B466 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B591630C1EDEC80100D1B466 /* libWeChatSDK.a */; };
+		B59163141EDEC80100D1B466 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = B591630D1EDEC80100D1B466 /* README.txt */; };
+		B59163161EDECE5000D1B466 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163151EDECE5000D1B466 /* CoreLocation.framework */; };
+		B59163181EDECE5900D1B466 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163171EDECE5900D1B466 /* libsqlite3.tbd */; };
+		B59163201EDEDB5A00D1B466 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163191EDED0FC00D1B466 /* libc++.tbd */; };
+		B59163221EDEDB7B00D1B466 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163211EDEDB7B00D1B466 /* CoreTelephony.framework */; };
+		B59163241EDEDBAB00D1B466 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163231EDEDBAB00D1B466 /* SystemConfiguration.framework */; };
+		B5BDC7AA1EDEB59100925B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC7A91EDEB59100925B14 /* AppDelegate.swift */; };
+		B5BDC7AC1EDEB59100925B14 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC7AB1EDEB59100925B14 /* FirstViewController.swift */; };
+		B5BDC7AE1EDEB59100925B14 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC7AD1EDEB59100925B14 /* SecondViewController.swift */; };
+		B5BDC7B11EDEB59100925B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BDC7AF1EDEB59100925B14 /* Main.storyboard */; };
+		B5BDC7B31EDEB59100925B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BDC7B21EDEB59100925B14 /* Assets.xcassets */; };
+		B5BDC7B61EDEB59100925B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BDC7B41EDEB59100925B14 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13C2AA93CD003B1DF41EC087 /* Pods-MLHybridDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLHybridDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLHybridDemo/Pods-MLHybridDemo.release.xcconfig"; sourceTree = "<group>"; };
+		1B1A6CFC099073442A78DFCF /* Pods_MLHybridDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLHybridDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59162671EDEBEE400D1B466 /* MLHybridContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridContentView.swift; sourceTree = "<group>"; };
+		B59162681EDEBEE500D1B466 /* MLHybridTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridTools.swift; sourceTree = "<group>"; };
+		B59162691EDEBEE500D1B466 /* MLHybridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridViewController.swift; sourceTree = "<group>"; };
+		B591626B1EDEBEE500D1B466 /* Hybrid_headerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hybrid_headerModel.swift; sourceTree = "<group>"; };
+		B591626C1EDEBEE500D1B466 /* Hybrid_naviButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hybrid_naviButtonModel.swift; sourceTree = "<group>"; };
+		B591626D1EDEBEE500D1B466 /* Hybrid_titleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hybrid_titleModel.swift; sourceTree = "<group>"; };
+		B59162751EDEBEE500D1B466 /* DogHybirdURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogHybirdURLProtocol.swift; sourceTree = "<group>"; };
+		B59162771EDEBEE500D1B466 /* HybirdTransionPush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybirdTransionPush.swift; sourceTree = "<group>"; };
+		B59162791EDEBEE500D1B466 /* UIView+ML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ML.swift"; sourceTree = "<group>"; };
+		B591627A1EDEBEE500D1B466 /* UIViewController+ML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ML.swift"; sourceTree = "<group>"; };
+		B591627B1EDEBEE500D1B466 /* MLHybridExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridExtension.swift; sourceTree = "<group>"; };
+		B591627C1EDEBEE500D1B466 /* MLHybridLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridLocation.swift; sourceTree = "<group>"; };
+		B59162AC1EDEBEE500D1B466 /* ZYHWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYHWebImage.swift; sourceTree = "<group>"; };
+		B59162AD1EDEBEE500D1B466 /* ZYHWebImageChcheCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYHWebImageChcheCenter.swift; sourceTree = "<group>"; };
+		B59162AF1EDEBEE500D1B466 /* HybridNaviTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridNaviTitleView.swift; sourceTree = "<group>"; };
+		B59162B01EDEBEE500D1B466 /* HybridSearchBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridSearchBox.swift; sourceTree = "<group>"; };
+		B59162B11EDEBEE500D1B466 /* MLHybridInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridInputView.swift; sourceTree = "<group>"; };
+		B59162B21EDEBEE500D1B466 /* MLHybridMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridMapViewController.swift; sourceTree = "<group>"; };
+		B59162B31EDEBEE500D1B466 /* MLHybridMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MLHybridMapViewController.xib; sourceTree = "<group>"; };
+		B59162B41EDEBEE500D1B466 /* MLHybridTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridTextField.swift; sourceTree = "<group>"; };
+		B59162B51EDEBEE500D1B466 /* MLHybridTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridTextView.swift; sourceTree = "<group>"; };
+		B59162B61EDEBEE500D1B466 /* MLRefreshDIYHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLRefreshDIYHeader.swift; sourceTree = "<group>"; };
+		B59162B91EDEBEE500D1B466 /* ActivityPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPopView.swift; sourceTree = "<group>"; };
+		B59162BA1EDEBEE500D1B466 /* ActivityPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityPopView.xib; sourceTree = "<group>"; };
+		B59162BC1EDEBEE500D1B466 /* CYPhotoBrowser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CYPhotoBrowser.storyboard; sourceTree = "<group>"; };
+		B59162BD1EDEBEE500D1B466 /* CYPhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYPhotoBrowser.swift; sourceTree = "<group>"; };
+		B59162BE1EDEBEE500D1B466 /* CYPhotoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYPhotoDetailController.swift; sourceTree = "<group>"; };
+		B59162BF1EDEBEE500D1B466 /* MLHybridToolsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHybridToolsExtension.swift; sourceTree = "<group>"; };
+		B59162F41EDEC05B00D1B466 /* Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-header.h"; sourceTree = "<group>"; };
+		B59162F71EDEC7D700D1B466 /* MLPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLPay.swift; sourceTree = "<group>"; };
+		B59162F81EDEC7D700D1B466 /* MLPayForAlipay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLPayForAlipay.swift; sourceTree = "<group>"; };
+		B59162F91EDEC7D700D1B466 /* MLPayForWechat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLPayForWechat.swift; sourceTree = "<group>"; };
+		B59162FD1EDEC7D700D1B466 /* WeChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeChatManager.swift; sourceTree = "<group>"; };
+		B59162FE1EDEC7D700D1B466 /* WeChatPayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeChatPayManager.swift; sourceTree = "<group>"; };
+		B59163091EDEC80100D1B466 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		B591630A1EDEC80100D1B466 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		B591630C1EDEC80100D1B466 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		B591630D1EDEC80100D1B466 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		B591630E1EDEC80100D1B466 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		B591630F1EDEC80100D1B466 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		B59163101EDEC80100D1B466 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		B59163151EDECE5000D1B466 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B59163171EDECE5900D1B466 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B59163191EDED0FC00D1B466 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		B59163211EDEDB7B00D1B466 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B59163231EDEDBAB00D1B466 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B5BDC7A61EDEB59100925B14 /* MLHybridDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLHybridDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BDC7A91EDEB59100925B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5BDC7AB1EDEB59100925B14 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		B5BDC7AD1EDEB59100925B14 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B5BDC7B01EDEB59100925B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5BDC7B21EDEB59100925B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5BDC7B51EDEB59100925B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5BDC7B71EDEB59100925B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C747E8AA7532B22ECCB18F47 /* Pods-MLHybridDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLHybridDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLHybridDemo/Pods-MLHybridDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5BDC7A31EDEB59100925B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59163241EDEDBAB00D1B466 /* SystemConfiguration.framework in Frameworks */,
+				B59163221EDEDB7B00D1B466 /* CoreTelephony.framework in Frameworks */,
+				B59163201EDEDB5A00D1B466 /* libc++.tbd in Frameworks */,
+				B59163181EDECE5900D1B466 /* libsqlite3.tbd in Frameworks */,
+				B59163161EDECE5000D1B466 /* CoreLocation.framework in Frameworks */,
+				AAA32E0ABD1843260458F5CE /* Pods_MLHybridDemo.framework in Frameworks */,
+				B59163121EDEC80100D1B466 /* AlipaySDK.framework in Frameworks */,
+				B59163131EDEC80100D1B466 /* libWeChatSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B93053152176FA4BD0402A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C747E8AA7532B22ECCB18F47 /* Pods-MLHybridDemo.debug.xcconfig */,
+				13C2AA93CD003B1DF41EC087 /* Pods-MLHybridDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2640887F24EDA2500587D992 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B59163231EDEDBAB00D1B466 /* SystemConfiguration.framework */,
+				B59163211EDEDB7B00D1B466 /* CoreTelephony.framework */,
+				B59163191EDED0FC00D1B466 /* libc++.tbd */,
+				B59163171EDECE5900D1B466 /* libsqlite3.tbd */,
+				B59163151EDECE5000D1B466 /* CoreLocation.framework */,
+				1B1A6CFC099073442A78DFCF /* Pods_MLHybridDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B59162651EDEBEE400D1B466 /* MLHybrid */ = {
+			isa = PBXGroup;
+			children = (
+				B59163071EDEC80100D1B466 /* ThirdParty */,
+				B59162F61EDEC7D700D1B466 /* MLPay */,
+				B59162661EDEBEE400D1B466 /* DogHybrid */,
+				B59162B71EDEBEE500D1B466 /* DogHybridExtension */,
+			);
+			path = MLHybrid;
+			sourceTree = "<group>";
+		};
+		B59162661EDEBEE400D1B466 /* DogHybrid */ = {
+			isa = PBXGroup;
+			children = (
+				B59162671EDEBEE400D1B466 /* MLHybridContentView.swift */,
+				B59162681EDEBEE500D1B466 /* MLHybridTools.swift */,
+				B59162691EDEBEE500D1B466 /* MLHybridViewController.swift */,
+				B591626A1EDEBEE500D1B466 /* Model */,
+				B59162731EDEBEE500D1B466 /* Tool */,
+				B59162AE1EDEBEE500D1B466 /* View */,
+			);
+			path = DogHybrid;
+			sourceTree = "<group>";
+		};
+		B591626A1EDEBEE500D1B466 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B591626B1EDEBEE500D1B466 /* Hybrid_headerModel.swift */,
+				B591626C1EDEBEE500D1B466 /* Hybrid_naviButtonModel.swift */,
+				B591626D1EDEBEE500D1B466 /* Hybrid_titleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B59162731EDEBEE500D1B466 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				B59162741EDEBEE500D1B466 /* DogHybirdURLProtocol */,
+				B59162761EDEBEE500D1B466 /* HybirdTransion */,
+				B59162781EDEBEE500D1B466 /* Loading */,
+				B591627B1EDEBEE500D1B466 /* MLHybridExtension.swift */,
+				B591627C1EDEBEE500D1B466 /* MLHybridLocation.swift */,
+				B59162AC1EDEBEE500D1B466 /* ZYHWebImage.swift */,
+				B59162AD1EDEBEE500D1B466 /* ZYHWebImageChcheCenter.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		B59162741EDEBEE500D1B466 /* DogHybirdURLProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				B59162751EDEBEE500D1B466 /* DogHybirdURLProtocol.swift */,
+			);
+			path = DogHybirdURLProtocol;
+			sourceTree = "<group>";
+		};
+		B59162761EDEBEE500D1B466 /* HybirdTransion */ = {
+			isa = PBXGroup;
+			children = (
+				B59162771EDEBEE500D1B466 /* HybirdTransionPush.swift */,
+			);
+			path = HybirdTransion;
+			sourceTree = "<group>";
+		};
+		B59162781EDEBEE500D1B466 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				B59162791EDEBEE500D1B466 /* UIView+ML.swift */,
+				B591627A1EDEBEE500D1B466 /* UIViewController+ML.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		B59162AE1EDEBEE500D1B466 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B59162AF1EDEBEE500D1B466 /* HybridNaviTitleView.swift */,
+				B59162B01EDEBEE500D1B466 /* HybridSearchBox.swift */,
+				B59162B11EDEBEE500D1B466 /* MLHybridInputView.swift */,
+				B59162B21EDEBEE500D1B466 /* MLHybridMapViewController.swift */,
+				B59162B31EDEBEE500D1B466 /* MLHybridMapViewController.xib */,
+				B59162B41EDEBEE500D1B466 /* MLHybridTextField.swift */,
+				B59162B51EDEBEE500D1B466 /* MLHybridTextView.swift */,
+				B59162B61EDEBEE500D1B466 /* MLRefreshDIYHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B59162B71EDEBEE500D1B466 /* DogHybridExtension */ = {
+			isa = PBXGroup;
+			children = (
+				B59162B81EDEBEE500D1B466 /* ActivityPopView */,
+				B59162BB1EDEBEE500D1B466 /* CYPhotoBrowser */,
+				B59162BF1EDEBEE500D1B466 /* MLHybridToolsExtension.swift */,
+			);
+			path = DogHybridExtension;
+			sourceTree = "<group>";
+		};
+		B59162B81EDEBEE500D1B466 /* ActivityPopView */ = {
+			isa = PBXGroup;
+			children = (
+				B59162B91EDEBEE500D1B466 /* ActivityPopView.swift */,
+				B59162BA1EDEBEE500D1B466 /* ActivityPopView.xib */,
+			);
+			path = ActivityPopView;
+			sourceTree = "<group>";
+		};
+		B59162BB1EDEBEE500D1B466 /* CYPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				B59162BC1EDEBEE500D1B466 /* CYPhotoBrowser.storyboard */,
+				B59162BD1EDEBEE500D1B466 /* CYPhotoBrowser.swift */,
+				B59162BE1EDEBEE500D1B466 /* CYPhotoDetailController.swift */,
+			);
+			path = CYPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		B59162F61EDEC7D700D1B466 /* MLPay */ = {
+			isa = PBXGroup;
+			children = (
+				B59162F71EDEC7D700D1B466 /* MLPay.swift */,
+				B59162F81EDEC7D700D1B466 /* MLPayForAlipay.swift */,
+				B59162F91EDEC7D700D1B466 /* MLPayForWechat.swift */,
+				B59162FD1EDEC7D700D1B466 /* WeChatManager.swift */,
+				B59162FE1EDEC7D700D1B466 /* WeChatPayManager.swift */,
+			);
+			path = MLPay;
+			sourceTree = "<group>";
+		};
+		B59163071EDEC80100D1B466 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				B59163081EDEC80100D1B466 /* Alipay */,
+				B591630B1EDEC80100D1B466 /* WebChatSDK */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		B59163081EDEC80100D1B466 /* Alipay */ = {
+			isa = PBXGroup;
+			children = (
+				B59163091EDEC80100D1B466 /* AlipaySDK.bundle */,
+				B591630A1EDEC80100D1B466 /* AlipaySDK.framework */,
+			);
+			path = Alipay;
+			sourceTree = "<group>";
+		};
+		B591630B1EDEC80100D1B466 /* WebChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				B591630C1EDEC80100D1B466 /* libWeChatSDK.a */,
+				B591630D1EDEC80100D1B466 /* README.txt */,
+				B591630E1EDEC80100D1B466 /* WechatAuthSDK.h */,
+				B591630F1EDEC80100D1B466 /* WXApi.h */,
+				B59163101EDEC80100D1B466 /* WXApiObject.h */,
+			);
+			path = WebChatSDK;
+			sourceTree = "<group>";
+		};
+		B5BDC79D1EDEB59100925B14 = {
+			isa = PBXGroup;
+			children = (
+				B59162F41EDEC05B00D1B466 /* Bridging-header.h */,
+				B59162651EDEBEE400D1B466 /* MLHybrid */,
+				B5BDC7A81EDEB59100925B14 /* MLHybridDemo */,
+				B5BDC7A71EDEB59100925B14 /* Products */,
+				1B93053152176FA4BD0402A8 /* Pods */,
+				2640887F24EDA2500587D992 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5BDC7A71EDEB59100925B14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5BDC7A61EDEB59100925B14 /* MLHybridDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5BDC7A81EDEB59100925B14 /* MLHybridDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B5BDC7A91EDEB59100925B14 /* AppDelegate.swift */,
+				B5BDC7AB1EDEB59100925B14 /* FirstViewController.swift */,
+				B5BDC7AD1EDEB59100925B14 /* SecondViewController.swift */,
+				B5BDC7AF1EDEB59100925B14 /* Main.storyboard */,
+				B5BDC7B21EDEB59100925B14 /* Assets.xcassets */,
+				B5BDC7B41EDEB59100925B14 /* LaunchScreen.storyboard */,
+				B5BDC7B71EDEB59100925B14 /* Info.plist */,
+			);
+			path = MLHybridDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5BDC7A51EDEB59100925B14 /* MLHybridDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BDC7BA1EDEB59100925B14 /* Build configuration list for PBXNativeTarget "MLHybridDemo" */;
+			buildPhases = (
+				E475C5F602C39A2937DCCAD1 /* [CP] Check Pods Manifest.lock */,
+				B5BDC7A21EDEB59100925B14 /* Sources */,
+				B5BDC7A31EDEB59100925B14 /* Frameworks */,
+				B5BDC7A41EDEB59100925B14 /* Resources */,
+				BDF884CB39BB8D39A74DEA61 /* [CP] Embed Pods Frameworks */,
+				2F615947739DE91760DD6AF1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MLHybridDemo;
+			productName = MLHybridDemo;
+			productReference = B5BDC7A61EDEB59100925B14 /* MLHybridDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5BDC79E1EDEB59100925B14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Nil;
+				TargetAttributes = {
+					B5BDC7A51EDEB59100925B14 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 298LEY82V6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B5BDC7A11EDEB59100925B14 /* Build configuration list for PBXProject "MLHybridDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5BDC79D1EDEB59100925B14;
+			productRefGroup = B5BDC7A71EDEB59100925B14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5BDC7A51EDEB59100925B14 /* MLHybridDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5BDC7A41EDEB59100925B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BDC7B61EDEB59100925B14 /* LaunchScreen.storyboard in Resources */,
+				B5BDC7B31EDEB59100925B14 /* Assets.xcassets in Resources */,
+				B59163111EDEC80100D1B466 /* AlipaySDK.bundle in Resources */,
+				B59162EA1EDEBEE500D1B466 /* ActivityPopView.xib in Resources */,
+				B59162E51EDEBEE500D1B466 /* MLHybridMapViewController.xib in Resources */,
+				B59162EB1EDEBEE500D1B466 /* CYPhotoBrowser.storyboard in Resources */,
+				B59163141EDEC80100D1B466 /* README.txt in Resources */,
+				B5BDC7B11EDEB59100925B14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F615947739DE91760DD6AF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLHybridDemo/Pods-MLHybridDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDF884CB39BB8D39A74DEA61 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MLHybridDemo/Pods-MLHybridDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E475C5F602C39A2937DCCAD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5BDC7A21EDEB59100925B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59162E21EDEBEE500D1B466 /* HybridSearchBox.swift in Sources */,
+				B59163051EDEC7D700D1B466 /* WeChatManager.swift in Sources */,
+				B5BDC7AE1EDEB59100925B14 /* SecondViewController.swift in Sources */,
+				B59162C81EDEBEE500D1B466 /* DogHybirdURLProtocol.swift in Sources */,
+				B59162CB1EDEBEE500D1B466 /* UIViewController+ML.swift in Sources */,
+				B59162CD1EDEBEE500D1B466 /* MLHybridLocation.swift in Sources */,
+				B59162C21EDEBEE500D1B466 /* MLHybridViewController.swift in Sources */,
+				B59162E81EDEBEE500D1B466 /* MLRefreshDIYHeader.swift in Sources */,
+				B59162C91EDEBEE500D1B466 /* HybirdTransionPush.swift in Sources */,
+				B59162DF1EDEBEE500D1B466 /* ZYHWebImage.swift in Sources */,
+				B59163011EDEC7D700D1B466 /* MLPayForWechat.swift in Sources */,
+				B59162E71EDEBEE500D1B466 /* MLHybridTextView.swift in Sources */,
+				B59162C01EDEBEE500D1B466 /* MLHybridContentView.swift in Sources */,
+				B59162E41EDEBEE500D1B466 /* MLHybridMapViewController.swift in Sources */,
+				B59162E91EDEBEE500D1B466 /* ActivityPopView.swift in Sources */,
+				B59162E01EDEBEE500D1B466 /* ZYHWebImageChcheCenter.swift in Sources */,
+				B59162FF1EDEC7D700D1B466 /* MLPay.swift in Sources */,
+				B59162C41EDEBEE500D1B466 /* Hybrid_naviButtonModel.swift in Sources */,
+				B59162C51EDEBEE500D1B466 /* Hybrid_titleModel.swift in Sources */,
+				B59162ED1EDEBEE500D1B466 /* CYPhotoDetailController.swift in Sources */,
+				B59162EE1EDEBEE500D1B466 /* MLHybridToolsExtension.swift in Sources */,
+				B59162EC1EDEBEE500D1B466 /* CYPhotoBrowser.swift in Sources */,
+				B59163001EDEC7D700D1B466 /* MLPayForAlipay.swift in Sources */,
+				B59162CC1EDEBEE500D1B466 /* MLHybridExtension.swift in Sources */,
+				B5BDC7AA1EDEB59100925B14 /* AppDelegate.swift in Sources */,
+				B59162C11EDEBEE500D1B466 /* MLHybridTools.swift in Sources */,
+				B59162E31EDEBEE500D1B466 /* MLHybridInputView.swift in Sources */,
+				B59162CA1EDEBEE500D1B466 /* UIView+ML.swift in Sources */,
+				B59162C31EDEBEE500D1B466 /* Hybrid_headerModel.swift in Sources */,
+				B59162E11EDEBEE500D1B466 /* HybridNaviTitleView.swift in Sources */,
+				B59163061EDEC7D700D1B466 /* WeChatPayManager.swift in Sources */,
+				B5BDC7AC1EDEB59100925B14 /* FirstViewController.swift in Sources */,
+				B59162E61EDEBEE500D1B466 /* MLHybridTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5BDC7AF1EDEB59100925B14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5BDC7B01EDEB59100925B14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5BDC7B41EDEB59100925B14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5BDC7B51EDEB59100925B14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5BDC7B81EDEB59100925B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5BDC7B91EDEB59100925B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5BDC7BB1EDEB59100925B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C747E8AA7532B22ECCB18F47 /* Pods-MLHybridDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 298LEY82V6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MLHybrid/ThirdParty/Alipay",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				INFOPLIST_FILE = MLHybridDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MLHybrid/ThirdParty/WebChatSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"NJKWebViewProgress\"",
+					"-framework",
+					"\"RTRootNavigationController\"",
+					"-framework",
+					"\"YYModel\"",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cy.MLHybridDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B5BDC7BC1EDEB59100925B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13C2AA93CD003B1DF41EC087 /* Pods-MLHybridDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 298LEY82V6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MLHybrid/ThirdParty/Alipay",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				INFOPLIST_FILE = MLHybridDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MLHybrid/ThirdParty/WebChatSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"NJKWebViewProgress\"",
+					"-framework",
+					"\"RTRootNavigationController\"",
+					"-framework",
+					"\"YYModel\"",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Cy.MLHybridDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5BDC7A11EDEB59100925B14 /* Build configuration list for PBXProject "MLHybridDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BDC7B81EDEB59100925B14 /* Debug */,
+				B5BDC7B91EDEB59100925B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BDC7BA1EDEB59100925B14 /* Build configuration list for PBXNativeTarget "MLHybridDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BDC7BB1EDEB59100925B14 /* Debug */,
+				B5BDC7BC1EDEB59100925B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5BDC79E1EDEB59100925B14 /* Project object */;
+}
