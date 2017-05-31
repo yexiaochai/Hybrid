@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B51F7AAF1D2E59EC00603478"
-               BuildableName = "DogHybrid.framework"
-               BlueprintName = "DogHybrid"
-               ReferencedContainer = "container:DogHybrid.xcodeproj">
+               BlueprintIdentifier = "FD6FE184D49DB8D8C99780706BB73385"
+               BuildableName = "Pods_MLHybridDemo.framework"
+               BlueprintName = "Pods-MLHybridDemo"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B51F7AAF1D2E59EC00603478"
-            BuildableName = "DogHybrid.framework"
-            BlueprintName = "DogHybrid"
-            ReferencedContainer = "container:DogHybrid.xcodeproj">
+            BlueprintIdentifier = "FD6FE184D49DB8D8C99780706BB73385"
+            BuildableName = "Pods_MLHybridDemo.framework"
+            BlueprintName = "Pods-MLHybridDemo"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B51F7AAF1D2E59EC00603478"
-            BuildableName = "DogHybrid.framework"
-            BlueprintName = "DogHybrid"
-            ReferencedContainer = "container:DogHybrid.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
