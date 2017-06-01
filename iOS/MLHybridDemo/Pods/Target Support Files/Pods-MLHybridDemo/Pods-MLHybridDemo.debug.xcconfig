@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh" "$PODS_CONFIGURATION_BUILD_DIR/NJKWebViewProgress" "$PODS_CONFIGURATION_BUILD_DIR/RTRootNavigationController" "$PODS_CONFIGURATION_BUILD_DIR/YYCategories" "$PODS_CONFIGURATION_BUILD_DIR/YYModel"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh" "$PODS_CONFIGURATION_BUILD_DIR/NJKWebViewProgress" "$PODS_CONFIGURATION_BUILD_DIR/RTRootNavigationController" "$PODS_CONFIGURATION_BUILD_DIR/SSZipArchive" "$PODS_CONFIGURATION_BUILD_DIR/YYCategories" "$PODS_CONFIGURATION_BUILD_DIR/YYModel"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh/MJRefresh.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/NJKWebViewProgress/NJKWebViewProgress.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RTRootNavigationController/RTRootNavigationController.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/YYCategories/YYCategories.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/YYModel/YYModel.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "MJRefresh" -framework "NJKWebViewProgress" -framework "RTRootNavigationController" -framework "YYCategories" -framework "YYModel"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh/MJRefresh.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/NJKWebViewProgress/NJKWebViewProgress.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RTRootNavigationController/RTRootNavigationController.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SSZipArchive/SSZipArchive.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/YYCategories/YYCategories.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/YYModel/YYModel.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "MJRefresh" -framework "NJKWebViewProgress" -framework "RTRootNavigationController" -framework "SSZipArchive" -framework "YYCategories" -framework "YYModel"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

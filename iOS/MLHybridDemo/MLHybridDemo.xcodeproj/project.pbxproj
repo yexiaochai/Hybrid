@@ -50,6 +50,7 @@
 		B59163201EDEDB5A00D1B466 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163191EDED0FC00D1B466 /* libc++.tbd */; };
 		B59163221EDEDB7B00D1B466 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163211EDEDB7B00D1B466 /* CoreTelephony.framework */; };
 		B59163241EDEDBAB00D1B466 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59163231EDEDBAB00D1B466 /* SystemConfiguration.framework */; };
+		B59163291EE0014500D1B466 /* MLHybridSetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = B59163281EE0014500D1B466 /* MLHybridSetting.plist */; };
 		B5BDC7AA1EDEB59100925B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC7A91EDEB59100925B14 /* AppDelegate.swift */; };
 		B5BDC7AC1EDEB59100925B14 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC7AB1EDEB59100925B14 /* FirstViewController.swift */; };
 		B5BDC7AE1EDEB59100925B14 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC7AD1EDEB59100925B14 /* SecondViewController.swift */; };
@@ -107,6 +108,7 @@
 		B59163191EDED0FC00D1B466 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B59163211EDEDB7B00D1B466 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B59163231EDEDBAB00D1B466 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B59163281EE0014500D1B466 /* MLHybridSetting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MLHybridSetting.plist; sourceTree = "<group>"; };
 		B5BDC7A61EDEB59100925B14 /* MLHybridDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLHybridDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BDC7A91EDEB59100925B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5BDC7AB1EDEB59100925B14 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		B59162661EDEBEE400D1B466 /* DogHybrid */ = {
 			isa = PBXGroup;
 			children = (
+				B59163281EE0014500D1B466 /* MLHybridSetting.plist */,
 				B59162671EDEBEE400D1B466 /* MLHybridContentView.swift */,
 				B59162681EDEBEE500D1B466 /* MLHybridTools.swift */,
 				B59162691EDEBEE500D1B466 /* MLHybridViewController.swift */,
@@ -420,6 +423,7 @@
 				B59163111EDEC80100D1B466 /* AlipaySDK.bundle in Resources */,
 				B59162EA1EDEBEE500D1B466 /* ActivityPopView.xib in Resources */,
 				B59162E51EDEBEE500D1B466 /* MLHybridMapViewController.xib in Resources */,
+				B59163291EE0014500D1B466 /* MLHybridSetting.plist in Resources */,
 				B59162EB1EDEBEE500D1B466 /* CYPhotoBrowser.storyboard in Resources */,
 				B59163141EDEC80100D1B466 /* README.txt in Resources */,
 				B5BDC7B11EDEB59100925B14 /* Main.storyboard in Resources */,

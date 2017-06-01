@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SSZipArchive.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYCategories.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1B8A534B1AFD0521E6F357DFCDA1282F</key>
+		<key>210D03D3AAAB6BAF07A06E12E4009ADB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>570C058B3CD2CE55CE478848B80840C1</key>
+		<key>476FB43EFEAAE79FE8AF53D837F68D39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47E8D92F85A44B8B2246F5909161AAF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7094E1163CD2453BD9F6121C515BADA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>E14A62900910444707A5504D25EC98DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD6FE184D49DB8D8C99780706BB73385</key>
+		<key>FA5FE83E9FF700E27D864A6D1ECA77CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FCE802E6FA0647D5D839BDBCD86C5857</key>
 		<dict>
 			<key>primary</key>
 			<true/>

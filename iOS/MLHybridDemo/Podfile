@@ -11,7 +11,7 @@ target 'MLHybridDemo' do
   pod 'MJRefresh', '~> 3.0'
   pod 'YYModel', '~> 1.0.4'
   pod 'YYCategories', '~> 1.0.4'
-#  pod 'SSZipArchive', '~> 1.8.1'
+  pod 'SSZipArchive', '~> 1.8.1'
   pod 'RTRootNavigationController', '~> 0.5.26'
   pod 'NJKWebViewProgress', '~> 0.2.3'
   

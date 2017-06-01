@@ -16,7 +16,7 @@ class MLHybridContentView: UIWebView {
     
     var tool: MLHybridTools = MLHybridTools()
 
-    let USER_AGENT_HEADER = "med_hybrid_mecrm_"
+    let USER_AGENT_HEADER: String = MLHybridTools.readSetting()["userAgentHeader"] as! String
     
     var Cookie: String? {
         didSet {
@@ -56,11 +56,12 @@ class MLHybridContentView: UIWebView {
 
     //注入cookie
     func customerCookie() {
+        let cookieDomian: String = MLHybridTools.readSetting()["cookieDomian"] as! String
+        let platform: String = MLHybridTools.readSetting()["platform"] as! String
         if let sess = self.Cookie {
             var properties = [HTTPCookiePropertyKey: Any]()
             properties.updateValue(HTTPCookiePropertyKey(rawValue: sess), forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.value.rawValue))
             properties.updateValue(HTTPCookiePropertyKey(rawValue: "sess"), forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.name.rawValue))
-            let cookieDomian = ".medlinker.com"
             properties.updateValue(HTTPCookiePropertyKey(rawValue: cookieDomian) as AnyObject, forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.domain.rawValue))
             properties.updateValue(Date(timeIntervalSinceNow: 60*60*3600) as AnyObject, forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.expires.rawValue))
             properties.updateValue("/" as Any, forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.path.rawValue))
@@ -68,9 +69,8 @@ class MLHybridContentView: UIWebView {
             HTTPCookieStorage.shared.setCookie(cookie!)
         }
         var properties = [HTTPCookiePropertyKey: Any]()
-        properties.updateValue(HTTPCookiePropertyKey(rawValue: "me_crm"), forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.value.rawValue))
+        properties.updateValue(HTTPCookiePropertyKey(rawValue: platform), forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.value.rawValue))
         properties.updateValue(HTTPCookiePropertyKey(rawValue: "platform"), forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.name.rawValue))
-        let cookieDomian = ".medlinker.com"
         properties.updateValue(HTTPCookiePropertyKey(rawValue: cookieDomian) as AnyObject, forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.domain.rawValue))
         properties.updateValue(Date(timeIntervalSinceNow: 60*60*3600) as AnyObject, forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.expires.rawValue))
         properties.updateValue("/" as Any, forKey: HTTPCookiePropertyKey(rawValue: HTTPCookiePropertyKey.path.rawValue))
@@ -96,7 +96,7 @@ extension MLHybridContentView: UIWebViewDelegate {
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if request.url!.absoluteString.hasPrefix("\(MLHYBRID_SCHEMES)://") {
+        if request.url!.absoluteString.hasPrefix("\(MLHYBRID_SCHEME)://") {
             self.tool.analysis(urlString: request.url?.absoluteString, webView: webView)
             return false
         }

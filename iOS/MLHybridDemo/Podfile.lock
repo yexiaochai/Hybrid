@@ -8,6 +8,7 @@ PODS:
   - RTRootNavigationController (0.5.26):
     - RTRootNavigationController/Core (= 0.5.26)
   - RTRootNavigationController/Core (0.5.26)
+  - SSZipArchive (1.8.1)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.0)
   - NJKWebViewProgress (~> 0.2.3)
   - RTRootNavigationController (~> 0.5.26)
+  - SSZipArchive (~> 1.8.1)
   - YYCategories (~> 1.0.4)
   - YYModel (~> 1.0.4)
 
@@ -24,9 +26,10 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   RTRootNavigationController: 153e538439fa20faec706019b04375f6c6fabeb6
+  SSZipArchive: 04547dfa448be5ed7ecbaf7eaf8a6e9eb9b42997
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 40bf9e25000066015afeeffd60d8eed9303ec757
+PODFILE CHECKSUM: 587a8ffbcedaf7ab4d56e59a582abd0f8a1542f3
 
 COCOAPODS: 1.2.1

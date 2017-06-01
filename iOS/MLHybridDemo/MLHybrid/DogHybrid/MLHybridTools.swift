@@ -10,7 +10,7 @@ import UIKit
 import MJRefresh
 import CoreLocation
 
-let MLHYBRID_SCHEMES = "medmecrmhybrid"
+let MLHYBRID_SCHEME: String = MLHybridTools.readSetting()["hybridScheme"] as! String
 
 let HybridEvent = "Hybrid.callback"
 let NaviImageHeader = "hybrid_navi_"
@@ -77,7 +77,7 @@ class MLHybridTools: NSObject {
     /// - Returns: 执行方法名、参数、回调ID
     open func contentResolver(urlString: String, appendParams: [String: String] = [:]) -> (function: String, args: [String: AnyObject], callbackId: String) {
         if let url = URL(string: urlString) {
-            if url.scheme == MLHYBRID_SCHEMES {
+            if url.scheme == MLHYBRID_SCHEME {
                 let functionName = url.host ?? ""
                 let paramDic = url.hybridURLParamsDic()
                 var args = (paramDic["param"] ?? "").hybridDecodeURLString().hybridDecodeJsonStr()
@@ -819,7 +819,7 @@ private class MLOpenWebViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if request.url!.absoluteString.hasPrefix("\(MLHYBRID_SCHEMES)://") {
+        if request.url!.absoluteString.hasPrefix("\(MLHYBRID_SCHEME)://") {
             self.tool.analysis(urlString: request.url?.absoluteString, webView: webView)
         }
         return true
@@ -834,3 +834,9 @@ private class MLOpenWebViewController: UIViewController, UIWebViewDelegate {
 //    }
 }
 
+extension MLHybridTools {
+    class func readSetting() -> NSDictionary {
+        let settingListPath: String = Bundle.main.path(forResource: "MLHybridSetting", ofType:"plist")!
+        return NSMutableDictionary(contentsOfFile:settingListPath)!
+    }
+}

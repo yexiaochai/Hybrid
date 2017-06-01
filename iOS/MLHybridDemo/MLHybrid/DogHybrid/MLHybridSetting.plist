@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hybridScheme</key>
+	<string>medmecrmhybrid</string>
+	<key>platform</key>
+	<string>me_crm</string>
+	<key>cookieDomian</key>
+	<string>.medlinker.com</string>
+	<key>userAgentHeader</key>
+	<string>med_hybrid_mecrm_</string>
+</dict>
+</plist>

@@ -42,7 +42,7 @@ class MLHybridViewController: UIViewController {
                 webViewController.Cookie = sess
             }
             webViewController.hidesBottomBarWhenPushed = true
-            if url.scheme == MLHYBRID_SCHEMES {
+            if url.scheme == MLHYBRID_SCHEME {
                 let contentResolver = MLHybridTools().contentResolver(urlString: urlString)
                 if let topageURL = contentResolver.args["topage"] as? String {
                     webViewController.URLPath = topageURL

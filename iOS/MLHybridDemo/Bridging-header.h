@@ -9,6 +9,8 @@
 
 #import <YYModel/YYModel.h>
 #import <YYCategories/YYCategories.h>
+#import <SSZipArchive/SSZipArchive.h>
+//#import "SSZipArchive/SSZipArchive.h"
 
 //支付宝
 #import <AlipaySDK/AlipaySDK.h>
